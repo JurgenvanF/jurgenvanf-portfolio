@@ -4,6 +4,10 @@
   color: black;
 }
 
+p {
+  color: rgb(51 65 85);
+}
+
 /* Navbar */
 .hero {
   position: sticky;

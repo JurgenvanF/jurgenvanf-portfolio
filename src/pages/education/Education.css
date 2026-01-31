@@ -1,7 +1,11 @@
 .title__education {
-  color: #0081d4;
-}
+  height: 70px;
 
-p {
-  color: rgb(51 65 85);
+  /* Blue gradient text */
+  background: linear-gradient(to right, #2563eb, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  color: transparent;
 }
