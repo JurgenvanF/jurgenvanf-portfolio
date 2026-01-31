@@ -4,7 +4,7 @@ function Profession() {
   return (
     <>
       <h1 className="title__profession">Beroep</h1>
-      <p>Dit is mijn werkervaring.</p>
+      <p>Dit is mijn werkervaring!</p>
     </>
   );
 }
