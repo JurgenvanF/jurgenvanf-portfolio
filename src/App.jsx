@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import Home from "./pages/home/Home.jsx";
 import Education from "./pages/education/Education.jsx";
@@ -12,6 +12,18 @@ import "./App.css";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  // Lock body scroll when sidebar is open
+  useEffect(() => {
+    if (sidebarOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [sidebarOpen]);
 
   const navItems = [
     { to: "/", label: "Home", icon: <User />, class: "home" },
