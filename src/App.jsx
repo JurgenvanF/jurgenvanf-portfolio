@@ -66,7 +66,12 @@ function App() {
               className={({ isActive }) =>
                 `hero__link hero__link--${item.class}${isActive ? " active" : ""}`
               }
-              onClick={() => setSidebarOpen(false)} // close sidebar on click
+              onClick={(e) => {
+                setSidebarOpen(false);
+                const link = e.currentTarget;
+                link.classList.add("clicked");
+                setTimeout(() => link.classList.remove("clicked"), 200);
+              }}
             >
               {item.icon}
               <span>{item.label}</span>

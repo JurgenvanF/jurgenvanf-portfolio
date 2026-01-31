@@ -72,6 +72,23 @@
   background-color: #fcf3fb;
 }
 
+/* Click animation */
+@keyframes clickShrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero__link.clicked {
+  animation: clickShrink 0.2s ease;
+}
+
 /* Active link gradients */
 .hero__link.active.hero__link--home {
   background: linear-gradient(to right, #a855f7, #ec4899);
