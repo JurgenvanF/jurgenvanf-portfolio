@@ -15,14 +15,6 @@ h1 {
   color: transparent;
 }
 
-.title__semititle {
-  color: #45556c;
-  margin-top: 0;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 500;
-}
-
 p {
   color: rgb(51 65 85);
 }
@@ -196,14 +188,14 @@ p {
 
   .hero__toggle {
     display: block;
+    margin-right: -12px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 4px;
     color: black;
-    position: fixed; /* make it fixed on screen */
-    right: 16px; /* adjust horizontal position */
-    z-index: 2200; /* higher than sidebar (2100) */
+    right: 16px;
+    z-index: 2200;
   }
 
   .hero__link {

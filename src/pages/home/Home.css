@@ -27,6 +27,16 @@
   animation: float 3s ease-in-out infinite;
 }
 
+.title__semititle {
+  color: #45556c;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
 .title__description {
   display: inline-block;
   max-width: 60rem;
