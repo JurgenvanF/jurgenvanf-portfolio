@@ -1,14 +1,54 @@
 .title__home {
-  height: 70px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 20px 20px 0 20px;
 
   background: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
   background-clip: text;
-  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.title__picture {
+  width: 8rem;
+  height: 8rem;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 45px;
+
+  border-radius: 9999px;
+
+  background: linear-gradient(to bottom right, #a855f7, #ec4899, #f97316);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  animation: float 3s ease-in-out infinite;
+}
+
+.title__description {
+  display: inline-block;
+  max-width: 60rem;
+  margin-left: 40px;
+  margin-right: 40px;
+
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+
+  color: #45556c;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @media (max-width: 625px) {
