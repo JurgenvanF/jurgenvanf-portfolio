@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { HashRouter, Routes, Route, NavLink } from "react-router-dom";
 import Home from "./pages/home/Home.jsx";
 import Education from "./pages/education/Education.jsx";
 import Profession from "./pages/profession/Profession.jsx";
@@ -48,7 +48,7 @@ function App() {
   ];
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <nav className="hero">
         <NavLink to="/" className="hero__title">
           <img className="hero__logo" src={logo} alt="Logo" />
@@ -98,7 +98,7 @@ function App() {
         <Route path="/beroep" element={<Profession />} />
         <Route path="/projecten" element={<Projects />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
