@@ -25,8 +25,7 @@ function App() {
   // Initialize darkMode from localStorage or system preference
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("darkMode");
-    if (saved !== null) return saved === "true";
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return saved !== null ? saved === "true" : false; // default to light mode
   });
 
   // Lock body scroll when sidebar is open
