@@ -4,7 +4,6 @@ import Home from "./pages/home/Home.jsx";
 import Education from "./pages/education/Education.jsx";
 import Profession from "./pages/profession/Profession.jsx";
 import Projects from "./pages/projects/Projects.jsx";
-import logo from "./assets/jf-logo.png";
 
 import {
   Menu,

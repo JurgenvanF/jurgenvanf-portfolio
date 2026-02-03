@@ -1,10 +1,19 @@
 import "./Home.css";
+import { Canvas } from "@react-three/fiber";
+import HeadModel from "../../HeadModel";
 import logo from "../../assets/profilepicture.jpg";
 import { Mail, Github } from "lucide-react";
 
 function Home() {
   return (
     <>
+      <div style={{ width: "300px", height: "300px" }}>
+        <Canvas camera={{ position: [0, 0, 3] }}>
+          <ambientLight intensity={1} />
+          <pointLight position={[100, 100, 100]} />
+          <HeadModel url="/HeadModel.glb" />
+        </Canvas>
+      </div>
       <img className="title__picture" src={logo} />
       <h1 className="title__home">Jurgen van Fraeijenhove</h1>
       <p className="title__semititle">Front-end Designer & Developer 🚀</p>
