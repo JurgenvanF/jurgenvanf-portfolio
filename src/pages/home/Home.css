@@ -1,7 +1,70 @@
-.title__home {
-  margin: 20px 20px 0 20px;
+:root {
+  /* Text colors */
+  --color-text-primary: #314158; /* title semititle */
+  --color-text-secondary: #45556c; /* description */
+  --color-text-white: #ffffff;
 
-  background: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
+  /* Button text */
+  --color-btn-mail-text: #ffffff;
+  --color-btn-github-text: #45556c;
+
+  /* Button background gradients */
+  --gradient-mail: linear-gradient(to right, #9333ea, #ec4899);
+  --gradient-mail-hover: linear-gradient(to right, #7e22ce, #be185d);
+  --color-btn-github-bg: #ffffff;
+
+  /* Profile picture gradient */
+  --gradient-picture: linear-gradient(
+    to bottom right,
+    #a855f7,
+    #ec4899,
+    #f97316
+  );
+
+  /* Title gradient */
+  --gradient-title: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
+
+  /* Shadows */
+  --shadow-sm:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-lg:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-lg-github:
+    0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-text-primary: #d1d5db; /* lighter for dark bg */
+  --color-text-secondary: #e5e7eb; /* lighter description */
+  --color-btn-mail-text: #f5f5f5;
+  --color-btn-github-text: #e5e7eb;
+
+  --gradient-mail: linear-gradient(to right, #7c3aed, #db2777);
+  --gradient-mail-hover: linear-gradient(to right, #6b21a8, #be185d);
+  --color-btn-github-bg: #1f2937;
+  --gradient-github-hover: linear-gradient(to right, #374151, #4b5563);
+
+  --gradient-picture: linear-gradient(
+    to bottom right,
+    #7c3aed,
+    #db2777,
+    #f97316
+  );
+  --gradient-title: linear-gradient(to right, #c084fc, #f472b6, #fb923c);
+
+  --shadow-sm:
+    0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+  --shadow-lg:
+    0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  --shadow-lg-github:
+    0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.15);
+}
+
+/* Title & Picture */
+.title__home {
+  margin: 20px;
+  background: var(--gradient-title);
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -9,29 +72,19 @@
 .title__picture {
   width: 8rem;
   height: 8rem;
-
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 45px;
-
+  margin: 45px auto 0 auto;
   border-radius: 9999px;
-
-  background: linear-gradient(to bottom right, #a855f7, #ec4899, #f97316);
-
+  background: var(--gradient-picture);
   display: flex;
   align-items: center;
   justify-content: center;
-
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-
   animation: float 3s ease-in-out infinite;
 }
 
 .title__semititle {
-  color: #45556c;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 0;
+  color: var(--color-text-primary);
+  margin: 0 20px;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 500;
@@ -40,15 +93,81 @@
 .title__description {
   display: inline-block;
   max-width: 60rem;
-  margin-left: 40px;
-  margin-right: 40px;
-
+  margin: 0 40px;
   font-size: 1.125rem;
   line-height: 1.75rem;
-
-  color: #45556c;
+  color: var(--color-text-secondary);
 }
 
+.title__buttons {
+  margin-top: 20px;
+}
+
+/* Buttons */
+.title__buttons__mail,
+.title__buttons__github {
+  display: inline-flex;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+  outline: none;
+  text-decoration: none;
+}
+
+.title__buttons__mail {
+  background: var(--gradient-mail);
+  color: var(--color-btn-mail-text);
+  border: 1px solid transparent;
+}
+
+.title__buttons__github {
+  background: var(--color-btn-github-bg);
+  color: var(--color-btn-github-text);
+  border: 1px solid #d1d5db;
+}
+
+.title__buttons__mail__icon,
+.title__buttons__github__icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Hover effects */
+@media (hover: hover) {
+  .title__buttons__mail:hover {
+    cursor: pointer;
+    background: var(--gradient-mail-hover);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+    text-decoration: none;
+  }
+
+  .title__buttons__github:hover {
+    cursor: pointer;
+    color: var(--color-btn-github-text);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg-github);
+    text-decoration: none;
+  }
+}
+
+/* Float animation */
 @keyframes float {
   0% {
     transform: translateY(0px);
@@ -61,6 +180,7 @@
   }
 }
 
+/* Responsive */
 @media (max-width: 625px) {
   .title__home {
     height: 120px;

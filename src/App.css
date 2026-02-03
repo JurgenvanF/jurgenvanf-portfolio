@@ -1,22 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root {
+  /* Text colors */
+  --color-text-primary: #000000; /* brand, nav links */
+  --color-text-secondary: #334155; /* paragraph */
+  --color-text-white: #ffffff;
+
+  /* Background colors */
+  --color-bg-navbar: #ffffff;
+  --color-bg-overlay: rgba(0, 0, 0, 0.3);
+  --color-bg-hover-link: #fcf3fb;
+
+  /* Gradients for active links */
+  --gradient-home: linear-gradient(to right, #a855f7, #ec4899);
+  --gradient-education: linear-gradient(to right, #3b82f6, #06b6d4);
+  --gradient-profession: linear-gradient(to right, #22c55e, #10b981);
+  --gradient-projects: linear-gradient(to right, #f97316, #ef4444);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Navbar */
+  --hero-height: 70px;
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-text-primary: #e5e7eb; /* brand, nav links */
+  --color-text-secondary: #d1d5db; /* paragraph */
+  --color-bg-navbar: #1f2937; /* navbar bg */
+  --color-bg-overlay: rgba(0, 0, 0, 0.5);
+  --color-bg-hover-link: #374151; /* hover for links */
+
+  --gradient-home: linear-gradient(to right, #9333ea, #db2777);
+  --gradient-education: linear-gradient(to right, #2563eb, #0891b2);
+  --gradient-profession: linear-gradient(to right, #16a34a, #059669);
+  --gradient-projects: linear-gradient(to right, #ea580c, #dc2626);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
 /* Root */
 #root {
   text-align: center;
-  color: black;
+  color: var(--color-text-primary);
 }
 
 h1 {
   height: 70px;
   margin-bottom: 0;
-
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  background-clip: text;
   color: transparent;
 }
 
 p {
-  color: rgb(51 65 85);
+  color: var(--color-text-secondary);
 }
 
 /* Navbar */
@@ -26,13 +68,49 @@ p {
   z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: center; /* center the group */
-  padding: 0 20px; /* minimum space from edges */
-  background-color: white;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: var(--color-bg-navbar);
   border-bottom: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  min-height: 70px;
-  gap: clamp(20px, 20vw, 800px); /* smooth, responsive gap */
+  box-shadow: var(--shadow-sm);
+  min-height: var(--hero-height);
+  gap: clamp(20px, 20vw, 800px);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.hero__darkmode {
+  margin-right: 1rem;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--color-text);
+  z-index: 2200;
+  position: relative;
+}
+
+.hero__darkmode--desktop:hover {
+  transform: scale(1.05);
+  background-color: var(--color-bg-hover-link);
+}
+
+.dark .hero__darkmode {
+  color: #ffffff;
+}
+
+.hero__darkmode--desktop {
+  display: block;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hero__darkmode--mobile {
+  display: none;
 }
 
 /* Logo & Brand */
@@ -42,22 +120,39 @@ p {
   gap: 12px;
   text-decoration: none;
   font-size: large;
-  flex-shrink: 0; /* prevents shrinking too early */
+  flex-shrink: 0;
 }
 
 .hero__logo {
   width: 55px;
-  height: 55px;
-  transition: transform 0.3s ease;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(to bottom right, #8b5cf6, #ec4899);
+  border-radius: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "SN Pro";
+  font-weight: 700;
+  font-size: 32px;
+  color: white;
+  cursor: default;
+  transform: none;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
 .hero__title:hover .hero__logo {
+  cursor: pointer;
   transform: rotate(10deg);
 }
 
 .hero__brand {
   font-weight: bold;
-  color: black;
+  color: var(--color-text-primary);
 }
 
 /* Navigation links */
@@ -65,8 +160,8 @@ p {
   display: flex;
   align-items: center;
   gap: 20px;
-  flex-shrink: 0; /* prevents shrinking too fast */
-  transition: transform 0.3s ease; /* added smooth slide animation */
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
 .hero__link {
@@ -77,15 +172,17 @@ p {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
-  color: black;
+  color: var(--color-text-primary);
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .hero__link:hover {
   transform: scale(1.05);
-  background-color: #fcf3fb;
+  background-color: var(--color-bg-hover-link);
 }
 
 /* Click animation */
@@ -101,29 +198,30 @@ p {
   }
 }
 
-.hero__link.clicked {
+.hero__link.clicked,
+.hero__darkmode.clicked {
   animation: clickShrink 0.2s ease;
 }
 
 /* Active link gradients */
 .hero__link.active.hero__link--home {
-  background: linear-gradient(to right, #a855f7, #ec4899);
-  color: white;
+  background: var(--gradient-home);
+  color: var(--color-text-white);
 }
 
 .hero__link.active.hero__link--education {
-  background: linear-gradient(to right, #3b82f6, #06b6d4);
-  color: white;
+  background: var(--gradient-education);
+  color: var(--color-text-white);
 }
 
 .hero__link.active.hero__link--profession {
-  background: linear-gradient(to right, #22c55e, #10b981);
-  color: white;
+  background: var(--gradient-profession);
+  color: var(--color-text-white);
 }
 
 .hero__link.active.hero__link--projects {
-  background: linear-gradient(to right, #f97316, #ef4444);
-  color: white;
+  background: var(--gradient-projects);
+  color: var(--color-text-white);
 }
 
 /* Mobile toggle button */
@@ -133,7 +231,7 @@ p {
   border: none;
   cursor: pointer;
   padding: 4px;
-  color: black;
+  color: var(--color-text-primary);
   position: relative;
   z-index: 2100;
 }
@@ -145,7 +243,7 @@ p {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--color-bg-overlay);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -162,7 +260,7 @@ p {
   .hero {
     gap: 0;
     justify-content: space-between;
-    height: 71px;
+    height: calc(var(--hero-height) + 1px);
   }
 
   .hero__nav {
@@ -171,34 +269,47 @@ p {
     right: 0;
     height: 100vh;
     width: 250px;
-    background-color: white;
+    background-color: var(--color-bg-navbar);
     flex-direction: column;
     align-items: flex-start;
     padding: 80px 16px;
     gap: 20px;
-    transform: translateX(100%); /* hidden by default */
-    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    box-shadow: var(--shadow-md);
     z-index: 2100;
-    transition: transform 0.3s ease; /* smooth slide animation */
+    transition: transform 0.3s ease;
   }
 
   .hero__nav.open {
-    transform: translateX(0); /* slide in */
+    transform: translateX(0);
   }
 
   .hero__toggle {
     display: block;
     margin-right: -12px;
-    background: none;
-    border: none;
-    cursor: pointer;
     padding: 4px;
-    color: black;
     right: 16px;
     z-index: 2200;
   }
 
   .hero__link {
     width: 218px;
+  }
+
+  .hero__darkmode {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    margin: 0;
+  }
+
+  .hero__darkmode--desktop {
+    display: none;
+  }
+
+  .hero__darkmode--mobile {
+    display: block;
+    padding: 4px;
+    left: 30px;
   }
 }

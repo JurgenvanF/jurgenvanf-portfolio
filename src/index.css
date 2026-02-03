@@ -1,16 +1,36 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Typography */
+  --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --line-height: 1.5;
+  --font-weight: 400;
 
-  background-color: #f8fafc;
+  /* Colors */
+  --color-bg: #f8fafc; /* light mode background */
+  --color-text: #000000; /* default text color */
 }
 
+/* Dark mode overrides */
+.dark {
+  --color-bg: #111827; /* dark mode background */
+  --color-text: #e5e7eb; /* light text on dark bg */
+}
+
+/* Apply global styles */
 body {
-  margin: 0px;
+  margin: 0;
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  font-weight: var(--font-weight);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: var(--color-text);
 }

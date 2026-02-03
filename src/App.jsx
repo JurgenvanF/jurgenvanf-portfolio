@@ -6,24 +6,46 @@ import Profession from "./pages/profession/Profession.jsx";
 import Projects from "./pages/projects/Projects.jsx";
 import logo from "./assets/jf-logo.png";
 
-import { Menu, X, User, GraduationCap, Briefcase, Folder } from "lucide-react";
+import {
+  Menu,
+  X,
+  User,
+  GraduationCap,
+  Briefcase,
+  Folder,
+  Sun,
+  Moon,
+} from "lucide-react";
 
 import "./App.css";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  // Initialize darkMode from localStorage or system preference
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("darkMode");
+    if (saved !== null) return saved === "true";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
+
   // Lock body scroll when sidebar is open
   useEffect(() => {
-    if (sidebarOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = sidebarOpen ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [sidebarOpen]);
+
+  // Apply dark mode class and save preference
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
 
   const navItems = [
     { to: "/", label: "Home", icon: <User />, class: "home" },
@@ -51,7 +73,7 @@ function App() {
     <BrowserRouter>
       <nav className="hero">
         <NavLink to="/" className="hero__title">
-          <img className="hero__logo" src={logo} alt="Logo" />
+          <div className="hero__logo">JF</div>
           <p className="hero__brand">Portfolio</p>
         </NavLink>
 
@@ -71,6 +93,22 @@ function App() {
         />
 
         <div className={`hero__nav ${sidebarOpen ? "open" : ""}`}>
+          {/* Dark Mode Toggle */}
+          <button
+            className={`hero__darkmode ${
+              sidebarOpen ? "hero__darkmode--mobile" : "hero__darkmode--desktop"
+            }`}
+            onClick={(e) => {
+              setDarkMode(!darkMode);
+              const link = e.currentTarget;
+              link.classList.add("clicked");
+              setTimeout(() => link.classList.remove("clicked"), 200);
+            }}
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? <Sun size={24} /> : <Moon size={24} />}
+          </button>
+
           {navItems.map((item) => (
             <NavLink
               key={item.to}
