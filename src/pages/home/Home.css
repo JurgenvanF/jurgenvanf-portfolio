@@ -82,7 +82,7 @@
 
 .head-fade .title__picture {
   width: 250px; /* fixed width */
-  height: auto; /* keep aspect ratio */
+  height: 250px; /* keep aspect ratio */
   object-fit: cover;
   transition: all 0.3s ease;
 }
