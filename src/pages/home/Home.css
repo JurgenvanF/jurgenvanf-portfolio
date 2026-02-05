@@ -62,21 +62,29 @@
 }
 
 .head-fade {
-  width: 300px;
+  perspective: 1000px;
+  width: 95vw; /* container width adapts to viewport */
+  max-width: 800px; /* optional max width */
   height: 300px;
-  margin: 45px auto 0 auto;
-
-  overflow: hidden;
+  margin: 45px auto 20px auto;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .head-fade .model {
+  width: 95%; /* 95% of container */
+  height: auto; /* maintain aspect ratio */
   background: #f8fafc;
   transition: background 0.3s ease;
 }
 
 .head-fade .title__picture {
-  background: none;
+  width: 250px; /* fixed width */
+  height: auto; /* keep aspect ratio */
+  object-fit: cover;
+  transition: all 0.3s ease;
 }
 
 /* DARK MODE background */
@@ -116,15 +124,11 @@
 }
 
 .title__picture {
-  width: 8rem;
-  height: 8rem;
-  margin: 45px auto 0 auto;
   border-radius: 9999px;
-  background: var(--gradient-picture);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block; /* simpler for images */
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
   animation: float 3s ease-in-out infinite;
 }
 

@@ -18,12 +18,7 @@ function Home() {
             <HeadModel url="/HeadModel.glb" />
           </Canvas>
         ) : (
-          <img
-            className="title__picture"
-            src={logo}
-            alt="Profile"
-            style={{ width: "70%", height: "70%", objectFit: "cover" }}
-          />
+          <img className="title__picture" src={logo} alt="Profile" />
         )}
       </div>
 
