@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import "./Home.css";
 import { Canvas } from "@react-three/fiber";
 import HeadModel from "../../HeadModel";
@@ -11,15 +11,22 @@ function Home() {
   return (
     <>
       <div className="head-fade" onClick={() => setShowCanvas(!showCanvas)}>
-        {showCanvas ? (
-          <Canvas className="model" camera={{ position: [0, 0, 3] }}>
-            <ambientLight intensity={2} />
-            <pointLight position={[100, 100, 100]} />
+        <Canvas
+          className={`model ${showCanvas ? "visible" : ""}`}
+          camera={{ position: [0, 0, 3] }}
+        >
+          <ambientLight intensity={2} />
+          <pointLight position={[100, 100, 100]} />
+          <Suspense fallback={null}>
             <HeadModel url="/HeadModel.glb" />
-          </Canvas>
-        ) : (
-          <img className="title__picture" src={logo} alt="Profile" />
-        )}
+          </Suspense>
+        </Canvas>
+
+        <img
+          className={`title__picture ${!showCanvas ? "visible" : ""}`}
+          src={logo}
+          alt="Profile"
+        />
       </div>
 
       <h1 className="title__home">Jurgen van Fraeijenhove</h1>

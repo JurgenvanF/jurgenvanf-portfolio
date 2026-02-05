@@ -94,9 +94,30 @@
 
 .model,
 .title__picture {
+  position: absolute; /* stack on top of each other */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* center perfectly */
+  width: 250px; /* fixed width for image */
+  height: auto;
+  object-fit: cover;
   cursor: pointer;
+  transition:
+    opacity 0.8s ease,
+    transform 0.6s ease-in-out;
+  opacity: 0; /* start hidden */
+  pointer-events: none;
 }
 
+.model.hidden {
+  display: none;
+}
+
+.model.visible,
+.title__picture.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
 .head-fade canvas {
   width: 100% !important;
   height: 100% !important;
@@ -125,11 +146,14 @@
 
 .title__picture {
   border-radius: 9999px;
-  display: block; /* simpler for images */
+  display: block;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   transform-style: preserve-3d;
-  transition: transform 0.6s ease-in-out;
+  transition:
+    opacity 0.8s ease,
+    transform 0.6s ease-in-out;
   animation: float 3s ease-in-out infinite;
+  cursor: pointer;
 }
 
 .title__semititle {
@@ -220,13 +244,13 @@
 /* Float animation */
 @keyframes float {
   0% {
-    transform: translateY(0px);
+    transform: translate(-50%, -50%) translateY(0px);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translate(-50%, -50%) translateY(-12px);
   }
   100% {
-    transform: translateY(0px);
+    transform: translate(-50%, -50%) translateY(0px);
   }
 }
 
