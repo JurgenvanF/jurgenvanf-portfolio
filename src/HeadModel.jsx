@@ -5,7 +5,9 @@ export default function HeadModel({ url }) {
   const { scene } = useGLTF(url);
   const modelRef = useRef();
 
-  return <primitive ref={modelRef} object={scene} scale={1} />;
+  return (
+    <primitive ref={modelRef} object={scene} scale={8} position={[0, -13, 0]} />
+  );
 }
 
 useGLTF.preload("/HeadModel.glb");

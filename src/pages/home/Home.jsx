@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Home.css";
 import { Canvas } from "@react-three/fiber";
 import HeadModel from "../../HeadModel";
@@ -5,16 +6,27 @@ import logo from "../../assets/profilepicture.jpg";
 import { Mail, Github } from "lucide-react";
 
 function Home() {
+  const [showCanvas, setShowCanvas] = useState(false); // start with image
+
   return (
     <>
-      <div style={{ width: "300px", height: "300px" }}>
-        <Canvas camera={{ position: [0, 0, 3] }}>
-          <ambientLight intensity={1} />
-          <pointLight position={[100, 100, 100]} />
-          <HeadModel url="/HeadModel.glb" />
-        </Canvas>
+      <div className="head-fade" onClick={() => setShowCanvas(!showCanvas)}>
+        {showCanvas ? (
+          <Canvas className="model" camera={{ position: [0, 0, 3] }}>
+            <ambientLight intensity={2} />
+            <pointLight position={[100, 100, 100]} />
+            <HeadModel url="/HeadModel.glb" />
+          </Canvas>
+        ) : (
+          <img
+            className="title__picture"
+            src={logo}
+            alt="Profile"
+            style={{ width: "70%", height: "70%", objectFit: "cover" }}
+          />
+        )}
       </div>
-      <img className="title__picture" src={logo} />
+
       <h1 className="title__home">Jurgen van Fraeijenhove</h1>
       <p className="title__semititle">Front-end Designer & Developer 🚀</p>
       <p className="title__description">

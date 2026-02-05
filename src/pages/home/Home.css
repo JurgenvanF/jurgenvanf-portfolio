@@ -61,6 +61,52 @@
     0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.15);
 }
 
+.head-fade {
+  width: 300px;
+  height: 300px;
+  margin: 45px auto 0 auto;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.head-fade .model {
+  background: #f8fafc;
+  transition: background 0.3s ease;
+}
+
+.head-fade .title__picture {
+  background: none;
+}
+
+/* DARK MODE background */
+.dark .head-fade .model {
+  background: #111827;
+}
+
+.model,
+.title__picture {
+  cursor: pointer;
+}
+
+.head-fade canvas {
+  width: 100% !important;
+  height: 100% !important;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 55%,
+    rgba(0, 0, 0, 0.7) 91%,
+    transparent 92%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 55%,
+    rgba(0, 0, 0, 0.7) 87%,
+    transparent 91%
+  );
+}
+
 /* Title & Picture */
 .title__home {
   margin: 20px;
