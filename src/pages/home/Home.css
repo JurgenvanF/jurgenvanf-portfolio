@@ -156,6 +156,7 @@
 .title__picture.visible {
   opacity: 1;
   pointer-events: auto;
+  background: none;
 }
 
 /* ============================================================================
@@ -332,6 +333,8 @@
 .pageRouting__education,
 .pageRouting__profession,
 .pageRouting__projects {
+  position: relative;
+  overflow: hidden;
   display: grid;
   align-items: flex-start;
   text-align: left;
@@ -339,10 +342,63 @@
   min-width: 300px;
   border-radius: 25px;
   border: 2px solid var(--color-border-card);
-  transition: all 0.2s ease-in-out;
+  transition:
+    color 0.6s ease,
+    all 0.2s ease-in-out;
   transform: scale(1);
   cursor: pointer;
   text-decoration: none;
+}
+
+.pageRouting__education::before,
+.pageRouting__profession::before,
+.pageRouting__projects::before,
+.pageRouting__education::after,
+.pageRouting__profession::after,
+.pageRouting__projects::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transition: opacity 0.6s ease;
+}
+
+.pageRouting__education::before {
+  background: linear-gradient(var(--gradient-card-education));
+  opacity: 1;
+}
+.pageRouting__profession::before {
+  background: linear-gradient(var(--gradient-card-profession));
+  opacity: 1;
+}
+.pageRouting__projects::before {
+  background: linear-gradient(var(--gradient-card-projects));
+  opacity: 1;
+}
+
+.pageRouting__education::after {
+  background: linear-gradient(to bottom right, #1e293b, #0f172a);
+  opacity: 0;
+}
+.pageRouting__profession::after {
+  background: linear-gradient(to bottom right, #1b2a22, #0f1f17);
+  opacity: 0;
+}
+.pageRouting__projects::after {
+  background: linear-gradient(to bottom right, #2a1f1b, #1a1412);
+  opacity: 0;
+}
+
+.dark .pageRouting__education::before,
+.dark .pageRouting__profession::before,
+.dark .pageRouting__projects::before {
+  opacity: 0;
+}
+
+.dark .pageRouting__education::after,
+.dark .pageRouting__profession::after,
+.dark .pageRouting__projects::after {
+  opacity: 1;
 }
 
 .pageRouting__education {

@@ -7,23 +7,32 @@
   /* Colors */
   --color-bg: #f8fafc; /* light mode background */
   --color-text: #000000; /* default text color */
+
+  /* Gradient & blob colors */
+  --bg-gradient: linear-gradient(135deg, #ede9f7, #fff1f3, #e0e7ff);
+  --blob-purple: #c084fc;
+  --blob-pink: #f9a8d4;
+  --blob-yellow: #fcd34d;
 }
 
 /* Dark mode overrides */
 .dark {
-  --color-bg: #111827; /* dark mode background */
-  --color-text: #e5e7eb; /* light text on dark bg */
+  --color-bg: #111827;
+  --color-text: #e5e7eb;
+  --bg-gradient: linear-gradient(135deg, #1f2937, #111827, #374151);
+  --blob-purple: #7c3aed;
+  --blob-pink: #ec4899;
+  --blob-yellow: #facc15;
 }
 
-/* Apply global styles */
+/* Global styles */
 body {
   margin: 0;
   font-family: var(--font-family);
   line-height: var(--line-height);
   font-weight: var(--font-weight);
-  background-color: var(--color-bg);
   color: var(--color-text);
-
+  background-color: var(--color-bg);
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
@@ -33,4 +42,93 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   color: var(--color-text);
+  margin: 2rem;
+}
+
+/* Background container (sticky/fixed) */
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* behind all content */
+  pointer-events: none; /* clicks pass through */
+}
+
+/* Base gradient */
+.gradient-bg {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Light gradient visible by default */
+.gradient-light {
+  background: linear-gradient(var(--bg-gradient));
+  opacity: 1;
+}
+
+/* Dark gradient hidden by default */
+.gradient-dark {
+  background: linear-gradient(var(--bg-gradient));
+  opacity: 0;
+}
+
+/* When dark mode is active */
+.dark .gradient-light {
+  opacity: 0;
+}
+
+.dark .gradient-dark {
+  opacity: 1;
+}
+
+/* Blob styles */
+.blob {
+  position: absolute;
+  width: 288px;
+  height: 288px;
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(60px);
+  mix-blend-mode: multiply;
+  animation: blob 7s infinite;
+}
+
+.dark .blob {
+  opacity: 0.1;
+  mix-blend-mode: screen;
+}
+
+.blob.purple {
+  background-color: var(--blob-purple);
+  top: 2%;
+  left: 1%;
+  animation-delay: 0s;
+}
+.blob.pink {
+  background-color: var(--blob-pink);
+  top: 70%;
+  left: 5%;
+  animation-delay: 2s;
+}
+.blob.yellow {
+  background-color: var(--blob-yellow);
+  top: 20%;
+  left: 85%;
+  animation-delay: 4s;
+}
+
+/* Animation keyframes */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
 }
