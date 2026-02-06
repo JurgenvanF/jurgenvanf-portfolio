@@ -56,6 +56,13 @@ function Home() {
         />
       </div>
 
+      {/* Mobile toggle button */}
+      <div className="mobile-toggle">
+        <button onClick={toggleCanvas}>
+          {showCanvas ? "Maak me 2D" : "Maak me 3D"}
+        </button>
+      </div>
+
       <h1 className="title__home">Jurgen van Fraeijenhove</h1>
       <p className="title__semititle">Front-end Designer & Developer 🚀</p>
       <p className="title__description">

@@ -163,6 +163,10 @@
   background: none;
 }
 
+.mobile-toggle {
+  display: none;
+}
+
 /* ============================================================================
    TYPOGRAPHY
    ============================================================================ */
@@ -554,6 +558,29 @@
   .pageRouting__profession,
   .pageRouting__projects {
     width: 90% !important;
+  }
+
+  .model.visible {
+    border: 1px solid black;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .mobile-toggle {
+    display: block;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+  }
+
+  .mobile-toggle button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #4f46e5;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 }
 
