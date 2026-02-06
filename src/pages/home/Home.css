@@ -733,10 +733,24 @@
 }
 
 @media (max-width: 700px) {
+  .pageRouting__education:hover,
+  .pageRouting__profession:hover,
+  .pageRouting__projects:hover {
+    transform: scale(1);
+    box-shadow: none;
+    transition: none;
+  }
+
   .skills__container {
     width: 90%;
     min-width: 0px;
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .skills__container__item:hover {
+    transform: scale(1);
+    box-shadow: none;
+    transition: none;
   }
 }
 
