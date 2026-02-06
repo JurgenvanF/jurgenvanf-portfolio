@@ -115,6 +115,10 @@
   transition: background 0.3s ease;
 }
 
+.model {
+  touch-action: none;
+}
+
 .head-fade canvas {
   width: 100% !important;
   height: 100% !important;

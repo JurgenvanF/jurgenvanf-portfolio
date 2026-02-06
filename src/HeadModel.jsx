@@ -87,13 +87,13 @@ export default function HeadModel({ url }) {
   useEffect(() => {
     const canvas = gl.domElement;
 
+    // ---------- Desktop ----------
     const onMouseMove = (e) => {
       const rect = canvas.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
       targetMouse.current = { x, y };
     };
-
     const onMouseEnter = () => setMouseInside(true);
     const onMouseLeave = () => setMouseInside(false);
 
@@ -101,10 +101,31 @@ export default function HeadModel({ url }) {
     canvas.addEventListener("mouseenter", onMouseEnter);
     canvas.addEventListener("mouseleave", onMouseLeave);
 
+    // ---------- Mobile ----------
+    const onTouchMove = (e) => {
+      e.preventDefault(); // prevents scrolling
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      const x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
+      const y = -(((touch.clientY - rect.top) / rect.height) * 2 - 1);
+      targetMouse.current = { x, y };
+      setMouseInside(true);
+    };
+
+    const onTouchEnd = () => setMouseInside(false);
+
+    canvas.addEventListener("touchmove", onTouchMove, { passive: false });
+    canvas.addEventListener("touchstart", onTouchMove, { passive: false });
+    canvas.addEventListener("touchend", onTouchEnd);
+
     return () => {
       canvas.removeEventListener("mousemove", onMouseMove);
       canvas.removeEventListener("mouseenter", onMouseEnter);
       canvas.removeEventListener("mouseleave", onMouseLeave);
+
+      canvas.removeEventListener("touchmove", onTouchMove);
+      canvas.removeEventListener("touchstart", onTouchMove);
+      canvas.removeEventListener("touchend", onTouchEnd);
     };
   }, [gl]);
 
