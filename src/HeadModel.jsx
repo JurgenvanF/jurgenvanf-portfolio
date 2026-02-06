@@ -87,23 +87,27 @@ export default function HeadModel({ url }) {
   useEffect(() => {
     const canvas = gl.domElement;
 
-    // ---------- Desktop ----------
-    const onMouseMove = (e) => {
-      const rect = canvas.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-      const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
-      targetMouse.current = { x, y };
-    };
-    const onMouseEnter = () => setMouseInside(true);
-    const onMouseLeave = () => setMouseInside(false);
-
-    canvas.addEventListener("mousemove", onMouseMove);
-    canvas.addEventListener("mouseenter", onMouseEnter);
-    canvas.addEventListener("mouseleave", onMouseLeave);
+    let touchStartX = 0;
+    let touchStartY = 0;
+    const TAP_THRESHOLD = 10; // pixels
 
     // ---------- Mobile ----------
+    const onTouchStart = (e) => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+
+      // Also update targetMouse so it follows instantly
+      const x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
+      const y = -(((touch.clientY - rect.top) / rect.height) * 2 - 1);
+      targetMouse.current = { x, y };
+      setMouseInside(true);
+    };
+
     const onTouchMove = (e) => {
-      e.preventDefault(); // prevents scrolling
+      e.preventDefault();
       const rect = canvas.getBoundingClientRect();
       const touch = e.touches[0];
       const x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
@@ -112,19 +116,29 @@ export default function HeadModel({ url }) {
       setMouseInside(true);
     };
 
-    const onTouchEnd = () => setMouseInside(false);
+    const onTouchEnd = (e) => {
+      setMouseInside(false);
 
+      // Determine if it was a tap
+      if (!e.changedTouches || e.changedTouches.length === 0) return;
+      const touch = e.changedTouches[0];
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < TAP_THRESHOLD) {
+        // It's a tap! Call your switch function
+        switchToProfilePicture();
+      }
+    };
+
+    canvas.addEventListener("touchstart", onTouchStart, { passive: false });
     canvas.addEventListener("touchmove", onTouchMove, { passive: false });
-    canvas.addEventListener("touchstart", onTouchMove, { passive: false });
     canvas.addEventListener("touchend", onTouchEnd);
 
     return () => {
-      canvas.removeEventListener("mousemove", onMouseMove);
-      canvas.removeEventListener("mouseenter", onMouseEnter);
-      canvas.removeEventListener("mouseleave", onMouseLeave);
-
+      canvas.removeEventListener("touchstart", onTouchStart);
       canvas.removeEventListener("touchmove", onTouchMove);
-      canvas.removeEventListener("touchstart", onTouchMove);
       canvas.removeEventListener("touchend", onTouchEnd);
     };
   }, [gl]);
