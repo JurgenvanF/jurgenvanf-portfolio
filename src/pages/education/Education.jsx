@@ -1,6 +1,11 @@
 import "./Education.css";
+import { useEffect } from "react";
 
 function Education() {
+  useEffect(() => {
+    document.title = "Portfolio | Opleiding 🎓";
+  }, []);
+
   return (
     <>
       <h1 className="title__education">Opleiding 🎓</h1>

@@ -124,25 +124,22 @@ p {
 }
 
 .hero__logo {
-  width: 55px;
-  aspect-ratio: 1 / 1;
+  width: 45px;
+  height: 45px;
   background: linear-gradient(to bottom right, #8b5cf6, #ec4899);
-  border-radius: 40%;
+  border-radius: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "SN Pro";
   font-weight: 700;
-  font-size: 32px;
+  font-size: 24px;
   color: white;
   cursor: default;
   transform: none;
   transition:
     transform 0.3s ease,
     background 0.3s ease;
-  box-shadow:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
 .hero__title:hover .hero__logo {
@@ -256,7 +253,7 @@ p {
 }
 
 /* Mobile sidebar */
-@media (max-width: 950px) {
+@media (max-width: 1100px) {
   .hero {
     gap: 0;
     justify-content: space-between;

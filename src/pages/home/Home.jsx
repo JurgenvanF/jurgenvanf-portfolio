@@ -1,12 +1,24 @@
-import { useState, Suspense } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import { Canvas } from "@react-three/fiber";
 import HeadModel from "../../HeadModel";
 import logo from "../../assets/profilepicture.jpg";
-import { Mail, Github } from "lucide-react";
+import {
+  User,
+  GraduationCap,
+  Briefcase,
+  Folder,
+  Mail,
+  Github,
+} from "lucide-react";
 
 function Home() {
   const [showCanvas, setShowCanvas] = useState(false); // start with image
+
+  useEffect(() => {
+    document.title = "Portfolio | Home";
+  }, []);
 
   return (
     <>
@@ -55,6 +67,33 @@ function Home() {
           <Github className="title__buttons__github__icon" />
           GitHub
         </a>
+      </div>
+
+      <div className="pageRouting">
+        <Link to="/opleiding" className="pageRouting__education">
+          <GraduationCap className="pageRouting__education__icon" />
+          <br />
+          <h2 className="pageRouting__education__title">Opleiding 🎓</h2>
+          <p className="pageRouting__education__text">
+            Mijn academische avonturen
+          </p>
+        </Link>
+
+        <Link to="/beroep" className="pageRouting__profession">
+          <Briefcase className="pageRouting__profession__icon" />
+          <h2 className="pageRouting__profession__title">Beroep 💼</h2>
+          <p className="pageRouting__profession__text">
+            Waar ik heb gewerkt en wat ik heb gebouwd
+          </p>
+        </Link>
+
+        <Link to="/projecten" className="pageRouting__projects">
+          <Folder className="pageRouting__projects__icon" />
+          <h2 className="pageRouting__projects__title">Projecten 🎨</h2>
+          <p className="pageRouting__projects__text">
+            Coole dingen die ik heb gemaakt
+          </p>
+        </Link>
       </div>
     </>
   );

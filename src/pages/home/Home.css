@@ -21,6 +21,11 @@
     #f97316
   );
 
+  /* Quick links gradients */
+  --gradient-education: linear-gradient(to bottom right, #3b82f6, #06b6d4);
+  --gradient-profession: linear-gradient(to bottom right, #22c55e, #10b981);
+  --gradient-projects: linear-gradient(to bottom right, #f97316, #ef4444);
+
   /* Title gradient */
   --gradient-title: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
 
@@ -155,6 +160,10 @@
   cursor: pointer;
 }
 
+.title__picture:hover {
+  animation: wiggle 0.8s ease-in-out;
+}
+
 .title__semititle {
   color: var(--color-text-primary);
   margin: 0 20px;
@@ -204,7 +213,6 @@
 .title__buttons__mail {
   background: var(--gradient-mail);
   color: var(--color-btn-mail-text);
-  border: 1px solid transparent;
 }
 
 .title__buttons__github {
@@ -219,6 +227,133 @@
   height: 1rem;
   margin-right: 0.5rem;
   flex-shrink: 0;
+}
+
+.pageRouting {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: nowrap;
+}
+
+.pageRouting__education,
+.pageRouting__profession,
+.pageRouting__projects {
+  display: grid;
+  align-items: left;
+  text-align: left;
+  width: 20%;
+  min-width: 300px;
+  border-radius: 25px;
+  border: 2px solid #0000001a;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+  cursor: pointer;
+}
+
+.pageRouting__education:hover,
+.pageRouting__profession:hover,
+.pageRouting__projects:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.pageRouting__education {
+  background: linear-gradient(to bottom right, #eff6ff, #ecfeff);
+}
+
+.pageRouting__education:hover {
+  border: 2px solid #93c5fd;
+}
+
+.pageRouting__profession {
+  background: linear-gradient(to bottom right, #f0fdf4, #ecfdf5);
+}
+
+.pageRouting__profession:hover {
+  border: 2px solid #86efac;
+}
+
+.pageRouting__projects {
+  background: linear-gradient(to bottom right, #fff7ed, #fef2f2);
+}
+
+.pageRouting__projects:hover {
+  border: 2px solid #fdba74;
+}
+
+.pageRouting__education__icon,
+.pageRouting__profession__icon,
+.pageRouting__projects__icon {
+  display: inline-block;
+  margin: 30px 0 0 30px;
+  padding: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30%;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.pageRouting__education:hover,
+.pageRouting__profession:hover,
+.pageRouting__projects:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.pageRouting__education:hover .pageRouting__education__icon,
+.pageRouting__profession:hover .pageRouting__profession__icon,
+.pageRouting__projects:hover .pageRouting__projects__icon {
+  transform: rotate(15deg);
+}
+
+.pageRouting__education__icon {
+  background: var(--gradient-education);
+}
+
+.pageRouting__profession__icon {
+  background: var(--gradient-profession);
+}
+
+.pageRouting__projects__icon {
+  background: var(--gradient-projects);
+}
+
+.pageRouting__education__title,
+.pageRouting__profession__title,
+.pageRouting__projects__title {
+  margin: 15px 0 0 30px;
+  font-size: 28px;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.pageRouting__education__title {
+  background: linear-gradient(to right, #2563eb, #06b6d4);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.pageRouting__profession__title {
+  background: linear-gradient(to right, #16a34a, #22c55e);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.pageRouting__projects__title {
+  background: linear-gradient(to right, #f97316, #ef4444);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.pageRouting__education__text,
+.pageRouting__profession__text,
+.pageRouting__projects__text {
+  margin-left: 30px;
+  padding-bottom: 5px;
+  font-size: 15px;
 }
 
 /* Hover effects */
@@ -253,9 +388,156 @@
   }
 }
 
+/* Wiggle animation */
+@keyframes wiggle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  15% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+  30% {
+    transform: translate(-50%, -50%) rotate(5deg);
+  }
+  45% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+  60% {
+    transform: translate(-50%, -50%) rotate(5deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
 /* Responsive */
 @media (max-width: 625px) {
   .title__home {
     height: 120px;
   }
+}
+
+@media (max-width: 1100px) {
+  .pageRouting {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pageRouting__education,
+  .pageRouting__profession,
+  .pageRouting__projects {
+    width: 90% !important;
+    margin-bottom: 30px;
+  }
+}
+
+/* Dark mode wrapper */
+.dark .pageRouting {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 30px;
+}
+
+/* Dark cards */
+.dark .pageRouting__education,
+.dark .pageRouting__profession,
+.dark .pageRouting__projects {
+  display: grid;
+  align-items: left;
+  text-align: left;
+  width: 20%;
+  border-radius: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+  cursor: pointer;
+}
+
+/* Hover shadow for dark mode */
+.dark .pageRouting__education:hover,
+.dark .pageRouting__profession:hover,
+.dark .pageRouting__projects:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px -12px rgba(255, 255, 255, 0.15);
+}
+
+/* Dark gradients for cards */
+.dark .pageRouting__education {
+  background: linear-gradient(to bottom right, #1e293b, #0f172a);
+}
+
+.dark .pageRouting__education:hover {
+  border: 2px solid #3b82f6;
+}
+
+.dark .pageRouting__profession {
+  background: linear-gradient(to bottom right, #0f2920, #152e24);
+}
+
+.dark .pageRouting__profession:hover {
+  border: 2px solid #22c55e;
+}
+
+.dark .pageRouting__projects {
+  background: linear-gradient(to bottom right, #291811, #3b1f1a);
+}
+
+.dark .pageRouting__projects:hover {
+  border: 2px solid #f97316;
+}
+
+/* Icon backgrounds (dark mode versions) */
+.dark .pageRouting__education__icon {
+  background: linear-gradient(to right, #2563eb, #0c4a6e);
+}
+
+.dark .pageRouting__profession__icon {
+  background: linear-gradient(to right, #16a34a, #166534);
+}
+
+.dark .pageRouting__projects__icon {
+  background: linear-gradient(to right, #f97316, #b45309);
+}
+
+/* Titles with text gradients suitable for dark background */
+.dark .pageRouting__education__title,
+.dark .pageRouting__profession__title,
+.dark .pageRouting__projects__title {
+  margin: 15px 0 0 30px;
+  font-size: 28px;
+  color: transparent;
+}
+
+.dark .pageRouting__education__title {
+  background: linear-gradient(to right, #60a5fa, #22d3ee);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.dark .pageRouting__profession__title {
+  background: linear-gradient(to right, #4ade80, #16a34a);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.dark .pageRouting__projects__title {
+  background: linear-gradient(to right, #fb923c, #ef4444);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Text */
+.dark .pageRouting__education__text,
+.dark .pageRouting__profession__text,
+.dark .pageRouting__projects__text {
+  margin-left: 30px;
+  font-size: 15px;
+  color: #e5e7eb;
 }
