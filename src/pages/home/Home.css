@@ -250,6 +250,7 @@
   transition: all 0.2s ease-in-out;
   transform: scale(1);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .pageRouting__education:hover,
@@ -340,6 +341,7 @@
   background: linear-gradient(to right, #16a34a, #22c55e);
   background-clip: text;
   -webkit-background-clip: text;
+  text-decoration: none;
 }
 
 .pageRouting__projects__title {
