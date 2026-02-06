@@ -694,6 +694,7 @@
   .pageRouting {
     flex-direction: column;
     align-items: center;
+    margin-top: 70px;
   }
 
   .pageRouting__education,
