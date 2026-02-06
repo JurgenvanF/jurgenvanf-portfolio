@@ -499,6 +499,7 @@
 .pageRouting__profession__text,
 .pageRouting__projects__text {
   margin-left: 30px;
+  margin-right: 30px;
   padding-bottom: 5px;
   font-size: 15px;
   color: var(--color-text-primary);
@@ -518,7 +519,6 @@
   .pageRouting__profession,
   .pageRouting__projects {
     width: 90% !important;
-    margin-bottom: 30px;
   }
 }
 
