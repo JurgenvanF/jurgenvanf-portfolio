@@ -11,6 +11,7 @@ import {
   Folder,
   Mail,
   Github,
+  Rocket,
 } from "lucide-react";
 
 function Home() {
@@ -116,6 +117,44 @@ function Home() {
             Coole dingen die ik heb gemaakt
           </p>
         </Link>
+      </div>
+
+      <h2 className="skills__title">
+        <Rocket className="skills__icon" />
+        Skills & Tech Stack
+      </h2>
+      <p>Technologieën waar ik mee gewerkt heb</p>
+
+      <div className="skills__container">
+        <div className="skills__container__item">
+          <span className="skills__container__text html">HTML</span>
+        </div>
+        <div className="skills__container__item">
+          <span className="skills__container__text css">CSS</span>
+        </div>
+        <div className="skills__container__item">
+          <span className="skills__container__text js">
+            JavaScript / TypeScript
+          </span>
+        </div>
+        <div className="skills__container__item">
+          <span className="skills__container__text react">React</span>
+        </div>
+        <div className="skills__container__item">
+          <span className="skills__container__text angular">Angular</span>
+        </div>
+        <div className="skills__container__item">
+          <span className="skills__container__text laravel">Laravel</span>
+        </div>
+        <div className="skills__container__item">
+          <span className="skills__container__text sql">SQL</span>
+        </div>
+        <div className="skills__container__item">
+          <span className="skills__container__text git">Git / CI/CD</span>
+        </div>
+        <div className="skills__container__item">
+          <span className="skills__container__text ux">UI/UX Design</span>
+        </div>
       </div>
     </>
   );

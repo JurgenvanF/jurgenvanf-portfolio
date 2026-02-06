@@ -48,6 +48,25 @@
   --border-color-education-hover: #93c5fd;
   --border-color-profession-hover: #86efac;
   --border-color-projects-hover: #fdba74;
+
+  /* Gradient - Skills */
+  --gradient-skills: linear-gradient(to right, #7c3aed, #ec4899);
+
+  /* Container & card colors */
+  --color-card-bg: white;
+  --color-border-card: #e5e7eb;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* Skill text gradients */
+  --grad-html: linear-gradient(to right, #facc15, #f97316);
+  --grad-css: linear-gradient(to right, #60a5fa, #06b6d4);
+  --grad-js: linear-gradient(to right, #4ade80, #10b981);
+  --grad-react: linear-gradient(to right, #818cf8, #a78bfa);
+  --grad-angular: linear-gradient(to right, #f472b6, #f43f5e);
+  --grad-laravel: linear-gradient(to right, #22d3ee, #3b82f6);
+  --grad-sql: linear-gradient(to right, #22d3ee, #3b82f6);
+  --grad-git: linear-gradient(to right, #a78bfa, #ec4899);
+  --grad-ux: linear-gradient(to right, #fda4af, #fb923c);
 }
 
 /* Dark Mode Variables */
@@ -90,6 +109,20 @@
   --border-color-projects-hover: #f97316;
 
   --color-text-card: #e5e7eb;
+
+  --color-card-bg: #1f2937;
+  --color-border-card: #374151;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  --grad-html: linear-gradient(to right, #facc15, #f97316);
+  --grad-css: linear-gradient(to right, #60a5fa, #06b6d4);
+  --grad-js: linear-gradient(to right, #4ade80, #10b981);
+  --grad-react: linear-gradient(to right, #818cf8, #a78bfa);
+  --grad-angular: linear-gradient(to right, #f472b6, #f43f5e);
+  --grad-laravel: linear-gradient(to right, #22d3ee, #3b82f6);
+  --grad-sql: linear-gradient(to right, #f472b6, #f43f5e);
+  --grad-git: linear-gradient(to right, #a78bfa, #ec4899);
+  --grad-ux: linear-gradient(to right, #fda4af, #fb923c);
 }
 
 /* ============================================================================
@@ -544,6 +577,115 @@
   color: var(--color-text-primary);
 }
 
+.skills__title {
+  margin: 60px 20px 0 20px;
+  font-size: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gradient-skills);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills__icon {
+  color: #7c3aed;
+  width: 7rem;
+  aspect-ratio: 1 / 1;
+  max-width: 24px;
+}
+
+.skills__container {
+  display: grid;
+  width: 62%;
+  min-width: 1000px;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.skills__container__item {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: var(--color-card-bg);
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+  border: 1px solid var(--color-border-card);
+  cursor: pointer;
+}
+
+.skills__container__item:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-card);
+}
+
+.skills__container__text {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.skills__container__text.html {
+  background: var(--grad-html);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.skills__container__text.css {
+  background: var(--grad-css);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.skills__container__text.js {
+  background: var(--grad-js);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.skills__container__text.react {
+  background: var(--grad-react);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.skills__container__text.angular {
+  background: var(--grad-angular);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.skills__container__text.laravel {
+  background: var(--grad-laravel);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.skills__container__text.sql {
+  background: var(--grad-sql);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.skills__container__text.git {
+  background: var(--grad-git);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.skills__container__text.ux {
+  background: var(--grad-ux);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 /* ============================================================================
    RESPONSIVE DESIGN
    ============================================================================ */
@@ -558,6 +700,12 @@
   .pageRouting__profession,
   .pageRouting__projects {
     width: 90% !important;
+  }
+
+  .skills__container {
+    width: 90%;
+    min-width: 0px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .model.visible {
@@ -581,6 +729,14 @@
     color: white;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 700px) {
+  .skills__container {
+    width: 90%;
+    min-width: 0px;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
