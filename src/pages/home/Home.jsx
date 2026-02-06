@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, useTransition } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import { Canvas } from "@react-three/fiber";
@@ -15,24 +15,39 @@ import {
 
 function Home() {
   const [showCanvas, setShowCanvas] = useState(false); // start with image
+  const [hasCanvasLoaded, setHasCanvasLoaded] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     document.title = "Portfolio | Home";
   }, []);
 
+  const toggleCanvas = () => {
+    startTransition(() => {
+      if (!showCanvas && !hasCanvasLoaded) {
+        setHasCanvasLoaded(true);
+      }
+      setShowCanvas(!showCanvas);
+    });
+  };
+
   return (
     <>
-      <div className="head-fade" onClick={() => setShowCanvas(!showCanvas)}>
-        <Canvas
-          className={`model ${showCanvas ? "visible" : ""}`}
-          camera={{ position: [0, 0, 3] }}
-        >
-          <ambientLight intensity={2} />
-          <pointLight position={[100, 100, 100]} />
+      <div className="head-fade" onClick={toggleCanvas}>
+        {(showCanvas || hasCanvasLoaded) && (
           <Suspense fallback={null}>
-            <HeadModel url="/HeadModel.glb" />
+            <Canvas
+              className={`model ${showCanvas ? "visible" : ""}`}
+              camera={{ position: [0, 0, 3] }}
+            >
+              <ambientLight intensity={2} />
+              <pointLight position={[100, 100, 100]} />
+              <Suspense fallback={null}>
+                <HeadModel url="/HeadModel.glb" />
+              </Suspense>
+            </Canvas>
           </Suspense>
-        </Canvas>
+        )}
 
         <img
           className={`title__picture ${!showCanvas ? "visible" : ""}`}

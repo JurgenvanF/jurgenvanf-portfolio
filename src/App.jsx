@@ -1,5 +1,11 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { useState, useEffect, useLayoutEffect } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  NavLink,
+  useLocation,
+} from "react-router-dom";
 import Home from "./pages/home/Home.jsx";
 import Education from "./pages/education/Education.jsx";
 import Profession from "./pages/profession/Profession.jsx";
@@ -18,14 +24,25 @@ import {
 
 import "./App.css";
 
-function App() {
+function AppContent() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation();
 
   // Initialize darkMode from localStorage or system preference
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("darkMode");
     return saved !== null ? saved === "true" : false; // default to light mode
   });
+
+  // Update body class based on current route (use useLayoutEffect for immediate update)
+  useLayoutEffect(() => {
+    let pageClass = "home";
+    if (location.pathname === "/opleiding") pageClass = "education";
+    else if (location.pathname === "/beroep") pageClass = "profession";
+    else if (location.pathname === "/projecten") pageClass = "projects";
+
+    document.body.className = pageClass;
+  }, [location]);
 
   // Lock body scroll when sidebar is open
   useEffect(() => {
@@ -68,7 +85,7 @@ function App() {
   ];
 
   return (
-    <BrowserRouter>
+    <>
       <nav className="hero">
         <NavLink to="/" className="hero__title">
           <div className="hero__logo">JF</div>
@@ -134,6 +151,14 @@ function App() {
         <Route path="/beroep" element={<Profession />} />
         <Route path="/projecten" element={<Projects />} />
       </Routes>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }

@@ -203,6 +203,10 @@
   cursor: pointer;
 }
 
+.title__picture:not(.visible) {
+  animation: spinShrink 0.8s ease-in-out forwards;
+}
+
 .title__picture:hover {
   animation: wiggle 0.8s ease-in-out;
 }
@@ -315,6 +319,33 @@
   }
   100% {
     transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes spinShrink {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(0.3);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
