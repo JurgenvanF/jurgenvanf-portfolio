@@ -1,5 +1,6 @@
 import "./Profession.css";
 import { useEffect } from "react";
+import { Briefcase } from "lucide-react";
 
 function Profession() {
   useEffect(() => {
@@ -8,6 +9,7 @@ function Profession() {
 
   return (
     <>
+      <Briefcase className="profession__icon" />
       <h1 className="title__profession">Beroep 💼</h1>
       <p>Dit is mijn werkervaring!</p>
     </>

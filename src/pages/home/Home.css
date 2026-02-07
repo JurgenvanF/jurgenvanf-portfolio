@@ -357,7 +357,7 @@
   }
 }
 
-@keyframes floatHeart {
+@keyframes floatBetter {
   0% {
     transform: translateY(0px);
   }
@@ -825,7 +825,7 @@
   height: auto;
   color: white;
   fill: white;
-  animation: floatHeart 3s ease-in-out infinite;
+  animation: floatBetter 3s ease-in-out infinite;
 }
 
 .finish__text {

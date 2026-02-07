@@ -11,3 +11,16 @@
 p {
   color: var(--color-text-secondary);
 }
+
+.education__icon {
+  display: inline-block;
+  margin: 60px 0 0 30px;
+  padding: 15px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30%;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  background: var(--gradient-education);
+  animation: floatBetter 3s ease-in-out infinite;
+}
