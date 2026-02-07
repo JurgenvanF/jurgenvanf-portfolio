@@ -125,7 +125,7 @@
   cursor: default;
   transform: none;
   transition:
-    transform 0.3s ease-in-out,
+    transform 0.3s ease,
     background 0.3s ease;
 }
 
@@ -245,6 +245,11 @@
     gap: 0;
     justify-content: space-between;
     height: calc(var(--hero-height) + 1px);
+  }
+
+  .hero__title:hover .hero__logo {
+    cursor: pointer;
+    transform: none;
   }
 
   .hero__nav {
