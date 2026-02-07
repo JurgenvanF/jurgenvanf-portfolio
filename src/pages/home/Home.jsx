@@ -156,6 +156,33 @@ function Home() {
           <span className="skills__container__text ux">UI/UX Design</span>
         </div>
       </div>
+
+      <div className="data__container">
+        <div className="data__container__item">
+          <span className="data__container__icon">⏰</span>
+          <br />
+          <span className="data__container__text years">5+</span>
+          <p className="data__container__subtext">Jaren codeer ervaring</p>
+        </div>
+        <div className="data__container__item">
+          <span className="data__container__icon">🚀</span>
+          <br />
+          <span className="data__container__text projects">Meerdere</span>
+          <p className="data__container__subtext">Succesvolle projecten</p>
+        </div>
+        <div className="data__container__item">
+          <span className="data__container__icon">🍔</span>
+          <br />
+          <span className="data__container__text snacks">∞</span>
+          <p className="data__container__subtext">Snacks</p>
+        </div>
+        <div className="data__container__item">
+          <span className="data__container__icon">💻</span>
+          <br />
+          <span className="data__container__text lines">Te veel</span>
+          <p className="data__container__subtext">Regels code</p>
+        </div>
+      </div>
     </>
   );
 }
