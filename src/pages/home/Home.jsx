@@ -54,14 +54,13 @@ function Home() {
             </Canvas>
           </Suspense>
         )}
+        <div className="model-cover"></div>
 
-        <div className="title__picture-container">
-          <img
-            className={`title__picture ${!showCanvas ? "visible" : ""}`}
-            src={logo}
-            alt="Profile"
-          />
-        </div>
+        <img
+          className={`title__picture ${!showCanvas ? "visible" : ""}`}
+          src={logo}
+          alt="Profile"
+        />
       </div>
 
       {/* Mobile toggle button */}
