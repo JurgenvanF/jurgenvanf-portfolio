@@ -36,7 +36,10 @@ function Home() {
 
   return (
     <>
-      <div className="head-fade" onClick={toggleCanvas}>
+      <div
+        className={`head-fade ${showCanvas ? "model-active" : ""}`}
+        onClick={toggleCanvas}
+      >
         {(showCanvas || hasCanvasLoaded) && (
           <Suspense fallback={null}>
             <Canvas
@@ -52,11 +55,13 @@ function Home() {
           </Suspense>
         )}
 
-        <img
-          className={`title__picture ${!showCanvas ? "visible" : ""}`}
-          src={logo}
-          alt="Profile"
-        />
+        <div className="title__picture-container">
+          <img
+            className={`title__picture ${!showCanvas ? "visible" : ""}`}
+            src={logo}
+            alt="Profile"
+          />
+        </div>
       </div>
 
       {/* Mobile toggle button */}
