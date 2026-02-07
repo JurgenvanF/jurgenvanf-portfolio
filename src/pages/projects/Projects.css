@@ -1,5 +1,13 @@
 .title__projects {
+  height: 70px;
+  margin-bottom: 0;
   background: linear-gradient(to right, #f97316, #ef4444);
   background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+p {
+  color: var(--color-text-secondary);
 }

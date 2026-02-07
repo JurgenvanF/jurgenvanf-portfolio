@@ -11,7 +11,9 @@ import {
   Folder,
   Mail,
   Github,
+  Linkedin,
   Rocket,
+  Heart,
 } from "lucide-react";
 
 function Home() {
@@ -181,6 +183,44 @@ function Home() {
           <br />
           <span className="data__container__text lines">Te veel</span>
           <p className="data__container__subtext">Regels code</p>
+        </div>
+      </div>
+
+      <div className="finish">
+        <Heart className="finish__icon" />
+        <h1 className="finish__text">Ik vind het leuk dat je er bent!</h1>
+        <p className="finish__subtext">
+          Heb je een interessant project in gedachten? Of wil je simpelweg
+          contact met mij opnemen? Ik sta altijd open voor een babbeltje!!
+        </p>
+        <div className="finish__socialbuttons">
+          <a
+            href="mailto:jurgenvanf@gmail.com?subject=Laten%20we%20samenwerken"
+            className="finish__buttons mail"
+          >
+            <Mail className="finish__buttons__icon mail" />
+            Stuur Email
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/jurgen-van-fraeijenhove-480329164/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="finish__buttons linkedin"
+          >
+            <Linkedin className="finish__buttons__icon linkedin" />
+            LinkedIn
+          </a>
+
+          <a
+            href="https://github.com/JurgenvanF"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="finish__buttons github"
+          >
+            <Github className="finish__buttons__icon github" />
+            GitHub
+          </a>
         </div>
       </div>
     </>

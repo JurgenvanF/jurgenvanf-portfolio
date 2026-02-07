@@ -61,7 +61,6 @@ footer {
   margin-top: 50px;
   text-align: center;
   color: white;
-  background: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
   transition:
     background 0.6s ease,
     color 0.6s ease;
@@ -81,7 +80,7 @@ body.projects footer {
 }
 
 body.home footer {
-  background: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
+  background: linear-gradient(to right, #7c3aed, #ec4899);
 }
 
 /* Background container (sticky/fixed) */

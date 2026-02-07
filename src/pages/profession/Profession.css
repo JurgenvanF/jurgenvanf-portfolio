@@ -1,5 +1,13 @@
 .title__profession {
+  height: 70px;
+  margin-bottom: 0;
   background: linear-gradient(to right, #16a34a, #22c55e);
   background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+p {
+  color: var(--color-text-secondary);
 }

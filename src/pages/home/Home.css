@@ -67,6 +67,8 @@
   --grad-sql: linear-gradient(to right, #22d3ee, #3b82f6);
   --grad-git: linear-gradient(to right, #a78bfa, #ec4899);
   --grad-ux: linear-gradient(to right, #fda4af, #fb923c);
+
+  --grad-finish: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
 }
 
 /* Dark Mode Variables */
@@ -123,6 +125,8 @@
   --grad-sql: linear-gradient(to right, #f472b6, #f43f5e);
   --grad-git: linear-gradient(to right, #a78bfa, #ec4899);
   --grad-ux: linear-gradient(to right, #fda4af, #fb923c);
+
+  --grad-finish: linear-gradient(to right, #5b21b6, #be185d, #c2410c);
 }
 
 /* ============================================================================
@@ -205,10 +209,13 @@
    ============================================================================ */
 
 .title__home {
+  height: 66px;
   margin: 20px;
   background: var(--gradient-title);
   background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .title__semititle {
@@ -336,6 +343,18 @@
   }
   100% {
     transform: translate(-50%, -50%) translateY(0px);
+  }
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
@@ -747,6 +766,113 @@
   font-size: 0.875rem;
 }
 
+.finish {
+  position: relative;
+  margin: auto;
+  width: 60%;
+  min-width: 940px;
+  border-radius: 30px;
+  padding: 50px;
+  overflow: hidden;
+  color: white;
+}
+
+/* Both gradient layers */
+.finish::before,
+.finish::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  z-index: -1;
+  transition: opacity 0.2s ease;
+}
+
+/* Light mode gradient */
+.finish::before {
+  background: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
+  opacity: 1;
+}
+
+/* Dark mode gradient */
+.finish::after {
+  background: linear-gradient(to right, #5b21b6, #be185d, #c2410c);
+  opacity: 0;
+}
+
+/* When dark mode is active */
+.dark .finish::before {
+  opacity: 0;
+}
+
+.dark .finish::after {
+  opacity: 1;
+}
+
+.finish__icon {
+  width: 120px;
+  height: auto;
+  color: white;
+  fill: white;
+  animation: floatHeart 3s ease-in-out infinite;
+}
+
+.finish__text {
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.finish__subtext {
+  color: white;
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+}
+
+.finish__socialbuttons {
+  padding: 0 20px;
+  margin-top: 40px;
+}
+
+.finish__buttons {
+  display: inline-flex;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  border-radius: 9999px;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  background: white;
+  color: var(--color-text-primary);
+  border: 1px solid #d1d5db;
+}
+
+.finish__buttons:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-card);
+}
+
+.finish__buttons__icon {
+  width: 16px;
+  height: auto;
+}
+
+.dark .finish__buttons {
+  color: #1e293b;
+  border: 1px solid #d1d5db;
+}
+
 /* ============================================================================
    RESPONSIVE DESIGN
    ============================================================================ */
@@ -774,6 +900,11 @@
     width: 90%;
     min-width: 0px;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .finish {
+    width: 80%;
+    min-width: 0px;
   }
 
   .model.visible {
@@ -832,10 +963,22 @@
     box-shadow: none;
     transition: none;
   }
+
+  .finish {
+    width: 85%;
+    padding: 50px 20px;
+  }
 }
 
 @media (max-width: 625px) {
   .title__home {
     height: 120px;
+  }
+}
+
+@media (max-width: 400px) {
+  .finish__socialbuttons {
+    padding: 0;
+    margin-top: 40px;
   }
 }
