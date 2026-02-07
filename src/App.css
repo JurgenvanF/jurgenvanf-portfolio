@@ -125,7 +125,7 @@
   cursor: default;
   transform: none;
   transition:
-    transform 0.3s ease,
+    transform 0.3s ease-in-out,
     background 0.3s ease;
 }
 
