@@ -34,6 +34,11 @@ function AppContent() {
     return saved !== null ? saved === "true" : false; // default to light mode
   });
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname]); // scrolls every time the path changes
+
   // Update body class based on current route (use useLayoutEffect for immediate update)
   useLayoutEffect(() => {
     let pageClass = "home";
