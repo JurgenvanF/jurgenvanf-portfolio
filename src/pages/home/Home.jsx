@@ -150,7 +150,7 @@ function Home() {
           <span className="skills__container__text angular">Angular</span>
         </div>
         <div className="skills__container__item">
-          <span className="skills__container__text laravel">Laravel</span>
+          <span className="skills__container__text laravel">PHP / Laravel</span>
         </div>
         <div className="skills__container__item">
           <span className="skills__container__text sql">SQL</span>
@@ -165,16 +165,20 @@ function Home() {
 
       <div className="data__container">
         <div className="data__container__item">
-          <span className="data__container__icon">⏰</span>
-          <br />
-          <span className="data__container__text years">5+</span>
-          <p className="data__container__subtext">Jaren codeer ervaring</p>
+          <Link to="/opleiding" className="data__container__link">
+            <span className="data__container__icon">⏰</span>
+            <br />
+            <span className="data__container__text years">5+</span>
+            <p className="data__container__subtext">Jaren codeer ervaring</p>
+          </Link>
         </div>
         <div className="data__container__item">
-          <span className="data__container__icon">🚀</span>
-          <br />
-          <span className="data__container__text projects">Meerdere</span>
-          <p className="data__container__subtext">Succesvolle projecten</p>
+          <Link to="/projecten" className="data__container__link">
+            <span className="data__container__icon">🚀</span>
+            <br />
+            <span className="data__container__text projects">Meerdere</span>
+            <p className="data__container__subtext">Succesvolle projecten</p>
+          </Link>
         </div>
         <div className="data__container__item">
           <span className="data__container__icon">🍔</span>
@@ -183,10 +187,17 @@ function Home() {
           <p className="data__container__subtext">Snacks</p>
         </div>
         <div className="data__container__item">
-          <span className="data__container__icon">💻</span>
-          <br />
-          <span className="data__container__text lines">Te veel</span>
-          <p className="data__container__subtext">Regels code</p>
+          <a
+            href="https://github.com/JurgenvanF"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="data__container__link"
+          >
+            <span className="data__container__icon">💻</span>
+            <br />
+            <span className="data__container__text lines">Te veel</span>
+            <p className="data__container__subtext">Regels code</p>
+          </a>
         </div>
       </div>
 
@@ -195,7 +206,7 @@ function Home() {
         <h1 className="finish__text">Ik vind het leuk dat je er bent!</h1>
         <p className="finish__subtext">
           Heb je een interessant project in gedachten? Of wil je simpelweg
-          contact met mij opnemen? Ik sta altijd open voor een babbeltje!!
+          contact met mij opnemen? Ik sta altijd open voor een praatje!!
         </p>
         <div className="finish__socialbuttons">
           <a

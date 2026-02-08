@@ -1,6 +1,7 @@
 :root {
   /* Typography */
   --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-serif: "Young Serif", serif;
   --line-height: 1.5;
   --font-weight: 400;
 
