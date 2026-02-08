@@ -165,20 +165,16 @@ function Home() {
 
       <div className="data__container">
         <div className="data__container__item">
-          <Link to="/opleiding" className="data__container__link">
-            <span className="data__container__icon">⏰</span>
-            <br />
-            <span className="data__container__text years">5+</span>
-            <p className="data__container__subtext">Jaren codeer ervaring</p>
-          </Link>
+          <span className="data__container__icon">⏰</span>
+          <br />
+          <span className="data__container__text years">5+</span>
+          <p className="data__container__subtext">Jaren codeer ervaring</p>
         </div>
         <div className="data__container__item">
-          <Link to="/projecten" className="data__container__link">
-            <span className="data__container__icon">🚀</span>
-            <br />
-            <span className="data__container__text projects">Meerdere</span>
-            <p className="data__container__subtext">Succesvolle projecten</p>
-          </Link>
+          <span className="data__container__icon">🚀</span>
+          <br />
+          <span className="data__container__text projects">Meerdere</span>
+          <p className="data__container__subtext">Succesvolle projecten</p>
         </div>
         <div className="data__container__item">
           <span className="data__container__icon">🍔</span>
@@ -187,17 +183,10 @@ function Home() {
           <p className="data__container__subtext">Snacks</p>
         </div>
         <div className="data__container__item">
-          <a
-            href="https://github.com/JurgenvanF"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="data__container__link"
-          >
-            <span className="data__container__icon">💻</span>
-            <br />
-            <span className="data__container__text lines">Te veel</span>
-            <p className="data__container__subtext">Regels code</p>
-          </a>
+          <span className="data__container__icon">💻</span>
+          <br />
+          <span className="data__container__text lines">Te veel</span>
+          <p className="data__container__subtext">Regels code</p>
         </div>
       </div>
 
