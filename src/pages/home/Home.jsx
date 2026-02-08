@@ -174,7 +174,7 @@ function Home() {
           <span className="data__container__icon">🚀</span>
           <br />
           <span className="data__container__text projects">Meerdere</span>
-          <p className="data__container__subtext">Succesvolle projecten</p>
+          <p className="data__container__subtext">Voltooide projecten</p>
         </div>
         <div className="data__container__item">
           <span className="data__container__icon">🍔</span>
