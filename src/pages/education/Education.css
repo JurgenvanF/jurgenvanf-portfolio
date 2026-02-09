@@ -2,8 +2,8 @@
   /* Backgrounds */
   --color-bg-card: white;
   --color-bg-specialization: #f9f9f9;
-  --color-bg-header: linear-gradient(to right, #eff6ff, #ecfeff);
-  --color-bg-level: linear-gradient(to right, #3b82f6, #06b6d4);
+  --color-bg-header--education: linear-gradient(to right, #eff6ff, #ecfeff);
+  --color-bg-level--education: linear-gradient(to right, #3b82f6, #06b6d4);
 
   /* Borders */
   --color-border-card: #d1d5db; /* slate-300 */
@@ -13,9 +13,9 @@
   --color-text-secondary: #475569; /* slate-600 */
 
   /* Bullets */
-  --color-bullet: #3b82f6; /* blue-500 */
+  --color-bullet--education: #3b82f6; /* blue-500 */
 
-  --color-specialization-border: #3b82f6;
+  --color-specialization-border--education: #3b82f6;
 
   /* Courses */
   --color-course-text: #111827; /* slate-900 */
@@ -26,18 +26,18 @@
 .dark {
   --color-bg-card: #1f2937; /* slate-800 */
   --color-bg-specialization: #111827;
-  --color-bg-header: linear-gradient(
+  --color-bg-header--education: linear-gradient(
     to right,
     #0f172a,
     #1e3a8a
   ); /* deep navy to royal blue */
-  --color-bg-level: linear-gradient(to right, #2563eb, #06b6d4);
+  --color-bg-level--education: linear-gradient(to right, #2563eb, #06b6d4);
 
   --color-border-card: #374151; /* slate-700 */
   --color-text-primary: #f9fafb; /* slate-50 */
   --color-text-secondary: #d1d5db; /* slate-300 */
-  --color-bullet: #2563eb;
-  --color-specialization-border: #2563eb;
+  --color-bullet--education: #2563eb;
+  --color-specialization-border--education: #2563eb;
   --color-course-text: #f9fafb;
   --color-course-border: #374151;
 }
@@ -96,6 +96,7 @@ p {
 .education__container__items {
   gap: 30px;
   display: grid;
+  padding-bottom: 40px;
 }
 
 .education__container__item {
@@ -116,7 +117,7 @@ p {
   display: flex;
   justify-content: space-between;
   gap: 5px;
-  background: var(--color-bg-header);
+  background: var(--color-bg-header--education);
   transition: all 0.2s ease;
   border-radius: 25px 25px 0 0;
 }
@@ -196,7 +197,7 @@ p {
   align-content: center;
   padding: 2px 8px;
   border-radius: calc(0.625rem - 2px);
-  background: var(--color-bg-level);
+  background: var(--color-bg-level--education);
   color: white;
   margin: 25px;
 }
@@ -217,7 +218,7 @@ p {
   margin: 2rem 0 1rem 0;
   background: var(--color-bg-specialization);
   padding: 0.75rem 1rem;
-  border-left: 4px solid var(--color-specialization-border);
+  border-left: 4px solid var(--color-specialization-border--education);
   border-radius: 4px;
 }
 
@@ -250,12 +251,13 @@ p {
 }
 
 .education__container__item__spec__text__achievements__list__items li::marker {
-  color: var(--color-bullet);
+  color: var(--color-bullet--education);
   font-size: 14px;
 }
 
 .education__container__item__spec__text__achievements__list__items li {
   margin-bottom: 1rem;
+  padding-left: 0.5rem;
 }
 
 .education__container__item__spec__text__achievements__list__items
@@ -297,14 +299,6 @@ p {
   color: var(--color-text-primary);
 }
 
-/* Plus / minus icon */
-.accordion__icon {
-  font-size: 1.2rem;
-  line-height: 1;
-  color: var(--color-bullet);
-  transition: transform 0.2s ease;
-}
-
 /* Rotate icon slightly when open (subtle detail) */
 .education__container__item__spec__text__accordion__item.open .accordion__icon {
   transform: rotate(180deg);
@@ -338,7 +332,7 @@ p {
 .accordion__triangle {
   display: inline-block;
   vertical-align: middle;
-  fill: var(--color-bullet);
+  fill: var(--color-bullet--education);
   transition: transform 0.25s ease;
   transform-origin: center;
 }
@@ -349,7 +343,7 @@ p {
 }
 
 .education__container__item__spec__text__accordion__content__link {
-  color: var(--color-bullet);
+  color: var(--color-bullet--education);
   text-decoration: none;
   font-weight: 500;
   background: none;

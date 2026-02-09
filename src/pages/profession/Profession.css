@@ -1,3 +1,66 @@
+:root {
+  /* Backgrounds */
+  --color-bg-card: white;
+  --color-bg-department: #f9f9f9;
+  --color-bg-header--profession: linear-gradient(
+    to right,
+    #ecfdf5,
+    #f0fdf4
+  ); /* soft green tint */
+  --color-bg-level--profession: linear-gradient(
+    to right,
+    #22c55e,
+    #10b981
+  ); /* green gradient */
+
+  /* Borders */
+  --color-border-card: #d1d5db; /* slate-300 */
+
+  /* Text */
+  --color-text-primary: #111827; /* slate-900 */
+  --color-text-secondary: #475569; /* slate-600 */
+
+  /* Bullets */
+  --color-bullet--profession: #22c55e; /* green-500 */
+
+  --color-department-border--profession: #22c55e; /* green-500 */
+
+  /* Tech */
+  --color-tech-text: #111827; /* slate-900 */
+  --color-tech-border: #d1d5db; /* slate-300 */
+
+  /* Timeline */
+  --timeline-line: #cbd5e1; /* slate-400 */
+  --timeline-circle: #64748b; /* slate-500 */
+  --timeline-circle-active: #22c55e; /* green-500 */
+  --timeline-ring: #4ade80; /* green-400 */
+}
+
+/* Dark Mode overrides */
+.dark {
+  --color-bg-card: #1f2937; /* slate-800 */
+  --color-bg-department: #111827;
+  --color-bg-header--profession: linear-gradient(
+    to right,
+    #052e16,
+    #064e3b
+  ); /* deep green tones */
+  --color-bg-level--profession: linear-gradient(to right, #16a34a, #10b981);
+
+  --color-border-card: #374151; /* slate-700 */
+  --color-text-primary: #f9fafb; /* slate-50 */
+  --color-text-secondary: #d1d5db; /* slate-300 */
+  --color-bullet--profession: #22c55e;
+  --color-department-border--profession: #22c55e;
+  --color-tech-text: #f9fafb;
+  --color-tech-border: #374151;
+
+  --timeline-line: #1f2937; /* slate-800 */
+  --timeline-circle: #718096; /* slate-500 */
+  --timeline-circle-active: #16a34a; /* green-600 */
+  --timeline-ring: #22c55e; /* green-500 */
+}
+
 .title__profession {
   background: linear-gradient(to right, #16a34a, #22c55e);
   background-clip: text;
@@ -23,4 +86,337 @@ p {
   transition: all 0.2s ease-in-out;
   background: var(--gradient-profession);
   animation: floatBetter 3s ease-in-out infinite;
+}
+
+.profession__container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  width: 90%;
+  max-width: 1550px;
+}
+
+@media (max-width: 1750px) {
+  .profession__container {
+    margin-left: clamp(60px, 5%, 100px);
+    margin-right: 5%;
+    width: auto;
+  }
+
+  .profession__container__timeline::after,
+  .profession__container__timeline__marker {
+    left: -2rem;
+  }
+}
+
+@media (min-width: 1750px) {
+  .profession__container__timeline::after,
+  .profession__container__timeline__marker {
+    left: -4rem;
+  }
+}
+
+.profession__container__items {
+  gap: 30px;
+  display: grid;
+  padding: 40px 0 40px 0;
+}
+
+.profession__container__timeline {
+  display: flex;
+  position: relative;
+  gap: 30px;
+}
+
+.profession__container__timeline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -2rem;
+  width: 2px;
+  background: var(--timeline-line);
+  transform: translate(-50%);
+}
+
+.profession__container__timeline__marker {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.profession__container__timeline__marker__circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--timeline-circle-active);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.inactive {
+  background: var(--timeline-circle);
+}
+
+.active {
+  z-index: 10;
+}
+
+.profession__container__timeline__marker__ring {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid var(--timeline-ring);
+  transform: translate(-13%, -85%) scale(0.8);
+  animation: pulse 2s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-13%, -85%) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-13%, -85%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+.profession__container__timeline:last-child::after {
+  display: none;
+}
+
+.profession__container__item {
+  display: grid;
+  position: relative;
+  text-align: left;
+  border: 2px solid var(--color-border-card);
+  border-radius: 25px;
+  transition: all 0.2s ease-in-out;
+}
+
+@media (min-width: 700px) {
+  .profession__container__item:hover {
+    transform: scale(1.05);
+  }
+}
+
+.profession__container__item__details {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  background: var(--color-bg-header--profession);
+  transition: all 0.2s ease;
+  border-radius: 25px 25px 0 0;
+}
+
+.profession__container__item__details__company {
+  margin: 10px 25px;
+}
+
+.profession__container__item__details__company__subject {
+  font-weight: normal;
+}
+
+.profession__container__item__details__company__name {
+  margin-bottom: 6px;
+  color: var(--color-text-secondary);
+}
+
+.profession__container__item__details__company__locdate {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px 30px;
+  color: var(--color-text-secondary);
+}
+
+.profession__container__item__details__company__location,
+.profession__container__item__details__company__date {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.profession__container__item__details__company__location__icon,
+.profession__container__item__details__company__date__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.profession__container__item__details__level {
+  font-weight: bold;
+  height: 26px;
+  align-content: center;
+  padding: 2px 8px;
+  border-radius: calc(0.625rem - 2px);
+  background: var(--color-bg-level--profession);
+  color: white;
+  margin: 25px;
+}
+
+.profession__container__item__spec {
+  padding: 20px 25px 0 25px;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-card);
+  border-radius: 0 0 25px 25px;
+  transition: all 0.2s ease;
+}
+
+.profession__container__item__spec__text__description {
+  margin: 25px 0 15px 0;
+}
+
+.profession__container__item__spec__text__department {
+  margin: 2rem 0 1rem 0;
+  background: var(--color-bg-department);
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--color-department-border--profession);
+  border-radius: 4px;
+}
+
+.profession__container__item__spec__text__department__title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  margin-top: 0;
+}
+
+.profession__container__item__spec__text__department__content {
+  margin: 0;
+}
+
+.profession__container__item__spec__text__achievements__title {
+  margin-top: 20px;
+}
+
+.profession__container__item__spec__text__achievements__title,
+.profession__container__item__spec__text__responsibilities__title {
+  display: flex;
+  color: var(--color-text-primary);
+  font-weight: bold;
+  align-items: center;
+  gap: 10px;
+}
+
+.profession__container__item__spec__text__achievements__title__icon,
+.profession__container__item__spec__text__responsibilities__title__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.profession__container__item__spec__text__achievements__list__items,
+.profession__container__item__spec__text__responsibilities__list__items {
+  margin: 0;
+  padding: 0 15px;
+}
+
+.profession__container__item__spec__text__achievements__list__items li::marker,
+.profession__container__item__spec__text__responsibilities__list__items
+  li::marker {
+  color: var(--color-bullet--profession);
+  font-size: 14px;
+}
+
+.profession__container__item__spec__text__achievements__list__items li::marker {
+  content: "✓";
+}
+
+.profession__container__item__spec__text__achievements__list__items li,
+.profession__container__item__spec__text__responsibilities__list__items li {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+.profession__container__item__spec__text__achievements__list__items
+  li:last-child,
+.profession__container__item__spec__text__responsibilities__list__items
+  li:last-child {
+  margin-bottom: 0;
+}
+
+.profession__container__item__spec__text__responsibilities__title__text {
+  font-weight: bold;
+}
+
+.profession__container__item__spec__text__responsibilities__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  margin-bottom: 30px;
+}
+
+.profession__container__item__spec__text__responsibilities__item {
+  border: 1px solid var(--color-border-card);
+  border-radius: calc(0.625rem - 2px);
+  color: var(--color-course-text);
+  font-size: 0.9rem;
+  padding: 2px 8px;
+}
+
+.profession__container__item__spec__text__tech__title__text {
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.profession__container__item__spec__text__tech__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  margin-bottom: 30px;
+}
+
+.profession__container__item__spec__text__tech__item {
+  border: 1px solid var(--color-tech-border);
+  border-radius: calc(0.625rem - 2px);
+  color: var(--color-tech-text);
+  font-size: 0.9rem;
+  padding: 2px 8px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+  .profession__container__item__details {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .profession__container__item__details__level {
+    order: -1;
+    width: fit-content;
+    margin: 25px 25px 0 auto !important;
+  }
+
+  .profession__container__item__details__company__locdate {
+    width: 100%;
+  }
+
+  .profession__container__item__details__company {
+    margin: 0px 25px 10px 25px !important;
+  }
+
+  .profession__container__item__details__company__name {
+    width: 100% !important;
+  }
+
+  .profession__container__item__details__company__subject {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 1450px) {
+  .profession__container__item__details__company__name {
+    width: 190%;
+  }
 }
