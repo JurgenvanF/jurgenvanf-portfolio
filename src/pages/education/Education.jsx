@@ -477,11 +477,12 @@ function Education() {
               ✕
             </button>
             <iframe
-              src="https://drive.google.com/file/d/1F6wOfVD4yq90sjVhUr1LKp0i213hlp53/preview"
+              src={pdfUrl}
               width="100%"
-              height="600px"
+              height="100%"
+              style={{ flex: 1, border: "none" }}
               title="Thesis PDF"
-            ></iframe>
+            />
           </div>
         </div>
       )}

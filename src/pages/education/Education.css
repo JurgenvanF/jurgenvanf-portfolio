@@ -410,7 +410,7 @@ p {
   top: 5%;
   left: 5%;
   width: 90%;
-  height: fit-content;
+  height: 90%; /* <-- fill most of screen */
   background: white;
   border-radius: 8px;
   overflow: hidden;
@@ -419,6 +419,7 @@ p {
 }
 
 .pdf-modal__close {
+  color: black;
   align-self: flex-end;
   margin: 8px;
   background: none;
