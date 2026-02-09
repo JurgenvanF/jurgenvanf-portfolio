@@ -330,7 +330,7 @@ p {
 
 .education__container__item__spec__text__accordion__item.open
   .education__container__item__spec__text__accordion__content {
-  max-height: 1400px; /* large enough for content */
+  max-height: 1800px; /* large enough for content */
   opacity: 1;
 }
 
