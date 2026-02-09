@@ -211,7 +211,6 @@ p {
 
 .education__container__item__spec__text__description {
   margin: 25px 0 15px 0;
-  font-size: 16px;
 }
 
 .education__container__item__spec__text__specialization {
@@ -257,7 +256,6 @@ p {
 
 .education__container__item__spec__text__achievements__list__items li {
   margin-bottom: 1rem;
-  font-size: 16px;
 }
 
 .education__container__item__spec__text__achievements__list__items
@@ -317,7 +315,7 @@ p {
   margin-top: 8px;
   color: var(--color-text-secondary);
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 0.95rem;
 }
 
 /* Animated accordion: collapse/expand using max-height + opacity */
