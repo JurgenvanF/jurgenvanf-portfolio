@@ -1,6 +1,6 @@
 import "./Education.css";
 import { useEffect, useState } from "react";
-import { GraduationCap, MapPin, Calendar, Award } from "lucide-react";
+import { GraduationCap, MapPin, Calendar, Award, X } from "lucide-react";
 
 function Education() {
   useEffect(() => {
@@ -8,12 +8,15 @@ function Education() {
   }, []);
 
   const [openIndex, setOpenIndex] = useState(null);
-
   const [showPdfModal, setShowPdfModal] = useState(false);
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  // Google Drive direct preview link
+  const pdfUrl =
+    "https://drive.google.com/file/d/1F6wOfVD4yq90sjVhUr1LKp0i213hlp53/preview";
 
   return (
     <>
@@ -355,6 +358,41 @@ function Education() {
                         </button>
                       </p>
 
+                      {/* PDF Modal */}
+                      {showPdfModal && (
+                        <div className="pdf-modal">
+                          <div
+                            className="pdf-modal__overlay"
+                            onClick={() => setShowPdfModal(false)}
+                          />
+                          <div className="pdf-modal__content">
+                            <button
+                              className="pdf-modal__close"
+                              onClick={() => setShowPdfModal(false)}
+                            >
+                              <X size={24} />
+                            </button>
+                            <object
+                              data={pdfUrl}
+                              type="application/pdf"
+                              width="100%"
+                              height="100%"
+                            >
+                              <p>
+                                PDF kan niet worden weergegeven.{" "}
+                                <a
+                                  href={pdfUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  Open in nieuw tabblad
+                                </a>
+                              </p>
+                            </object>
+                          </div>
+                        </div>
+                      )}
+
                       <h4>Resultaten</h4>
                       <ul>
                         <li>
@@ -426,25 +464,23 @@ function Education() {
       </div>
 
       {showPdfModal && (
-        <div
-          className="pdf-modal-overlay"
-          onClick={() => setShowPdfModal(false)}
-        >
+        <div className="pdf-modal">
           <div
-            className="pdf-modal-content"
-            onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside modal
-          >
+            className="pdf-modal__overlay"
+            onClick={() => setShowPdfModal(false)}
+          ></div>
+          <div className="pdf-modal__content">
             <button
-              className="pdf-modal-close"
+              className="pdf-modal__close"
               onClick={() => setShowPdfModal(false)}
             >
               ✕
             </button>
             <iframe
-              src="/vanFraeijenhove_Jurgen_Thesis_Fall2025.pdf"
-              title="Full Thesis"
+              src="https://drive.google.com/file/d/1F6wOfVD4yq90sjVhUr1LKp0i213hlp53/preview"
               width="100%"
-              height="100%"
+              height="600px"
+              title="Thesis PDF"
             ></iframe>
           </div>
         </div>
