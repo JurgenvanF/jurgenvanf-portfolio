@@ -40,7 +40,8 @@ function Education() {
                   <div className="education__container__item__details__school__date">
                     <Calendar className="education__container__item__details__school__date__icon" />
                     <span className="education__container__item__details__school__date__text">
-                      September 2018 - Juni 2022
+                      <span>Augustus 2019 -</span>{" "}
+                      <span className="nowrap">Juni 2024</span>
                     </span>
                   </div>
                 </div>
@@ -59,6 +60,16 @@ function Education() {
                   echte projecten voor opdrachtgevers.
                 </div>
 
+                {/* Specialisatie */}
+                <div className="education__container__item__spec__text__specialization">
+                  <p className="education__container__item__spec__text__specialization__title">
+                    Specialisatie
+                  </p>
+                  <p className="education__container__item__spec__text__specialization__content">
+                    Software development
+                  </p>
+                </div>
+
                 <div className="education__container__item__spec__text__achievements">
                   <div className="education__container__item__spec__text__achievements__title">
                     <Award className="education__container__item__spec__text__achievements__title__icon" />
@@ -75,6 +86,10 @@ function Education() {
                       <li className="education__container__item__spec__text__achievements__list__item">
                         Intensieve ervaring opgedaan met Agile en Scrum werken
                       </li>
+                      <li className="education__container__item__spec__text__achievements__list__item">
+                        Gegroeid van programmeer beginner naar ervaren
+                        ontwikkelaar
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -87,19 +102,19 @@ function Education() {
                   </div>
                   <div className="education__container__item__spec__text__courses__items">
                     <div className="education__container__item__spec__text__courses__item">
-                      Software Engineering
+                      Software Design
                     </div>
                     <div className="education__container__item__spec__text__courses__item">
-                      Webdevelopment
+                      Object Oriented Programming
                     </div>
                     <div className="education__container__item__spec__text__courses__item">
-                      Databases
+                      Digital Innovation
                     </div>
                     <div className="education__container__item__spec__text__courses__item">
-                      Security
+                      Digital Transformation
                     </div>
                     <div className="education__container__item__spec__text__courses__item">
-                      Objectgeoriënteerd Programmeren
+                      Design Thinking
                     </div>
                   </div>
                 </div>
@@ -111,7 +126,7 @@ function Education() {
             <div className="education__container__item__details">
               <div className="education__container__item__details__school">
                 <h2 className="education__container__item__details__school__subject">
-                  New Media Design
+                  MSc Communicatie- en Informatiewetenschappen
                 </h2>
                 <h3 className="education__container__item__details__school__name">
                   Tilburg University
@@ -127,7 +142,8 @@ function Education() {
                   <div className="education__container__item__details__school__date">
                     <Calendar className="education__container__item__details__school__date__icon" />
                     <span className="education__container__item__details__school__date__text">
-                      September 2018 - Juni 2022
+                      <span>Augustus 2024 -</span>{" "}
+                      <span className="nowrap">Februari 2026</span>
                     </span>
                   </div>
                 </div>
@@ -140,10 +156,20 @@ function Education() {
               <p className="education__container__item__spec__text">
                 <div className="education__container__item__spec__text__description">
                   Tijdens mijn master Communicatie- en Informatiewetenschappen
-                  met de specialisatie New Media Design heb ik me verdiept in
-                  het ontwerpen en onderzoeken van digitale media. De focus lag
-                  op gebruikerservaring, interactieontwerp en hoe mensen
-                  technologie beleven en gebruiken.
+                  heb ik me verdiept in het ontwerpen en onderzoeken van
+                  digitale media. De focus lag op gebruikerservaring,
+                  interactieontwerp en hoe mensen technologie beleven en
+                  gebruiken.
+                </div>
+
+                {/* Specialisatie */}
+                <div className="education__container__item__spec__text__specialization">
+                  <p className="education__container__item__spec__text__specialization__title">
+                    Specialisatie
+                  </p>
+                  <p className="education__container__item__spec__text__specialization__content">
+                    New Media Design
+                  </p>
                 </div>
 
                 <div className="education__container__item__spec__text__achievements">
