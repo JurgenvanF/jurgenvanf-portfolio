@@ -20,6 +20,53 @@ function Profession() {
               <div className="profession__container__timeline__marker__circle active"></div>
               <div className="profession__container__timeline__marker__ring"></div>
             </div>
+
+            <div className="profession__container__item">
+              <div className="profession__container__item__details">
+                <div className="profession__container__item__details__company">
+                  <h2 className="profession__container__item__details__company__subject">
+                    Op zoek naar nieuwe uitdaging
+                  </h2>
+                  <h3 className="profession__container__item__details__company__name">
+                    Gezellig bedrijf
+                  </h3>
+                  <div className="profession__container__item__details__company__locdate">
+                    <div className="profession__container__item__details__company__location">
+                      <MapPin className="profession__container__item__details__company__location__icon" />
+                      <span className="profession__container__item__details__company__location__text">
+                        Zeeland, Nederland
+                      </span>
+                    </div>
+                    <div className="profession__container__item__details__company__date">
+                      <Calendar className="profession__container__item__details__company__date__icon" />
+                      <span className="profession__container__item__details__company__date__text">
+                        <span>Nu beschikbaar</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="profession__container__item__details__level">
+                  <span className="nowrap">Actief op zoek</span>
+                </div>
+              </div>
+
+              <div className="profession__container__item__spec">
+                <p className="profession__container__item__spec__text">
+                  <div className="profession__container__item__spec__text__description">
+                    Ik ben momenteel op zoek naar een nieuwe uitdaging als
+                    frontend of fullstack developer. Klaar om mijn ervaring bij
+                    Nedbase en YourSurprise in te zetten voor een innovatief
+                    team!
+                  </div>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="profession__container__timeline">
+            <div className="profession__container__timeline__marker">
+              <div className="profession__container__timeline__marker__circle inactive"></div>
+            </div>
             <div className="profession__container__item">
               <div className="profession__container__item__details">
                 <div className="profession__container__item__details__company">
