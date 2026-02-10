@@ -281,9 +281,14 @@ p {
   margin: 50px auto 0;
 }
 
+.projects__github__title {
+  padding: 0 30px;
+}
+
 .projects__github__description {
   margin-top: 0;
   color: white;
+  padding: 0 30px;
 }
 
 .projects__github__button {
