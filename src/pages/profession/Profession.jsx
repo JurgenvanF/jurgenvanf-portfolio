@@ -200,6 +200,9 @@ function Profession() {
                         REST APIs
                       </div>
                       <div className="profession__container__item__spec__text__tech__item">
+                        Figma
+                      </div>
+                      <div className="profession__container__item__spec__text__tech__item">
                         Git
                       </div>
                     </div>
@@ -347,6 +350,9 @@ function Profession() {
                         HTML / CSS
                       </div>
                       <div className="profession__container__item__spec__text__tech__item">
+                        MockFlow
+                      </div>
+                      <div className="profession__container__item__spec__text__tech__item">
                         Git
                       </div>
                     </div>
@@ -380,7 +386,9 @@ function Profession() {
             </p>
           </div>
           <div className="profession__summary__container__item">
-            <span className="profession__summary__container__text tech">8</span>
+            <span className="profession__summary__container__text tech">
+              10
+            </span>
             <p className="profession__summary__container__subtext">
               Technologieën gebruikt
             </p>

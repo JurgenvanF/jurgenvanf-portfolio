@@ -5,7 +5,6 @@ import { Canvas } from "@react-three/fiber";
 import HeadModel from "../../HeadModel";
 import logo from "../../assets/profilepicture.jpg";
 import {
-  User,
   GraduationCap,
   Briefcase,
   Folder,
