@@ -107,6 +107,7 @@ p {
 @media (min-width: 700px) {
   .projects__container__item:hover {
     transform: scale(1.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   }
 
   .projects__container__item:hover .projects__picture {
