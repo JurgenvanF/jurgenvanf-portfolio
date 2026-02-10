@@ -737,7 +737,7 @@
   grid-template-columns: repeat(4, 1fr);
   width: 62%;
   min-width: 1000px;
-  gap: 30px;
+  gap: 40px 30px;
   margin: 100px auto;
   padding: 1rem;
   justify-content: space-between;
