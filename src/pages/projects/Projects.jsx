@@ -69,7 +69,7 @@ function Projects() {
             </div>
           </div>
           <div className="projects__container__item">
-            <div className="projects__type">Web Application</div>
+            <div className="projects__type">Webapplicatie</div>
             <img className="projects__picture" src={logo} alt="Emergis" />
             <h3 className="projects__name">Emergis</h3>
             <p className="projects__description">
