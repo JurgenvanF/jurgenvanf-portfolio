@@ -312,6 +312,7 @@ p {
   color: var(--color-text-secondary);
   line-height: 1.6;
   font-size: 0.95rem;
+  cursor: auto;
 }
 
 /* Animated accordion: collapse/expand using max-height + opacity */

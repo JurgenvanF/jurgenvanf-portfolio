@@ -510,3 +510,8 @@ p {
     width: 190%;
   }
 }
+
+#yoursurprise,
+#nedbase {
+  scroll-margin-top: 100px;
+}

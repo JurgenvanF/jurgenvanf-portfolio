@@ -82,7 +82,7 @@ p {
   margin: 50px auto 0;
   width: 90%;
   max-width: 1300px;
-  padding: 0 15px;
+  padding: 20px 15px 40px;
 }
 
 .projects__container__items {
@@ -101,6 +101,17 @@ p {
   border-radius: 25px;
   overflow: hidden;
   text-align: left;
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 700px) {
+  .projects__container__item:hover {
+    transform: scale(1.05);
+  }
+
+  .projects__container__item:hover .projects__picture {
+    transform: scale(1.2);
+  }
 }
 
 .projects__type {
@@ -111,12 +122,15 @@ p {
   border-radius: 10px;
   background: var(--projects-type-bg);
   color: var(--projects-text-primary);
+  z-index: 10;
 }
 
 .projects__picture {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid var(--projects-divider);
 }
 
 .projects__name {

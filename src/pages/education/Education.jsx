@@ -36,213 +36,6 @@ function Education() {
             <div className="education__container__item__details">
               <div className="education__container__item__details__school">
                 <h2 className="education__container__item__details__school__subject">
-                  HBO-ICT
-                </h2>
-                <h3 className="education__container__item__details__school__name">
-                  HZ, University of Applied Sciences
-                </h3>
-                <div className="education__container__item__details__school__locdate">
-                  <div className="education__container__item__details__school__location">
-                    <MapPin className="education__container__item__details__school__location__icon" />
-                    <span className="education__container__item__details__school__location__text">
-                      Middelburg, Nederland
-                    </span>
-                  </div>
-
-                  <div className="education__container__item__details__school__date">
-                    <Calendar className="education__container__item__details__school__date__icon" />
-                    <span className="education__container__item__details__school__date__text">
-                      <span>Augustus 2019 -</span>{" "}
-                      <span className="nowrap">Juni 2024</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="education__container__item__details__level">
-                <span>Bachelor</span>
-              </div>
-            </div>
-            <div className="education__container__item__spec">
-              <p className="education__container__item__spec__text">
-                <div className="education__container__item__spec__text__description">
-                  Tijdens mijn bachelor ICT aan HZ heb ik een sterke,
-                  praktijkgerichte basis opgebouwd in softwareontwikkeling. De
-                  opleiding richtte zich op het ontwerpen, bouwen en testen van
-                  moderne applicaties, waarbij ik veel in teamverband werkte aan
-                  echte projecten voor opdrachtgevers.
-                </div>
-
-                {/* Specialisatie */}
-                <div className="education__container__item__spec__text__specialization">
-                  <p className="education__container__item__spec__text__specialization__title">
-                    Specialisatie
-                  </p>
-                  <p className="education__container__item__spec__text__specialization__content">
-                    Software development
-                  </p>
-                </div>
-
-                <div className="education__container__item__spec__text__achievements">
-                  <div className="education__container__item__spec__text__achievements__title">
-                    <Award className="education__container__item__spec__text__achievements__title__icon" />
-                    <p className="education__container__item__spec__text__achievements__title__text">
-                      Prestaties
-                    </p>
-                  </div>
-                  <div className="education__container__item__spec__text__achievements__list">
-                    <ul className="education__container__item__spec__text__achievements__list__items">
-                      <li className="education__container__item__spec__text__achievements__list__item">
-                        Meerdere softwareprojecten opgeleverd voor echte
-                        opdrachtgevers
-                      </li>
-                      <li className="education__container__item__spec__text__achievements__list__item">
-                        Intensieve ervaring opgedaan met Agile en Scrum werken
-                      </li>
-                      <li className="education__container__item__spec__text__achievements__list__item">
-                        Gegroeid van programmeer beginner naar ervaren
-                        ontwikkelaar
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <p className="education__container__item__spec__text__accordion__text">
-                  Stages
-                </p>
-                <div className="education__container__item__spec__text__accordion">
-                  <div
-                    className={`education__container__item__spec__text__accordion__item ${
-                      openIndex === 0 ? "open" : ""
-                    }`}
-                    onClick={() => toggleAccordion(0)}
-                  >
-                    <div className="education__container__item__spec__text__accordion__header">
-                      <span>YourSurprise</span>
-                      <svg
-                        className="accordion__triangle"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path d="M8 5l8 7-8 7z" />
-                      </svg>
-                    </div>
-                    <div className="education__container__item__spec__text__accordion__content">
-                      Hier heb ik ervaring opgedaan in het werken binnen een
-                      professioneel team. Ik leerde hoe je effectief samenwerkt,
-                      communiceert en bijdraagt aan gezamenlijke doelen.
-                      Daarnaast maakte ik kennis met workflows en ontwikkelde ik
-                      een beter begrip van het werken in een kantoor omgeving.
-                      <ul>
-                        <li>
-                          Ontwikkelde een dynamische afbeeldingswisselaar voor
-                          het ontwerpteam, waardoor per seizoen andere visuals
-                          in de webshop getoond kunnen worden.
-                        </li>
-                        <li>
-                          Werkte samen binnen een multidisciplinair team om
-                          webshop functionaliteiten te optimaliseren en
-                          problemen efficient op te lossen.
-                        </li>
-                        <li>
-                          Leerde en paste gebruiksvriendelijke workflows toe
-                          binnen de ontwikkelomgeving om de productiviteit te
-                          verhogen.
-                        </li>
-                      </ul>
-                      <Link
-                        to="/beroep"
-                        className="education__container__item__spec__text__accordion__link"
-                      >
-                        <p className="education__container__item__spec__text__accordion__link__text">
-                          Bekijk de beroep-pagina voor meer informatie
-                        </p>
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div
-                    className={`education__container__item__spec__text__accordion__item ${
-                      openIndex === 1 ? "open" : ""
-                    }`}
-                    onClick={() => toggleAccordion(1)}
-                  >
-                    <div className="education__container__item__spec__text__accordion__header">
-                      <span>Afstudeerstage - Nedbase</span>
-                      <svg
-                        className="accordion__triangle"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path d="M8 5l8 7-8 7z" />
-                      </svg>
-                    </div>
-                    <div className="education__container__item__spec__text__accordion__content">
-                      Hier werkte ik in een team dat maatwerk applicaties
-                      ontwikkelde. Mijn focus lag vooral op de front-end: welke
-                      informatie beschikbaar moest zijn, hoe dit overzichtelijk
-                      gepresenteerd kon worden en hoe de interface er
-                      uiteindelijk uit moest zien.
-                      <ul>
-                        <li>
-                          Ontwikkelde (front-end) functionaliteiten voor een
-                          klantgerichte tool die de toegankelijkheid en het
-                          overzicht van website-informatie verbeterde.
-                        </li>
-                        <li>
-                          Leerde en gebruikte moderne ontwikkeltools en
-                          frameworks binnen een professionele ontwikkelomgeving.
-                        </li>
-                      </ul>
-                      <Link
-                        to="/beroep"
-                        className="education__container__item__spec__text__accordion__link"
-                      >
-                        <p className="education__container__item__spec__text__accordion__link__text">
-                          Bekijk de beroep-pagina voor meer informatie
-                        </p>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="education__container__item__spec__text__courses">
-                  <div className="education__container__item__spec__text__courses__title">
-                    <p className="education__container__item__spec__text__courses__title__text">
-                      Kernvakken
-                    </p>
-                  </div>
-                  <div className="education__container__item__spec__text__courses__items">
-                    <div className="education__container__item__spec__text__courses__item">
-                      Software Design
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      Object Oriented Programming
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      Digital Innovation
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      Digital Transformation
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      Design Thinking
-                    </div>
-                  </div>
-                </div>
-              </p>
-            </div>
-          </div>
-
-          <div className="education__container__item">
-            <div className="education__container__item__details">
-              <div className="education__container__item__details__school">
-                <h2 className="education__container__item__details__school__subject">
                   MSc Communicatie- en Informatiewetenschappen
                 </h2>
                 <h3 className="education__container__item__details__school__name">
@@ -471,6 +264,213 @@ function Education() {
                     </div>
                     <div className="education__container__item__spec__text__courses__item">
                       The Human Mind in the Digital World
+                    </div>
+                  </div>
+                </div>
+              </p>
+            </div>
+          </div>
+
+          <div className="education__container__item">
+            <div className="education__container__item__details">
+              <div className="education__container__item__details__school">
+                <h2 className="education__container__item__details__school__subject">
+                  HBO-ICT
+                </h2>
+                <h3 className="education__container__item__details__school__name">
+                  HZ, University of Applied Sciences
+                </h3>
+                <div className="education__container__item__details__school__locdate">
+                  <div className="education__container__item__details__school__location">
+                    <MapPin className="education__container__item__details__school__location__icon" />
+                    <span className="education__container__item__details__school__location__text">
+                      Middelburg, Nederland
+                    </span>
+                  </div>
+
+                  <div className="education__container__item__details__school__date">
+                    <Calendar className="education__container__item__details__school__date__icon" />
+                    <span className="education__container__item__details__school__date__text">
+                      <span>Augustus 2019 -</span>{" "}
+                      <span className="nowrap">Juni 2024</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="education__container__item__details__level">
+                <span>Bachelor</span>
+              </div>
+            </div>
+            <div className="education__container__item__spec">
+              <p className="education__container__item__spec__text">
+                <div className="education__container__item__spec__text__description">
+                  Tijdens mijn bachelor ICT aan HZ heb ik een sterke,
+                  praktijkgerichte basis opgebouwd in softwareontwikkeling. De
+                  opleiding richtte zich op het ontwerpen, bouwen en testen van
+                  moderne applicaties, waarbij ik veel in teamverband werkte aan
+                  echte projecten voor opdrachtgevers.
+                </div>
+
+                {/* Specialisatie */}
+                <div className="education__container__item__spec__text__specialization">
+                  <p className="education__container__item__spec__text__specialization__title">
+                    Specialisatie
+                  </p>
+                  <p className="education__container__item__spec__text__specialization__content">
+                    Software development
+                  </p>
+                </div>
+
+                <div className="education__container__item__spec__text__achievements">
+                  <div className="education__container__item__spec__text__achievements__title">
+                    <Award className="education__container__item__spec__text__achievements__title__icon" />
+                    <p className="education__container__item__spec__text__achievements__title__text">
+                      Prestaties
+                    </p>
+                  </div>
+                  <div className="education__container__item__spec__text__achievements__list">
+                    <ul className="education__container__item__spec__text__achievements__list__items">
+                      <li className="education__container__item__spec__text__achievements__list__item">
+                        Meerdere softwareprojecten opgeleverd voor echte
+                        opdrachtgevers
+                      </li>
+                      <li className="education__container__item__spec__text__achievements__list__item">
+                        Intensieve ervaring opgedaan met Agile en Scrum werken
+                      </li>
+                      <li className="education__container__item__spec__text__achievements__list__item">
+                        Gegroeid van programmeer beginner naar ervaren
+                        ontwikkelaar
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <p className="education__container__item__spec__text__accordion__text">
+                  Stages
+                </p>
+                <div className="education__container__item__spec__text__accordion">
+                  <div
+                    className={`education__container__item__spec__text__accordion__item ${
+                      openIndex === 0 ? "open" : ""
+                    }`}
+                    onClick={() => toggleAccordion(0)}
+                  >
+                    <div className="education__container__item__spec__text__accordion__header">
+                      <span>YourSurprise</span>
+                      <svg
+                        className="accordion__triangle"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path d="M8 5l8 7-8 7z" />
+                      </svg>
+                    </div>
+                    <div className="education__container__item__spec__text__accordion__content">
+                      Hier heb ik ervaring opgedaan in het werken binnen een
+                      professioneel team. Ik leerde hoe je effectief samenwerkt,
+                      communiceert en bijdraagt aan gezamenlijke doelen.
+                      Daarnaast maakte ik kennis met workflows en ontwikkelde ik
+                      een beter begrip van het werken in een kantoor omgeving.
+                      <ul>
+                        <li>
+                          Ontwikkelde een dynamische afbeeldingswisselaar voor
+                          het ontwerpteam, waardoor per seizoen andere visuals
+                          in de webshop getoond kunnen worden.
+                        </li>
+                        <li>
+                          Werkte samen binnen een multidisciplinair team om
+                          webshop functionaliteiten te optimaliseren en
+                          problemen efficient op te lossen.
+                        </li>
+                        <li>
+                          Leerde en paste gebruiksvriendelijke workflows toe
+                          binnen de ontwikkelomgeving om de productiviteit te
+                          verhogen.
+                        </li>
+                      </ul>
+                      <Link
+                        to="/beroep#yoursurprise"
+                        className="education__container__item__spec__text__accordion__link"
+                      >
+                        <p className="education__container__item__spec__text__accordion__link__text">
+                          Bekijk de beroep-pagina voor meer informatie
+                        </p>
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div
+                    className={`education__container__item__spec__text__accordion__item ${
+                      openIndex === 1 ? "open" : ""
+                    }`}
+                    onClick={() => toggleAccordion(1)}
+                  >
+                    <div className="education__container__item__spec__text__accordion__header">
+                      <span>Afstudeerstage - Nedbase</span>
+                      <svg
+                        className="accordion__triangle"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path d="M8 5l8 7-8 7z" />
+                      </svg>
+                    </div>
+                    <div className="education__container__item__spec__text__accordion__content">
+                      Hier werkte ik in een team dat maatwerk applicaties
+                      ontwikkelde. Mijn focus lag vooral op de front-end: welke
+                      informatie beschikbaar moest zijn, hoe dit overzichtelijk
+                      gepresenteerd kon worden en hoe de interface er
+                      uiteindelijk uit moest zien.
+                      <ul>
+                        <li>
+                          Ontwikkelde (front-end) functionaliteiten voor een
+                          klantgerichte tool die de toegankelijkheid en het
+                          overzicht van website-informatie verbeterde.
+                        </li>
+                        <li>
+                          Leerde en gebruikte moderne ontwikkeltools en
+                          frameworks binnen een professionele ontwikkelomgeving.
+                        </li>
+                      </ul>
+                      <Link
+                        to="/beroep#nedbase"
+                        className="education__container__item__spec__text__accordion__link"
+                      >
+                        <p className="education__container__item__spec__text__accordion__link__text">
+                          Bekijk de beroep-pagina voor meer informatie
+                        </p>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="education__container__item__spec__text__courses">
+                  <div className="education__container__item__spec__text__courses__title">
+                    <p className="education__container__item__spec__text__courses__title__text">
+                      Kernvakken
+                    </p>
+                  </div>
+                  <div className="education__container__item__spec__text__courses__items">
+                    <div className="education__container__item__spec__text__courses__item">
+                      Software Design
+                    </div>
+                    <div className="education__container__item__spec__text__courses__item">
+                      Object Oriented Programming
+                    </div>
+                    <div className="education__container__item__spec__text__courses__item">
+                      Digital Innovation
+                    </div>
+                    <div className="education__container__item__spec__text__courses__item">
+                      Digital Transformation
+                    </div>
+                    <div className="education__container__item__spec__text__courses__item">
+                      Design Thinking
                     </div>
                   </div>
                 </div>

@@ -63,7 +63,7 @@ function Profession() {
             </div>
           </div>
 
-          <div className="profession__container__timeline">
+          <div className="profession__container__timeline" id="nedbase">
             <div className="profession__container__timeline__marker">
               <div className="profession__container__timeline__marker__circle inactive"></div>
             </div>
@@ -212,7 +212,7 @@ function Profession() {
             </div>
           </div>
 
-          <div className="profession__container__timeline">
+          <div className="profession__container__timeline" id="yoursurprise">
             <div className="profession__container__timeline__marker">
               <div className="profession__container__timeline__marker__circle inactive"></div>
             </div>

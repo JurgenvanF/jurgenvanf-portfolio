@@ -34,10 +34,18 @@ function AppContent() {
     return saved !== null ? saved === "true" : false; // default to light mode
   });
 
-  // Scroll to top on route change
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, [location.pathname]); // scrolls every time the path changes
+    if (location.hash) {
+      // Scroll to the element with the id matching the hash
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Scroll to top for normal route changes
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  }, [location]);
 
   // Update body class based on current route (use useLayoutEffect for immediate update)
   useLayoutEffect(() => {
