@@ -1,5 +1,6 @@
 import "./Education.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { GraduationCap, MapPin, Calendar, Award, X } from "lucide-react";
 
 function Education() {
@@ -151,6 +152,14 @@ function Education() {
                           verhogen.
                         </li>
                       </ul>
+                      <Link
+                        to="/beroep"
+                        className="education__container__item__spec__text__accordion__link"
+                      >
+                        <p className="education__container__item__spec__text__accordion__link__text">
+                          Bekijk de beroep-pagina voor meer informatie
+                        </p>
+                      </Link>
                     </div>
                   </div>
 
@@ -190,6 +199,14 @@ function Education() {
                           frameworks binnen een professionele ontwikkelomgeving.
                         </li>
                       </ul>
+                      <Link
+                        to="/beroep"
+                        className="education__container__item__spec__text__accordion__link"
+                      >
+                        <p className="education__container__item__spec__text__accordion__link__text">
+                          Bekijk de beroep-pagina voor meer informatie
+                        </p>
+                      </Link>
                     </div>
                   </div>
                 </div>

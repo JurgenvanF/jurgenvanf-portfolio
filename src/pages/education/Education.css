@@ -344,6 +344,7 @@ p {
   transform: rotate(90deg);
 }
 
+.education__container__item__spec__text__accordion__link,
 .education__container__item__spec__text__accordion__content__link {
   color: var(--color-bullet--education);
   text-decoration: none;
@@ -355,7 +356,18 @@ p {
   transition: color 0.2s ease;
 }
 
-.education__container__item__spec__text__accordion__content__link:hover {
+.education__container__item__spec__text__accordion__link__text {
+  color: var(--color-bullet--education);
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.education__container__item__spec__text__accordion__content__link:hover,
+.education__container__item__spec__text__accordion__link__text:hover {
   color: #2563eb; /* slightly darker blue on hover for feedback */
   text-decoration: underline;
 }

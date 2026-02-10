@@ -25,7 +25,7 @@ function Profession() {
               <div className="profession__container__item__details">
                 <div className="profession__container__item__details__company">
                   <h2 className="profession__container__item__details__company__subject">
-                    Op zoek naar nieuwe uitdaging
+                    Op zoek naar een eerste uitdaging
                   </h2>
                   <h3 className="profession__container__item__details__company__name">
                     Gezellig bedrijf
@@ -53,9 +53,10 @@ function Profession() {
               <div className="profession__container__item__spec">
                 <p className="profession__container__item__spec__text">
                   <div className="profession__container__item__spec__text__description">
-                    Ik ben momenteel op zoek naar een nieuwe uitdaging als
-                    frontend developer / UX developer. Klaar om mijn kennis en
-                    energie in te zetten voor een leuk en innovatief team!
+                    Ik ben na de afronding van mijn studie op zoek naar een
+                    eerste uitdaging als frontend developer / UX developer.
+                    Klaar om mijn kennis en energie in te zetten voor een leuk
+                    en innovatief team!
                   </div>
                 </p>
               </div>
