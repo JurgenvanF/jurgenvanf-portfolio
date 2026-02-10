@@ -108,7 +108,8 @@ function Home() {
           </p>
         </Link>
 
-        <Link to="/beroep" className="pageRouting__profession">
+        <Link to="/beroep" className="pageRouting__profession open-position">
+          <span className="open-position-icon">🔍</span>
           <Briefcase className="pageRouting__profession__icon" />
           <h2 className="pageRouting__profession__title">Beroep 💼</h2>
           <p className="pageRouting__profession__text">

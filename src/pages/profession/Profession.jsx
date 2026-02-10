@@ -54,9 +54,8 @@ function Profession() {
                 <p className="profession__container__item__spec__text">
                   <div className="profession__container__item__spec__text__description">
                     Ik ben momenteel op zoek naar een nieuwe uitdaging als
-                    frontend of fullstack developer. Klaar om mijn ervaring bij
-                    Nedbase en YourSurprise in te zetten voor een innovatief
-                    team!
+                    frontend developer / UX developer. Klaar om mijn kennis en
+                    energie in te zetten voor een leuk en innovatief team!
                   </div>
                 </p>
               </div>

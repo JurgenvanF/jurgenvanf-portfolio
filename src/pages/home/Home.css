@@ -449,6 +449,25 @@
   text-decoration: none;
 }
 
+.open-position {
+  animation: mediumFlash 5s infinite;
+}
+
+.dark .open-position {
+  animation:
+    brightFlash 5s infinite,
+    borderFlash 5s infinite;
+}
+
+.open-position-icon {
+  position: absolute;
+  top: 15px; /* distance from the top of the link */
+  right: 20px; /* distance from the right of the link */
+  font-size: 3.2rem; /* optional, adjust size */
+  pointer-events: none; /* so it doesn’t block clicks */
+  animation: searchWiggle 4s ease-in-out infinite;
+}
+
 .pageRouting__education::before,
 .pageRouting__profession::before,
 .pageRouting__projects::before,
@@ -524,7 +543,7 @@
 }
 
 .pageRouting__profession:hover {
-  border-color: var(--border-color-profession-hover);
+  border-color: var(--border-color-profession-hover) !important;
 }
 
 .pageRouting__projects:hover {
