@@ -51,6 +51,7 @@ body {
 #root {
   flex: 1;
   overflow-x: hidden;
+  margin-top: 72px;
 }
 
 h1 {
