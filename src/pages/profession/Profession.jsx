@@ -356,6 +356,36 @@ function Profession() {
           </div>
         </div>
       </div>
+
+      <div className="profession__summary">
+        <h2 className="profession__summary__title">
+          Samenvatting professionele skills
+        </h2>
+        <div className="profession__summary__container">
+          <div className="profession__summary__container__item">
+            <span className="profession__summary__container__text years">
+              5+
+            </span>
+            <p className="profession__summary__container__subtext">
+              Jaren codeer ervaring
+            </p>
+          </div>
+          <div className="profession__summary__container__item">
+            <span className="profession__summary__container__text projects">
+              2
+            </span>
+            <p className="profession__summary__container__subtext">
+              Voltooide stages
+            </p>
+          </div>
+          <div className="profession__summary__container__item">
+            <span className="profession__summary__container__text tech">8</span>
+            <p className="profession__summary__container__subtext">
+              Technologieën gebruikt
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

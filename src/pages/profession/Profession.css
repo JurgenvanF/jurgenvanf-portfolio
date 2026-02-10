@@ -35,6 +35,8 @@
   --timeline-circle: #64748b; /* slate-500 */
   --timeline-circle-active: #22c55e; /* green-500 */
   --timeline-ring: #4ade80; /* green-400 */
+
+  --summary-background: #0f172b;
 }
 
 /* Dark Mode overrides */
@@ -61,6 +63,8 @@
   --timeline-circle: #718096; /* slate-500 */
   --timeline-circle-active: #16a34a; /* green-600 */
   --timeline-ring: #22c55e; /* green-500 */
+
+  --summary-background: #070b14;
 }
 
 .title__profession {
@@ -110,6 +114,12 @@ p {
   .profession__container__timeline::after,
   .profession__container__timeline__marker {
     left: -2rem;
+  }
+
+  .profession__summary {
+    width: auto !important;
+    margin: 0 3% !important;
+    min-width: 0px !important;
   }
 }
 
@@ -384,6 +394,83 @@ p {
   padding: 2px 8px;
   background: var(--color-tech-background);
   transition: all 0.2s ease;
+}
+
+.profession__summary {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 80%;
+  border-radius: 15px;
+  min-width: 1650px;
+  max-width: 1800px;
+  background-color: var(--summary-background);
+  transition: all 0.2s ease;
+}
+
+.profession__summary__title {
+  margin-top: 60px;
+  padding: 0 25px;
+  color: white;
+}
+
+.profession__summary__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 62%;
+  min-width: 1000px;
+  gap: 30px;
+  margin: 10px auto 60px;
+  padding: 2rem;
+  justify-content: space-between;
+}
+
+@media (max-width: 1150px) {
+  .profession__summary__container {
+    grid-template-columns: repeat(1, 1fr);
+    min-width: 0px;
+  }
+}
+
+.profession__summary__container__item {
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  padding-top: 10px;
+  min-width: 225px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+  border: 1px solid #e5e7eb;
+}
+
+.profession__summary__container__icon {
+  font-size: 2.25rem;
+}
+
+.profession__summary__container__text {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.profession__summary__container__text.years {
+  color: #155dfc;
+}
+
+.profession__summary__container__text.projects {
+  color: #00a63e;
+}
+
+.profession__summary__container__text.tech {
+  color: #9810fa;
+}
+
+.profession__summary__container__subtext {
+  font-size: 0.875rem;
+  color: #45556c;
 }
 
 .nowrap {
