@@ -1,7 +1,6 @@
 import "./Projects.css";
 import { useEffect } from "react";
-import { Folder, Github, ExternalLink, Lock } from "lucide-react";
-import logo from "../../assets/profilepicture.jpg";
+import { Folder, Github, ExternalLink, Lock, Code2 } from "lucide-react";
 import logoIsoaAdvies from "../../assets/projects/isoaadvies/logo.jpg";
 import logoEmergis from "../../assets/projects/emergis/logo.jpg";
 import logoGardenConnect from "../../assets/projects/gardenconnect/logo.jpg";
@@ -232,6 +231,24 @@ function Projects() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="projects__github">
+        <Code2 className="projects__github__icon" />
+        <h2 className="projects__github__title">Wil je meer zien?</h2>
+        <p className="projects__github__description">
+          Bekijk mijn GitHub profiel voor meer projecten en bijdragen tijdens
+          mijn studie
+        </p>
+        <a
+          href="https://github.com/JurgenvanF"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="projects__github__button"
+        >
+          <Github className="projects__github__button__icon" />
+          Bekijk GitHub profiel
+        </a>
       </div>
     </>
   );

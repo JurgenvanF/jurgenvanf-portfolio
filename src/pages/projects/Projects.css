@@ -263,6 +263,62 @@ p {
   width: 20px;
 }
 
+.projects__github {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 90%;
+  border-radius: 15px;
+  max-width: 1500px;
+  background-color: var(--summary-background);
+  transition: all 0.2s ease;
+  color: white;
+}
+
+.projects__github__icon {
+  width: 60px;
+  height: 60px;
+  margin: 50px auto 0;
+}
+
+.projects__github__description {
+  margin-top: 0;
+  color: white;
+}
+
+.projects__github__button {
+  display: inline-flex;
+  width: 190px;
+  margin: 20px auto 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  flex-shrink: 0;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--projects-btn-github-bg);
+  color: black;
+  border: 1px solid #d1d5db;
+}
+
+.projects__github__button:hover {
+  transform: scale(1.05);
+  background: var(--projects-btn-github-bg-hover);
+}
+
 @media (max-width: 1100px) {
   .projects__container__items {
     grid-template-columns: repeat(2, minmax(0px, 1fr)) !important;
