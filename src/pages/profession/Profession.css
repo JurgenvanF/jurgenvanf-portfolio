@@ -28,6 +28,7 @@
   /* Tech */
   --color-tech-text: #111827; /* slate-900 */
   --color-tech-border: #d1d5db; /* slate-300 */
+  --color-tech-background: #f9f9f9;
 
   /* Timeline */
   --timeline-line: #cbd5e1; /* slate-400 */
@@ -54,6 +55,7 @@
   --color-department-border--profession: #22c55e;
   --color-tech-text: #f9fafb;
   --color-tech-border: #374151;
+  --color-tech-background: #27303f;
 
   --timeline-line: #1f2937; /* slate-800 */
   --timeline-circle: #718096; /* slate-500 */
@@ -138,6 +140,7 @@ p {
   width: 2px;
   background: var(--timeline-line);
   transform: translate(-50%);
+  transition: all 0.2s ease;
 }
 
 .profession__container__timeline__marker {
@@ -204,9 +207,21 @@ p {
   transition: all 0.2s ease-in-out;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 1750px) {
   .profession__container__item:hover {
     transform: scale(1.05);
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1749px) {
+  .profession__container__item:hover {
+    transform: scale(1.02);
+  }
+}
+
+@media (max-width: 699px) {
+  .profession__container__item:hover {
+    transform: none;
   }
 }
 
@@ -380,6 +395,8 @@ p {
   color: var(--color-tech-text);
   font-size: 0.9rem;
   padding: 2px 8px;
+  background: var(--color-tech-background);
+  transition: all 0.2s ease;
 }
 
 .nowrap {

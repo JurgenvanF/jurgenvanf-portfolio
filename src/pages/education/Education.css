@@ -20,6 +20,7 @@
   /* Courses */
   --color-course-text: #111827; /* slate-900 */
   --color-course-border: #d1d5db; /* slate-300 */
+  --color-course-background: #f9f9f9;
 }
 
 /* Dark Mode overrides */
@@ -40,6 +41,7 @@
   --color-specialization-border--education: #2563eb;
   --color-course-text: #f9fafb;
   --color-course-border: #374151;
+  --color-course-background: #27303f;
 }
 
 .title__education {
@@ -377,6 +379,8 @@ p {
   color: var(--color-course-text);
   font-size: 0.9rem;
   padding: 2px 8px;
+  background: var(--color-course-background);
+  transition: all 0.2s ease;
 }
 
 .nowrap {
