@@ -227,7 +227,7 @@ function Home({ isModalOpen, setIsModalOpen }) {
         <div className="data__container__item">
           <span className="data__container__icon">🚀</span>
           <br />
-          <span className="data__container__text projects">Meerdere</span>
+          <span className="data__container__text projects">10+</span>
           <p className="data__container__subtext">Voltooide projecten</p>
         </div>
         <div className="data__container__item">
@@ -317,20 +317,21 @@ function Home({ isModalOpen, setIsModalOpen }) {
 
             <div className="modal__content">
               <p>
-                Ik ben een afgestudeerde Media Design-student met een passie
-                voor hoe design het gedrag en de ervaring van mensen beïnvloedt.
-                Tijdens mijn studie heb ik veel geleerd over cognitieve
-                psychologie en hoe visuele keuzes bepalen hoe mensen informatie
-                verwerken en gebruiken.
+                Ik ben een afgestudeerde Media Design / ICT-student met een
+                passie voor hoe design het gedrag en de ervaring van mensen
+                beïnvloedt. Tijdens mijn studie heb ik veel geleerd over
+                cognitieve psychologie en hoe visuele keuzes bepalen hoe mensen
+                informatie verwerken en gebruiken.
               </p>
 
               <p>
                 Mijn huidige kracht ligt vooral in front-end development,
-                dankzij praktische ervaring. Tegelijkertijd is mijn ambitie
-                gericht op UX-design. Ik vind het belangrijk om zowel technisch
-                als conceptueel te denken, zodat ideeën niet alleen mooi
-                aanvoelen, maar ook goed functioneren. Deze combinatie helpt mij
-                om de brug te slaan tussen design en uitvoering.
+                dankzij de praktische ervaring tijdens mijn bachelor.
+                Daarentegen is mijn ambitie gericht op UX-design. Ik vind het
+                belangrijk om zowel technisch als conceptueel te denken, zodat
+                ideeën niet alleen mooi aanvoelen, maar ook goed functioneren.
+                Deze combinatie helpt mij om de brug te slaan tussen design en
+                uitvoering.
               </p>
 
               <p>
@@ -338,26 +339,25 @@ function Home({ isModalOpen, setIsModalOpen }) {
                 project. Ik denk continu na over hoe iets logischer, duidelijker
                 en visueel sterker kan. Structuur aanbrengen in chaos geeft mij
                 veel voldoening: van een onoverzichtelijk Excel-bestand naar een
-                helder systeem met een fijne flow en een consistente
-                uitstraling. Overzicht, rust en gebruiksgemak staan altijd
-                centraal.
+                helder systeem met een fijne flow en een fijne uitstraling.
+                Overzicht, rust en gebruiksgemak vind ik heel belangrijk.
               </p>
 
               <p>
-                Voor de toekomst wil ik doorgroeien tot UX-designer. Ik ben
-                gemotiveerd om mijn vaardigheden in het ontwikkelen van een
-                visuele stijl vanaf nul te verbeteren en mezelf creatief uit te
-                dagen.
+                In de toekomst zou ik graag willen doorgroeien tot UX-designer.
+                Ik ben gemotiveerd om mijn vaardigheden in het ontwikkelen van
+                een visuele stijl te verbeteren en mezelf creatief uit te dagen.
               </p>
 
               <p>
                 Buiten design heb ik een grote fascinatie voor de ruimte. Als
-                kind wilde ik astronaut worden — en stiekem lijkt het me nog
-                steeds geweldig om met een professionele telescoop planeten te
-                bekijken. Daarnaast heb ik een half jaar in Madrid gewoond, wat
-                mijn zelfstandigheid en persoonlijke groei enorm heeft
-                versterkt. Van nature ben ik rustig en werk ik graag
-                geconcentreerd door, soms zó gefocust dat ik de tijd vergeet.
+                kind wilde ik astronaut worden (stiekem nog steeds) en ik zou
+                later dan ook graag een professionele telescoop willen bezitten
+                waarmee ik de planeten kan bekijken. Daarnaast heb ik een half
+                jaar in Madrid gewoond tijdens mijn Minor, wat mijn
+                zelfstandigheid en persoonlijke groei enorm heeft versterkt. Van
+                nature ben ik rustig en werk ik graag geconcentreerd door, soms
+                zó gefocust dat ik de tijd vergeet.
               </p>
             </div>
           </div>

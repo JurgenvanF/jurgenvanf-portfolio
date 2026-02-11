@@ -137,8 +137,8 @@ function Education() {
                     <div className="education__container__item__spec__text__accordion__content">
                       <p>
                         Voor mijn master New Media Design aan Tilburg University
-                        onderzocht ik hoe visuele kenmerken van knoppen -
-                        specifiek kleur en vorm - beïnvloeden hoe duidelijk
+                        onderzocht ik hoe visuele kenmerken van knoppen,
+                        specifiek kleur en vorm, beïnvloeden hoe duidelijk
                         gebruikers een knop vinden. In digitale interfaces
                         moeten mensen vaak snel beslissen wat een knop doet, nog
                         voordat ze de tekst goed lezen.
@@ -165,7 +165,7 @@ function Education() {
                         className="education__container__item__spec__text__accordion__content__link"
                         onClick={() => setShowPdfModal(true)}
                       >
-                        Bekijk de volledige thesis
+                        Bekijk de volledige scriptie
                       </button>
 
                       <h4>Resultaten</h4>
@@ -191,7 +191,7 @@ function Education() {
                         </li>
                         <li>
                           <strong>Exploratieve vraag:</strong>
-                          <br /> ✓ Wanneer kleur en vorm met elkaar in conflict
+                          <br /> Wanneer kleur en vorm met elkaar in conflict
                           waren, had <em>kleur</em> een duidelijk sterkere
                           invloed op ervaren duidelijkheid dan vorm.
                         </li>

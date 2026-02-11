@@ -54,10 +54,14 @@ function Profession() {
               <div className="profession__container__item__spec">
                 <div className="profession__container__item__spec__text">
                   <div className="profession__container__item__spec__text__description">
-                    Ik ben na de afronding van mijn studie op zoek naar een
-                    eerste uitdaging als frontend developer / UX developer.
-                    Klaar om mijn kennis en energie in te zetten voor een leuk
-                    en innovatief team!
+                    Na mijn studie Media Design ben ik op zoek naar een eerste
+                    uitdaging als frontend developer, met de ambitie om door te
+                    groeien richting UX-design. Ik werk graag aan digitale
+                    producten die visueel sterk zijn en logisch aanvoelen voor
+                    de gebruiker. Ik zoek een team waar ik kan blijven leren,
+                    meedenken over gebruiksvriendelijkheid en mijn oog voor
+                    detail kan inzetten om van idee tot eindproduct kwaliteit te
+                    leveren.
                   </div>
                 </div>
               </div>

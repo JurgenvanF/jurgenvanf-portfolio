@@ -26,7 +26,7 @@ function Projects() {
     <>
       <Folder className="projects__icon" />
       <h1 className="title__projects">Projecten 🎨</h1>
-      <p>Dit zijn de projecten die ik gedaan heb!</p>
+      <p>Dit zijn een aantal grote projecten die ik gedaan heb!</p>
 
       <div className="projects__container">
         <div className="projects__container__items">
@@ -143,8 +143,8 @@ function Projects() {
               worden, inclusief automatische e-mailnotificaties. Daarnaast is er
               veel aandacht besteed aan responsiveness, animaties en effecten om
               de site reactiever en gebruiksvriendelijk te maken. Het ontwerp is
-              volledig door mijzelf uitgewerkt, met het logo als enige
-              referentiepunt.
+              volledig door mijzelf ontworpen en uitgewerkt, met het logo als
+              enige referentiepunt.
             </p>
             <p className="projects__highlights">Belangrijkste punten</p>
             <ul className="projects__hightlights__list">
@@ -199,7 +199,8 @@ function Projects() {
               allemaal via Excel gebeurde. Wij hebben hiervoor een passende
               oplossing gerealiseerd. Ik heb bijgedragen aan het design, de
               layout en veel van de uitwerking van de website. Het project is
-              gebouwd met het Laravel framework, waarmee ik goed overweg kan.
+              gebouwd met het Laravel framework, waarmee ik ondertussen goed
+              overweg kan.
             </p>
             <p className="projects__highlights">Belangrijkste punten</p>
             <ul className="projects__hightlights__list">
@@ -308,7 +309,8 @@ function Projects() {
               producten te beheren. Het project omvatte het inventariseren van
               wensen van verschillende afdelingen, het ontwerpen van de
               interface, implementatie van upload- en koppelfunctionaliteiten
-              via Bynder, en het koppelen van combi-artikelen.
+              met het digital asset platform, en het koppelen van
+              combi-artikelen.
             </p>
             <p className="projects__highlights">Belangrijkste punten</p>
             <ul className="projects__hightlights__list">
@@ -371,16 +373,16 @@ function Projects() {
                 presentaties
               </li>
               <li>
-                Eigen focus aangebracht op geweld om de opdracht overzichtelijk
-                te houden
+                Project besproken met toenmalig minister van Justitie en
+                Veiligheid, Ferdinand Grapperhaus
               </li>
               <li>Voorzieningen getroffen voor toekomstige doorontwikkeling</li>
               <li>
-                Promotiefilmpje gemaakt als mogelijke basis voor SKC promotie
-              </li>
-              <li>
                 Demonstratie opgezet met Elastic en CSV-bestanden om trends in
                 misdaad te analyseren
+              </li>
+              <li>
+                Promotiefilmpje gemaakt als mogelijke basis voor SKC promotie
               </li>
             </ul>
             <div className="projects__tech">
@@ -407,7 +409,7 @@ function Projects() {
               Voor YourSurprise heb ik met een team een voorspellend model
               ontwikkeld om te voorspellen of klanten terugkomen voor een tweede
               bestelling. Terugkerende klanten zijn kostenefficiënter dan nieuwe
-              klanten, waardoor dit project waardevol is voor de business. Het
+              klanten, waardoor dit project waardevol is voor YourSurprise. Het
               project volgde het CRISP-DM proces voor data science, inclusief
               data verzameling, opschoning, modellering en evaluatie.
             </p>
