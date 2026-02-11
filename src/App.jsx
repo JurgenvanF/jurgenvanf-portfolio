@@ -185,7 +185,15 @@ function AppContent() {
         />
 
         <Route path="/opleiding" element={<Education />} />
-        <Route path="/beroep" element={<Profession />} />
+        <Route
+          path="/beroep"
+          element={
+            <Profession
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}
+            />
+          }
+        />
         <Route path="/projecten" element={<Projects />} />
       </Routes>
     </>

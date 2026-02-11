@@ -37,6 +37,10 @@
   --timeline-ring: #4ade80; /* green-400 */
 
   --summary-background: #0f172b;
+
+  --profession-modal-border: #bbf7d0;
+  --profession-modal-border-hover: #86efac;
+  --profession-modal-background-hover: #f0fdf4;
 }
 
 /* Dark Mode overrides */
@@ -65,6 +69,10 @@
   --timeline-ring: #22c55e; /* green-500 */
 
   --summary-background: #070b14;
+
+  --profession-modal-border: #166534;
+  --profession-modal-border-hover: #22c55e;
+  --profession-modal-background-hover: #1a2e22;
 }
 
 .title__profession {
@@ -435,7 +443,7 @@ p {
   align-content: center;
   height: 100%;
   width: 100%;
-  padding-top: 10px;
+  padding: 10px 0;
   min-width: 225px;
   align-items: center;
   justify-content: center;
@@ -470,6 +478,16 @@ p {
 .profession__summary__container__subtext {
   font-size: 0.875rem;
   color: #45556c;
+}
+
+.modal-profession {
+  margin: 30px 0;
+  border: 2px solid var(--profession-modal-border);
+}
+
+.modal-profession:hover {
+  border-color: var(--profession-modal-border-hover);
+  background: var(--profession-modal-background-hover);
 }
 
 .nowrap {
