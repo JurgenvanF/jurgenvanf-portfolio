@@ -11,10 +11,11 @@ function Profession() {
     <>
       <Briefcase className="profession__icon" />
       <h1 className="title__profession">Beroep 💼</h1>
-      <p>Dit is mijn werkervaring!</p>
+      <div>Dit is mijn werkervaring!</div>
 
       <div className="profession__container">
         <div className="profession__container__items">
+          {/* First timeline item */}
           <div className="profession__container__timeline">
             <div className="profession__container__timeline__marker">
               <div className="profession__container__timeline__marker__circle active"></div>
@@ -33,15 +34,15 @@ function Profession() {
                   <div className="profession__container__item__details__company__locdate">
                     <div className="profession__container__item__details__company__location">
                       <MapPin className="profession__container__item__details__company__location__icon" />
-                      <span className="profession__container__item__details__company__location__text">
+                      <div className="profession__container__item__details__company__location__text">
                         Zeeland, Nederland
-                      </span>
+                      </div>
                     </div>
                     <div className="profession__container__item__details__company__date">
                       <Calendar className="profession__container__item__details__company__date__icon" />
-                      <span className="profession__container__item__details__company__date__text">
+                      <div className="profession__container__item__details__company__date__text">
                         <span>Nu beschikbaar</span>
-                      </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -51,22 +52,24 @@ function Profession() {
               </div>
 
               <div className="profession__container__item__spec">
-                <p className="profession__container__item__spec__text">
+                <div className="profession__container__item__spec__text">
                   <div className="profession__container__item__spec__text__description">
                     Ik ben na de afronding van mijn studie op zoek naar een
                     eerste uitdaging als frontend developer / UX developer.
                     Klaar om mijn kennis en energie in te zetten voor een leuk
                     en innovatief team!
                   </div>
-                </p>
+                </div>
               </div>
             </div>
           </div>
 
+          {/* Nedbase */}
           <div className="profession__container__timeline" id="nedbase">
             <div className="profession__container__timeline__marker">
               <div className="profession__container__timeline__marker__circle inactive"></div>
             </div>
+
             <div className="profession__container__item">
               <div className="profession__container__item__details">
                 <div className="profession__container__item__details__company">
@@ -79,17 +82,17 @@ function Profession() {
                   <div className="profession__container__item__details__company__locdate">
                     <div className="profession__container__item__details__company__location">
                       <MapPin className="profession__container__item__details__company__location__icon" />
-                      <span className="profession__container__item__details__company__location__text">
+                      <div className="profession__container__item__details__company__location__text">
                         Middelburg, Nederland
-                      </span>
+                      </div>
                     </div>
 
                     <div className="profession__container__item__details__company__date">
                       <Calendar className="profession__container__item__details__company__date__icon" />
-                      <span className="profession__container__item__details__company__date__text">
+                      <div className="profession__container__item__details__company__date__text">
                         <span>Februari 2024 - </span>
                         <span className="nowrap">Juni 2024</span>
-                      </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -99,7 +102,7 @@ function Profession() {
               </div>
 
               <div className="profession__container__item__spec">
-                <p className="profession__container__item__spec__text">
+                <div className="profession__container__item__spec__text">
                   <div className="profession__container__item__spec__text__description">
                     Tijdens mijn stage bij Nedbase heb ik de basis gelegd voor
                     MijnNedbase, een interne tool waarmee klanten een
@@ -114,20 +117,20 @@ function Profession() {
                   </div>
 
                   <div className="profession__container__item__spec__text__department">
-                    <p className="profession__container__item__spec__text__department__title">
+                    <div className="profession__container__item__spec__text__department__title">
                       Afdeling
-                    </p>
-                    <p className="profession__container__item__spec__text__department__content">
+                    </div>
+                    <div className="profession__container__item__spec__text__department__content">
                       Maatwerk
-                    </p>
+                    </div>
                   </div>
 
                   <div className="profession__container__item__spec__text__responsibilities">
                     <div className="profession__container__item__spec__text__responsibilities__title">
                       <Briefcase className="profession__container__item__spec__text__responsibilities__title__icon" />
-                      <p className="profession__container__item__spec__text__responsibilities__title__text">
+                      <div className="profession__container__item__spec__text__responsibilities__title__text">
                         Verantwoordelijkheden
-                      </p>
+                      </div>
                     </div>
                     <div className="profession__container__item__spec__text__responsibilities__list">
                       <ul className="profession__container__item__spec__text__responsibilities__list__items">
@@ -158,9 +161,9 @@ function Profession() {
                   <div className="profession__container__item__spec__text__achievements">
                     <div className="profession__container__item__spec__text__achievements__title">
                       <TrendingUp className="profession__container__item__spec__text__achievements__title__icon" />
-                      <p className="profession__container__item__spec__text__achievements__title__text">
+                      <div className="profession__container__item__spec__text__achievements__title__text">
                         Prestaties
-                      </p>
+                      </div>
                     </div>
                     <div className="profession__container__item__spec__text__achievements__list">
                       <ul className="profession__container__item__spec__text__achievements__list__items">
@@ -182,9 +185,9 @@ function Profession() {
 
                   <div className="profession__container__item__spec__text__tech">
                     <div className="profession__container__item__spec__text__tech__title">
-                      <p className="profession__container__item__spec__text__tech__title__text">
+                      <div className="profession__container__item__spec__text__tech__title__text">
                         Technologieën
-                      </p>
+                      </div>
                     </div>
                     <div className="profession__container__item__spec__text__tech__items">
                       <div className="profession__container__item__spec__text__tech__item">
@@ -207,15 +210,17 @@ function Profession() {
                       </div>
                     </div>
                   </div>
-                </p>
+                </div>
               </div>
             </div>
           </div>
 
+          {/* YourSurprise */}
           <div className="profession__container__timeline" id="yoursurprise">
             <div className="profession__container__timeline__marker">
               <div className="profession__container__timeline__marker__circle inactive"></div>
             </div>
+
             <div className="profession__container__item">
               <div className="profession__container__item__details">
                 <div className="profession__container__item__details__company">
@@ -228,17 +233,17 @@ function Profession() {
                   <div className="profession__container__item__details__company__locdate">
                     <div className="profession__container__item__details__company__location">
                       <MapPin className="profession__container__item__details__company__location__icon" />
-                      <span className="profession__container__item__details__company__location__text">
+                      <div className="profession__container__item__details__company__location__text">
                         Zierikzee, Nederland
-                      </span>
+                      </div>
                     </div>
 
                     <div className="profession__container__item__details__company__date">
                       <Calendar className="profession__container__item__details__company__date__icon" />
-                      <span className="profession__container__item__details__company__date__text">
+                      <div className="profession__container__item__details__company__date__text">
                         <span>September 2022 - </span>
                         <span className="nowrap">Januari 2023</span>
-                      </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -248,7 +253,7 @@ function Profession() {
               </div>
 
               <div className="profession__container__item__spec">
-                <p className="profession__container__item__spec__text">
+                <div className="profession__container__item__spec__text">
                   <div className="profession__container__item__spec__text__description">
                     Tijdens mijn stage bij YourSurprise heb ik gewerkt aan TIM
                     (Theme Image Manager) binnen hun Page Manager, een systeem
@@ -263,20 +268,20 @@ function Profession() {
                   </div>
 
                   <div className="profession__container__item__spec__text__department">
-                    <p className="profession__container__item__spec__text__department__title">
+                    <div className="profession__container__item__spec__text__department__title">
                       Afdeling
-                    </p>
-                    <p className="profession__container__item__spec__text__department__content">
+                    </div>
+                    <div className="profession__container__item__spec__text__department__content">
                       Webshop Development
-                    </p>
+                    </div>
                   </div>
 
                   <div className="profession__container__item__spec__text__responsibilities">
                     <div className="profession__container__item__spec__text__responsibilities__title">
                       <Briefcase className="profession__container__item__spec__text__responsibilities__title__icon" />
-                      <p className="profession__container__item__spec__text__responsibilities__title__text">
+                      <div className="profession__container__item__spec__text__responsibilities__title__text">
                         Verantwoordelijkheden
-                      </p>
+                      </div>
                     </div>
                     <div className="profession__container__item__spec__text__responsibilities__list">
                       <ul className="profession__container__item__spec__text__responsibilities__list__items">
@@ -307,9 +312,9 @@ function Profession() {
                   <div className="profession__container__item__spec__text__achievements">
                     <div className="profession__container__item__spec__text__achievements__title">
                       <TrendingUp className="profession__container__item__spec__text__achievements__title__icon" />
-                      <p className="profession__container__item__spec__text__achievements__title__text">
+                      <div className="profession__container__item__spec__text__achievements__title__text">
                         Prestaties
-                      </p>
+                      </div>
                     </div>
                     <div className="profession__container__item__spec__text__achievements__list">
                       <ul className="profession__container__item__spec__text__achievements__list__items">
@@ -335,9 +340,9 @@ function Profession() {
 
                   <div className="profession__container__item__spec__text__tech">
                     <div className="profession__container__item__spec__text__tech__title">
-                      <p className="profession__container__item__spec__text__tech__title__text">
+                      <div className="profession__container__item__spec__text__tech__title__text">
                         Technologieën
-                      </p>
+                      </div>
                     </div>
                     <div className="profession__container__item__spec__text__tech__items">
                       <div className="profession__container__item__spec__text__tech__item">
@@ -357,13 +362,14 @@ function Profession() {
                       </div>
                     </div>
                   </div>
-                </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Summary */}
       <div className="profession__summary">
         <h2 className="profession__summary__title">
           Samenvatting professionele skills
@@ -373,25 +379,25 @@ function Profession() {
             <span className="profession__summary__container__text years">
               5+
             </span>
-            <p className="profession__summary__container__subtext">
+            <div className="profession__summary__container__subtext">
               Jaren codeer ervaring
-            </p>
+            </div>
           </div>
           <div className="profession__summary__container__item">
             <span className="profession__summary__container__text projects">
               2
             </span>
-            <p className="profession__summary__container__subtext">
+            <div className="profession__summary__container__subtext">
               Voltooide stages
-            </p>
+            </div>
           </div>
           <div className="profession__summary__container__item">
             <span className="profession__summary__container__text tech">
               10
             </span>
-            <p className="profession__summary__container__subtext">
+            <div className="profession__summary__container__subtext">
               Technologieën gebruikt
-            </p>
+            </div>
           </div>
         </div>
       </div>

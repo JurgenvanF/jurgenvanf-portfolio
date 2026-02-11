@@ -32,6 +32,7 @@ function Education() {
         </div>
 
         <div className="education__container__items">
+          {/* MSc */}
           <div className="education__container__item">
             <div className="education__container__item__details">
               <div className="education__container__item__details__school">
@@ -62,8 +63,9 @@ function Education() {
                 <span>Master</span>
               </div>
             </div>
+
             <div className="education__container__item__spec">
-              <p className="education__container__item__spec__text">
+              <div className="education__container__item__spec__text">
                 <div className="education__container__item__spec__text__description">
                   Tijdens mijn master Communicatie- en Informatiewetenschappen
                   heb ik me verdiept in het ontwerpen en onderzoeken van
@@ -74,20 +76,20 @@ function Education() {
 
                 {/* Specialisatie */}
                 <div className="education__container__item__spec__text__specialization">
-                  <p className="education__container__item__spec__text__specialization__title">
+                  <div className="education__container__item__spec__text__specialization__title">
                     Specialisatie
-                  </p>
-                  <p className="education__container__item__spec__text__specialization__content">
+                  </div>
+                  <div className="education__container__item__spec__text__specialization__content">
                     New Media Design
-                  </p>
+                  </div>
                 </div>
 
                 <div className="education__container__item__spec__text__achievements">
                   <div className="education__container__item__spec__text__achievements__title">
                     <Award className="education__container__item__spec__text__achievements__title__icon__svg" />
-                    <p className="education__container__item__spec__text__achievements__title__text">
+                    <div className="education__container__item__spec__text__achievements__title__text">
                       Prestaties
-                    </p>
+                    </div>
                   </div>
                   <div className="education__container__item__spec__text__achievements__list">
                     <ul className="education__container__item__spec__text__achievements__list__items">
@@ -109,9 +111,9 @@ function Education() {
                   </div>
                 </div>
 
-                <p className="education__container__item__spec__text__accordion__text">
+                <div className="education__container__item__spec__text__accordion__text">
                   Scriptie
-                </p>
+                </div>
                 <div className="education__container__item__spec__text__accordion">
                   <div
                     className={`education__container__item__spec__text__accordion__item ${
@@ -159,49 +161,12 @@ function Education() {
                         kan bijdragen aan gebruiksvriendelijkere en
                         betrouwbaardere interfaces.
                       </p>
-                      <p>
-                        <button
-                          className="education__container__item__spec__text__accordion__content__link"
-                          onClick={() => setShowPdfModal(true)}
-                        >
-                          Bekijk de volledige thesis
-                        </button>
-                      </p>
-
-                      {/* PDF Modal */}
-                      {showPdfModal && (
-                        <div className="pdf-modal">
-                          <div
-                            className="pdf-modal__overlay"
-                            onClick={() => setShowPdfModal(false)}
-                          />
-                          <div className="pdf-modal__content">
-                            <button
-                              className="pdf-modal__close"
-                              onClick={() => setShowPdfModal(false)}
-                            >
-                              <X size={24} />
-                            </button>
-                            <object
-                              data={pdfUrl}
-                              type="application/pdf"
-                              width="100%"
-                              height="100%"
-                            >
-                              <p>
-                                PDF kan niet worden weergegeven.{" "}
-                                <a
-                                  href={pdfUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  Open in nieuw tabblad
-                                </a>
-                              </p>
-                            </object>
-                          </div>
-                        </div>
-                      )}
+                      <button
+                        className="education__container__item__spec__text__accordion__content__link"
+                        onClick={() => setShowPdfModal(true)}
+                      >
+                        Bekijk de volledige thesis
+                      </button>
 
                       <h4>Resultaten</h4>
                       <ul>
@@ -242,9 +207,9 @@ function Education() {
 
                 <div className="education__container__item__spec__text__courses">
                   <div className="education__container__item__spec__text__courses__title">
-                    <p className="education__container__item__spec__text__courses__title__text">
+                    <div className="education__container__item__spec__text__courses__title__text">
                       Kernvakken
-                    </p>
+                    </div>
                   </div>
                   <div className="education__container__item__spec__text__courses__items">
                     <div className="education__container__item__spec__text__courses__item">
@@ -267,10 +232,11 @@ function Education() {
                     </div>
                   </div>
                 </div>
-              </p>
+              </div>
             </div>
           </div>
 
+          {/* HBO-ICT */}
           <div className="education__container__item">
             <div className="education__container__item__details">
               <div className="education__container__item__details__school">
@@ -301,8 +267,9 @@ function Education() {
                 <span>Bachelor</span>
               </div>
             </div>
+
             <div className="education__container__item__spec">
-              <p className="education__container__item__spec__text">
+              <div className="education__container__item__spec__text">
                 <div className="education__container__item__spec__text__description">
                   Tijdens mijn bachelor ICT aan HZ heb ik een sterke,
                   praktijkgerichte basis opgebouwd in softwareontwikkeling. De
@@ -313,20 +280,21 @@ function Education() {
 
                 {/* Specialisatie */}
                 <div className="education__container__item__spec__text__specialization">
-                  <p className="education__container__item__spec__text__specialization__title">
+                  <div className="education__container__item__spec__text__specialization__title">
                     Specialisatie
-                  </p>
-                  <p className="education__container__item__spec__text__specialization__content">
+                  </div>
+                  <div className="education__container__item__spec__text__specialization__content">
                     Software development
-                  </p>
+                  </div>
                 </div>
 
+                {/* Prestaties */}
                 <div className="education__container__item__spec__text__achievements">
                   <div className="education__container__item__spec__text__achievements__title">
                     <Award className="education__container__item__spec__text__achievements__title__icon" />
-                    <p className="education__container__item__spec__text__achievements__title__text">
+                    <div className="education__container__item__spec__text__achievements__title__text">
                       Prestaties
-                    </p>
+                    </div>
                   </div>
                   <div className="education__container__item__spec__text__achievements__list">
                     <ul className="education__container__item__spec__text__achievements__list__items">
@@ -345,9 +313,10 @@ function Education() {
                   </div>
                 </div>
 
-                <p className="education__container__item__spec__text__accordion__text">
+                {/* Stages Accordion */}
+                <div className="education__container__item__spec__text__accordion__text">
                   Stages
-                </p>
+                </div>
                 <div className="education__container__item__spec__text__accordion">
                   <div
                     className={`education__container__item__spec__text__accordion__item ${
@@ -369,11 +338,14 @@ function Education() {
                       </svg>
                     </div>
                     <div className="education__container__item__spec__text__accordion__content">
-                      Hier heb ik ervaring opgedaan in het werken binnen een
-                      professioneel team. Ik leerde hoe je effectief samenwerkt,
-                      communiceert en bijdraagt aan gezamenlijke doelen.
-                      Daarnaast maakte ik kennis met workflows en ontwikkelde ik
-                      een beter begrip van het werken in een kantoor omgeving.
+                      <p>
+                        Hier heb ik ervaring opgedaan in het werken binnen een
+                        professioneel team. Ik leerde hoe je effectief
+                        samenwerkt, communiceert en bijdraagt aan gezamenlijke
+                        doelen. Daarnaast maakte ik kennis met workflows en
+                        ontwikkelde ik een beter begrip van het werken in een
+                        kantoor omgeving.
+                      </p>
                       <ul>
                         <li>
                           Ontwikkelde een dynamische afbeeldingswisselaar voor
@@ -395,9 +367,9 @@ function Education() {
                         to="/beroep#yoursurprise"
                         className="education__container__item__spec__text__accordion__link"
                       >
-                        <p className="education__container__item__spec__text__accordion__link__text">
+                        <div className="education__container__item__spec__text__accordion__link__text">
                           Bekijk de beroep-pagina voor meer informatie
-                        </p>
+                        </div>
                       </Link>
                     </div>
                   </div>
@@ -422,11 +394,13 @@ function Education() {
                       </svg>
                     </div>
                     <div className="education__container__item__spec__text__accordion__content">
-                      Hier werkte ik in een team dat maatwerk applicaties
-                      ontwikkelde. Mijn focus lag vooral op de front-end: welke
-                      informatie beschikbaar moest zijn, hoe dit overzichtelijk
-                      gepresenteerd kon worden en hoe de interface er
-                      uiteindelijk uit moest zien.
+                      <p>
+                        Hier werkte ik in een team dat maatwerk applicaties
+                        ontwikkelde. Mijn focus lag vooral op de front-end:
+                        welke informatie beschikbaar moest zijn, hoe dit
+                        overzichtelijk gepresenteerd kon worden en hoe de
+                        interface er uiteindelijk uit moest zien.
+                      </p>
                       <ul>
                         <li>
                           Ontwikkelde (front-end) functionaliteiten voor een
@@ -442,19 +416,20 @@ function Education() {
                         to="/beroep#nedbase"
                         className="education__container__item__spec__text__accordion__link"
                       >
-                        <p className="education__container__item__spec__text__accordion__link__text">
+                        <div className="education__container__item__spec__text__accordion__link__text">
                           Bekijk de beroep-pagina voor meer informatie
-                        </p>
+                        </div>
                       </Link>
                     </div>
                   </div>
                 </div>
 
+                {/* Kernvakken */}
                 <div className="education__container__item__spec__text__courses">
                   <div className="education__container__item__spec__text__courses__title">
-                    <p className="education__container__item__spec__text__courses__title__text">
+                    <div className="education__container__item__spec__text__courses__title__text">
                       Kernvakken
-                    </p>
+                    </div>
                   </div>
                   <div className="education__container__item__spec__text__courses__items">
                     <div className="education__container__item__spec__text__courses__item">
@@ -474,7 +449,7 @@ function Education() {
                     </div>
                   </div>
                 </div>
-              </p>
+              </div>
             </div>
           </div>
         </div>
