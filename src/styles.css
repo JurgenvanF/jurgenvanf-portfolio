@@ -45,6 +45,9 @@
   --color-bg-overlay: rgba(0, 0, 0, 0.3);
   --color-bg-hover-link: #fcf3fb;
 
+  --logo-color: white;
+  --logo-background: linear-gradient(to bottom right, #8b5cf6, #ec4899);
+
   /* Gradients for active links */
   --gradient-home: linear-gradient(to right, #a855f7, #ec4899);
   --gradient-education: linear-gradient(to right, #3b82f6, #06b6d4);
@@ -82,6 +85,9 @@
 
 /* Text Colors */
 :root {
+  --title-home: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
+  --footer-home: linear-gradient(to right, #7c3aed, #ec4899);
+
   --color-text-primary: #314158;
   --color-text-secondary: #45556c;
   --color-text-muted: #6b7280;
@@ -99,9 +105,9 @@
   --shadow-sm: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 
   /* Gradients - Main */
-  --gradient-title: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
   --gradient-mail: linear-gradient(to right, #9333ea, #ec4899);
   --gradient-mail-hover: linear-gradient(to right, #7e22ce, #be185d);
+  --color-github-background: white;
 
   /* Gradients - Icons */
   --gradient-education: linear-gradient(to bottom right, #3b82f6, #06b6d4);
@@ -127,6 +133,12 @@
   --border-color-profession-hover: #86efac;
   --border-color-projects-hover: #fdba74;
 
+  --color-card-bg: white;
+  --color-data-years: #009af3;
+  --color-data-projects: #d248d0;
+  --color-data-snacks: #ff4f17;
+  --color-data-lines: #00c26b;
+
   /* Gradient - Skills */
   --gradient-skills: linear-gradient(to right, #7c3aed, #ec4899);
 
@@ -141,6 +153,14 @@
   --grad-git: linear-gradient(to right, #a78bfa, #ec4899);
   --grad-ux: linear-gradient(to right, #fda4af, #fb923c);
   --grad-finish: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
+
+  --color-finish-background: linear-gradient(
+    to right,
+    #7c3aed,
+    #ec4899,
+    #f97316
+  );
+  --color-text-button: #1e293b;
 
   /* Modal Colors */
   --modal-border: #e9d5ff;
@@ -169,14 +189,15 @@
   --gradient-title: linear-gradient(to right, #c084fc, #f472b6, #f97316);
   --gradient-mail: linear-gradient(to right, #7c3aed, #db2777);
   --gradient-mail-hover: linear-gradient(to right, #6b21a8, #be185d);
+  --color-github-background: #1e293b;
 
   --gradient-card-education: linear-gradient(to bottom right, #1e293b, #0f172a);
   --gradient-card-profession: linear-gradient(
     to bottom right,
-    #0f2920,
-    #152e24
+    #1b2a22,
+    #0f1f17
   );
-  --gradient-card-projects: linear-gradient(to bottom right, #291811, #3b1f1a);
+  --gradient-card-projects: linear-gradient(to bottom right, #2a1f1b, #1a1412);
 
   --gradient-education: linear-gradient(to right, #2563eb, #0c4a6e);
   --gradient-profession: linear-gradient(to right, #16a34a, #166534);
@@ -203,6 +224,13 @@
   --grad-ux: linear-gradient(to right, #fda4af, #fb923c);
   --grad-finish: linear-gradient(to right, #5b21b6, #be185d, #c2410c);
 
+  --color-finish-background-dark: linear-gradient(
+    to right,
+    #5b21b6,
+    #be185d,
+    #c2410c
+  );
+
   --modal-border: #5b21b6;
   --modal-border-hover: #7c3aed;
   --modal-background: #1e1b2e;
@@ -217,6 +245,9 @@
 
 /* Backgrounds */
 :root {
+  --title-education: linear-gradient(to right, #2563eb, #06b6d4);
+  --footer-education: linear-gradient(to right, #2563eb, #06b6d4);
+
   --color-bg-card: white;
   --color-bg-specialization: #f9f9f9;
   --color-bg-header--education: linear-gradient(to right, #eff6ff, #ecfeff);
@@ -264,6 +295,9 @@
 
 /* Backgrounds */
 :root {
+  --title-profession: linear-gradient(to right, #16a34a, #22c55e);
+  --footer-profession: linear-gradient(to right, #16a34a, #22c55e);
+
   --color-bg-card: white;
   --color-bg-department: #f9f9f9;
   --color-bg-header--profession: linear-gradient(to right, #ecfdf5, #f0fdf4);
@@ -292,6 +326,9 @@
   --timeline-ring: #4ade80;
 
   --summary-background: #0f172b;
+  --summary-text-years: #155dfc;
+  --summary-text-projects: #00a63e;
+  --summary-text-tech: #9810fa;
 
   /* Modal */
   --profession-modal-border: #bbf7d0;
@@ -335,6 +372,9 @@
 
 /* Cards */
 :root {
+  --title-projects: linear-gradient(to right, #f97316, #ef4444);
+  --footer-projects: linear-gradient(to right, #f97316, #ef4444);
+
   --projects-bg-card: #ffffff;
   --projects-border-card: #e5e7eb;
   --projects-type-bg: #ebeeee;

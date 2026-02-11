@@ -98,7 +98,7 @@
 .title__home {
   height: 66px;
   margin: 20px;
-  background: var(--gradient-title);
+  background: var(--title-home);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -188,14 +188,8 @@
 }
 
 .title__buttons__github {
-  background: white;
+  background: var(--color-github-background);
   color: var(--color-text-primary);
-  border: 1px solid #d1d5db;
-}
-
-.dark .title__buttons__github {
-  background: #1e293b;
-  color: #e5e7eb;
   border: 1px solid #d1d5db;
 }
 
@@ -293,28 +287,22 @@
 }
 
 .pageRouting__education::before {
-  background: linear-gradient(var(--gradient-card-education));
   opacity: 1;
 }
 .pageRouting__profession::before {
-  background: linear-gradient(var(--gradient-card-profession));
   opacity: 1;
 }
 .pageRouting__projects::before {
-  background: linear-gradient(var(--gradient-card-projects));
   opacity: 1;
 }
 
 .pageRouting__education::after {
-  background: linear-gradient(to bottom right, #1e293b, #0f172a);
   opacity: 0;
 }
 .pageRouting__profession::after {
-  background: linear-gradient(to bottom right, #1b2a22, #0f1f17);
   opacity: 0;
 }
 .pageRouting__projects::after {
-  background: linear-gradient(to bottom right, #2a1f1b, #1a1412);
   opacity: 0;
 }
 
@@ -585,19 +573,19 @@
 }
 
 .data__container__text.years {
-  color: #009af3;
+  color: var(--color-data-years);
 }
 
 .data__container__text.projects {
-  color: #d248d0;
+  color: var(--color-data-projects);
 }
 
 .data__container__text.snacks {
-  color: #ff4f17;
+  color: var(--color-data-snacks);
 }
 
 .data__container__text.lines {
-  color: #00c26b;
+  color: var(--color-data-lines);
 }
 
 .data__container__subtext {
@@ -628,13 +616,13 @@
 
 /* Light mode gradient */
 .finish::before {
-  background: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
+  background: var(--color-finish-background);
   opacity: 1;
 }
 
 /* Dark mode gradient */
 .finish::after {
-  background: linear-gradient(to right, #5b21b6, #be185d, #c2410c);
+  background: var(--color-finish-background-dark);
   opacity: 0;
 }
 
@@ -711,7 +699,7 @@
 }
 
 .dark .finish__buttons {
-  color: #1e293b;
+  color: var(--color-text-button);
   border: 1px solid #d1d5db;
 }
 
@@ -844,7 +832,7 @@
 .modal {
   background: var(--modal-background);
   border-radius: 12px;
-  max-width: 500px;
+  max-width: 600px;
   width: 90%;
   position: relative;
   text-align: left;

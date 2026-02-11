@@ -1,5 +1,5 @@
 .title__profession {
-  background: linear-gradient(to right, #16a34a, #22c55e);
+  background: var(--title-profession);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -387,15 +387,15 @@ p {
 }
 
 .profession__summary__container__text.years {
-  color: #155dfc;
+  color: var(--summary-text-years);
 }
 
 .profession__summary__container__text.projects {
-  color: #00a63e;
+  color: var(--summary-text-projects);
 }
 
 .profession__summary__container__text.tech {
-  color: #9810fa;
+  color: var(--summary-text-tech);
 }
 
 .profession__summary__container__subtext {

@@ -1,7 +1,7 @@
 .title__education {
   height: 70px;
   margin-bottom: 0;
-  background: linear-gradient(to right, #2563eb, #06b6d4);
+  background: var(--title-education);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

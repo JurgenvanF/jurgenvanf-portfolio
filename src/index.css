@@ -18,6 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  visibility: hidden;
 }
 
 #root {
@@ -45,19 +46,19 @@ footer {
 
 /* Page-specific footer gradients */
 body.education footer {
-  background: linear-gradient(to right, #2563eb, #06b6d4);
+  background: var(--footer-education);
 }
 
 body.profession footer {
-  background: linear-gradient(to right, #16a34a, #22c55e);
+  background: var(--footer-profession);
 }
 
 body.projects footer {
-  background: linear-gradient(to right, #f97316, #ef4444);
+  background: var(--footer-projects);
 }
 
 body.home footer {
-  background: linear-gradient(to right, #7c3aed, #ec4899);
+  background: var(--footer-home);
 }
 
 /* Background container (sticky/fixed) */

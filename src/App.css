@@ -46,10 +46,6 @@
   background-color: var(--color-bg-hover-link);
 }
 
-.dark .hero__darkmode {
-  color: #ffffff;
-}
-
 .hero__darkmode--desktop {
   display: block;
   transition:
@@ -74,7 +70,7 @@
 .hero__logo {
   width: 45px;
   height: 45px;
-  background: linear-gradient(to bottom right, #8b5cf6, #ec4899);
+  background: var(--logo-background);
   border-radius: 30%;
   display: flex;
   align-items: center;
@@ -82,7 +78,7 @@
   font-family: "SN Pro";
   font-weight: 700;
   font-size: 24px;
-  color: white;
+  color: var(--logo-color);
   cursor: default;
   transform: none;
   transition:
