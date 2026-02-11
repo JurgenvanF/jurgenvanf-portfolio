@@ -19,8 +19,8 @@ import {
   MapPin,
 } from "lucide-react";
 
-function Home() {
-  const [showCanvas, setShowCanvas] = useState(false); // start with image
+function Home({ isModalOpen, setIsModalOpen }) {
+  const [showCanvas, setShowCanvas] = useState(false);
   const [hasCanvasLoaded, setHasCanvasLoaded] = useState(false);
   const [isPending, startTransition] = useTransition();
 
@@ -28,16 +28,13 @@ function Home() {
   const [isClosing, setIsClosing] = useState(false);
 
   const openModal = () => {
-    setIsOpen(true);
     setIsClosing(false);
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsClosing(true);
-    setTimeout(() => {
-      setIsOpen(false);
-      setIsClosing(false);
-    }, 250); // match CSS animation duration
+    setTimeout(() => setIsModalOpen(false), 250);
   };
 
   useEffect(() => {
@@ -285,7 +282,7 @@ function Home() {
         </div>
       </div>
 
-      {isOpen && (
+      {isModalOpen && (
         <div
           className={`modal__overlay ${
             isClosing ? "modal__overlay--hide" : "modal__overlay--show"

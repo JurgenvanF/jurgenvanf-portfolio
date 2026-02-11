@@ -28,6 +28,8 @@ function AppContent() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   // Initialize darkMode from localStorage or system preference
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("darkMode");
@@ -35,17 +37,33 @@ function AppContent() {
   });
 
   useEffect(() => {
+    // Scroll to hash or top whenever route changes
     if (location.hash) {
-      // Scroll to the element with the id matching the hash
       const element = document.querySelector(location.hash);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      if (element) element.scrollIntoView({ behavior: "smooth" });
     } else {
-      // Scroll to top for normal route changes
       window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     }
   }, [location]);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
+    } else {
+      const scrollY = parseInt(document.body.style.top || "0") * -1;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollY);
+    }
+  }, [isModalOpen]);
 
   // Update body class based on current route (use useLayoutEffect for immediate update)
   useLayoutEffect(() => {
@@ -159,7 +177,13 @@ function AppContent() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Home isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+          }
+        />
+
         <Route path="/opleiding" element={<Education />} />
         <Route path="/beroep" element={<Profession />} />
         <Route path="/projecten" element={<Projects />} />
