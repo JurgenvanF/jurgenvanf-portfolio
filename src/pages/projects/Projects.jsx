@@ -1,10 +1,21 @@
 import "./Projects.css";
 import { useEffect } from "react";
-import { Folder, Github, ExternalLink, Lock, Code2 } from "lucide-react";
+import {
+  Folder,
+  Github,
+  ExternalLink,
+  Lock,
+  Code2,
+  MonitorCheck,
+} from "lucide-react";
 import logoIsoaAdvies from "../../assets/projects/isoaadvies/logo.jpg";
 import logoEmergis from "../../assets/projects/emergis/logo.jpg";
 import logoGardenConnect from "../../assets/projects/gardenconnect/logo.jpg";
 import logoMijnNedbase from "../../assets/projects/mijnnedbase/logo.jpg";
+import logoKledingbank from "../../assets/projects/kledingbank/logo.jpg";
+import logoPortfolio from "../../assets/projects/portfolio/logo.jpg";
+import logoSKC from "../../assets/projects/SKC/logo.jpg";
+import logoYourSurprise from "../../assets/projects/yoursurprise/logo.jpg";
 
 function Projects() {
   useEffect(() => {
@@ -19,6 +30,56 @@ function Projects() {
 
       <div className="projects__container">
         <div className="projects__container__items">
+          <div className="projects__container__item">
+            <div className="projects__type">Website</div>
+            <img
+              className="projects__picture"
+              src={logoPortfolio}
+              alt="Portfolio Website"
+            />
+            <h3 className="projects__name">Portfolio Pagina</h3>
+            <p className="projects__description">
+              Mijn persoonlijke portfolio website, ontwikkeld met React. Hierin
+              laat ik mijn projecten, werkervaring en vaardigheden zien. De
+              website is modulair opgebouwd, responsive en geoptimaliseerd voor
+              een consistente gebruikerservaring.
+            </p>
+            <p className="projects__highlights">Belangrijkste punten</p>
+            <ul className="projects__hightlights__list">
+              <li>Volledige ontwikkeling met React</li>
+              <li>Responsive design voor mobiel, tablet en desktop</li>
+              <li>
+                Gebruik van componentgebaseerde structuur en herbruikbare
+                modules
+              </li>
+              <li>
+                Experimenten met nieuwe technieken: 3D-modellen invoegen,
+                animaties en interactieve elementen
+              </li>
+            </ul>
+            <div className="projects__tech">
+              <div className="projects__tech__item">React</div>
+              <div className="projects__tech__item">JavaScript</div>
+              <div className="projects__tech__item">HTML / CSS</div>
+              <div className="projects__tech__item">Git</div>
+            </div>
+            <div className="projects__button">
+              <a
+                href="https://github.com/JurgenvanF/jurgenvanf-portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="projects__button__github"
+              >
+                <Github className="projects__button__github__icon" />
+                Code
+              </a>
+              <a className="projects__button__demo disable">
+                <MonitorCheck className="projects__button__demo__icon" />
+                Je bent er al
+              </a>
+            </div>
+          </div>
+
           <div className="projects__container__item">
             <div className="projects__type">Webapplicatie</div>
             <img
@@ -227,6 +288,207 @@ function Projects() {
               >
                 <ExternalLink className="projects__button__demo__icon" />
                 Demo
+              </a>
+            </div>
+          </div>
+
+          <div className="projects__container__item">
+            <div className="projects__type">Webapplicatie</div>
+            <img
+              className="projects__picture"
+              src={logoYourSurprise}
+              alt="YourSurprise TIM"
+            />
+            <h3 className="projects__name">Theme Image Manager (TIM)</h3>
+            <p className="projects__description">
+              Tijdens mijn stage bij YourSurprise heb ik gewerkt aan TIM, een
+              systeem binnen hun Page Manager om thema-afbeeldingen voor
+              producten te beheren. Het project omvatte het inventariseren van
+              wensen van verschillende afdelingen, het ontwerpen van de
+              interface, implementatie van upload- en koppelfunctionaliteiten
+              via Bynder, en het koppelen van combi-artikelen.
+            </p>
+            <p className="projects__highlights">Belangrijkste punten</p>
+            <ul className="projects__hightlights__list">
+              <li>
+                Interviews met afdelingen om wensen en workflows te
+                inventariseren
+              </li>
+              <li>
+                Frontend ontwerp en styling van TIM inclusief sidebar en
+                datavakken
+              </li>
+              <li>Ophalen en koppelen van productinformatie via SQL</li>
+              <li>
+                Functionaliteiten voor toevoegen, wijzigen en verwijderen van
+                afbeeldingen
+              </li>
+              <li>
+                Tests geschreven voor nieuwe functionaliteiten en advies
+                opgesteld voor toekomstig beheer
+              </li>
+            </ul>
+            <div className="projects__tech">
+              <div className="projects__tech__item">PHP</div>
+              <div className="projects__tech__item">SQL</div>
+              <div className="projects__tech__item">HTML / CSS</div>
+              <div className="projects__tech__item">MockFlow</div>
+              <div className="projects__tech__item">Git</div>
+            </div>
+            <div className="projects__private">
+              <Lock className="projects__private__icon" />
+              <span className="projects__private__text">
+                Dit project is privé
+              </span>
+            </div>
+          </div>
+
+          <div className="projects__container__item">
+            <div className="projects__type">Data Science</div>
+            <img
+              className="projects__picture"
+              src={logoSKC}
+              alt="Strategisch Kenniscentrum Prototype"
+            />
+            <h3 className="projects__name">Strategisch Kenniscentrum</h3>
+            <p className="projects__description">
+              Ontwikkeld als onderdeel van een multidisciplinair studententeam
+              voor het Strategisch Kenniscentrum (SKC). Het doel was een eerste
+              prototype van een applicatie voor verwerking van open bronnen, met
+              een geografische component en geautomatiseerde
+              analysemogelijkheden, gericht op internationale georganiseerde
+              criminaliteit en de bedreigingen daarvan voor Nederland.
+            </p>
+            <p className="projects__highlights">Belangrijkste punten</p>
+            <ul className="projects__hightlights__list">
+              <li>
+                Prototype ontwikkeld op basis van beperkte open source data
+              </li>
+              <li>
+                Regelmatig feedback gevraagd en verwerkt via gesprekken, mail en
+                presentaties
+              </li>
+              <li>
+                Eigen focus aangebracht op geweld om de opdracht overzichtelijk
+                te houden
+              </li>
+              <li>Voorzieningen getroffen voor toekomstige doorontwikkeling</li>
+              <li>
+                Promotiefilmpje gemaakt als mogelijke basis voor SKC promotie
+              </li>
+              <li>
+                Demonstratie opgezet met Elastic en CSV-bestanden om trends in
+                misdaad te analyseren
+              </li>
+            </ul>
+            <div className="projects__tech">
+              <div className="projects__tech__item">Elastic</div>
+              <div className="projects__tech__item">Open Source Data</div>
+            </div>
+            <div className="projects__private">
+              <Lock className="projects__private__icon" />
+              <span className="projects__private__text">
+                Dit project is privé
+              </span>
+            </div>
+          </div>
+
+          <div className="projects__container__item">
+            <div className="projects__type">Data Science</div>
+            <img
+              className="projects__picture"
+              src={logoYourSurprise}
+              alt="YourSurprise Data Science Project"
+            />
+            <h3 className="projects__name">
+              YourSurprise - Data Science Project
+            </h3>
+            <p className="projects__description">
+              Voor YourSurprise heb ik met een team een voorspellend model
+              ontwikkeld om te voorspellen of klanten terugkomen voor een tweede
+              bestelling. Terugkerende klanten zijn kostenefficiënter dan nieuwe
+              klanten, waardoor dit project waardevol is voor de business. Het
+              project volgde het CRISP-DM proces voor data science, inclusief
+              data verzameling, opschoning, modellering en evaluatie.
+            </p>
+            <p className="projects__highlights">Belangrijkste punten</p>
+            <ul className="projects__hightlights__list">
+              <li>Data opgeschoond en aangevuld met externe feestdagen-data</li>
+              <li>
+                Regression model als oefening, daarna Logistic Regression model
+                voor classification
+              </li>
+              <li>
+                Dataset opgesplitst in 80% training en 20% test, zonder
+                shuffelen om seizoenseffecten te behouden
+              </li>
+              <li>
+                Recall van het model: 0,644, voldoet aan succescriteria ≥0,6
+              </li>
+              <li>
+                Adviezen voor verbetering: extra features, andere modellen
+                testen en data cleaning verder optimaliseren
+              </li>
+            </ul>
+            <div className="projects__tech">
+              <div className="projects__tech__item">Python</div>
+              <div className="projects__tech__item">Pandas</div>
+              <div className="projects__tech__item">NumPy</div>
+              <div className="projects__tech__item">Scikit-learn</div>
+              <div className="projects__tech__item">Jupyter Notebook</div>
+              <div className="projects__tech__item">Matplotlib / Seaborn</div>
+            </div>
+            <div className="projects__private">
+              <Lock className="projects__private__icon" />
+              <span className="projects__private__text">
+                Dit project is privé
+              </span>
+            </div>
+          </div>
+
+          <div className="projects__container__item">
+            <div className="projects__type">Webapplicatie</div>
+            <img
+              className="projects__picture"
+              src={logoKledingbank}
+              alt="Kledingbank Zeeland"
+            />
+            <h3 className="projects__name">Kledingbank Zeeland</h3>
+            <p className="projects__description">
+              Het bestaande proces van klantregistratie bij Kledingbank Zeeland
+              gebeurde volledig telefonisch en werd bijgehouden in Excel. Voor
+              dit project heb ik een website ontwikkeld waarmee medewerkers
+              klantengegevens kunnen toevoegen, opzoeken, wijzigen, inzien en
+              verwijderen. Het Excel-systeem is hierdoor vervangen. Hoewel de
+              mogelijkheden voor klanttoegang en zelfregistratie zijn
+              onderzocht, zijn deze vanwege onze beperkte ervaring met
+              inlogsysteem nog niet geïmplementeerd.
+            </p>
+            <p className="projects__highlights">Belangrijkste punten</p>
+            <ul className="projects__hightlights__list">
+              <li>
+                Klantgegevens toevoegen, opzoeken, wijzigen, inzien en
+                verwijderen
+              </li>
+              <li>Excel-administratie volledig vervangen door de website</li>
+              <li>Onderzoek gedaan naar klanttoegang voor zelfregistratie</li>
+            </ul>
+            <div className="projects__tech">
+              <div className="projects__tech__item">HTML / CSS</div>
+              <div className="projects__tech__item">JavaScript</div>
+              <div className="projects__tech__item">Laravel</div>
+              <div className="projects__tech__item">Figma</div>
+              <div className="projects__tech__item">Git</div>
+            </div>
+            <div className="projects__button">
+              <a
+                href="https://github.com/JurgenvanF/groep-6-project"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="projects__button__github"
+              >
+                <Github className="projects__button__github__icon" />
+                Code
               </a>
             </div>
           </div>
