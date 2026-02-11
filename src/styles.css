@@ -173,6 +173,8 @@
 
 /* Dark Mode */
 .dark {
+  --title-home: linear-gradient(to right, #c084fc, #f472b6, #f97316);
+
   --color-text-primary: #e5e7eb;
   --color-text-secondary: #cbd5e1;
   --color-text-muted: #94a3b8;
@@ -186,7 +188,6 @@
   --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.4);
   --shadow-sm: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
 
-  --gradient-title: linear-gradient(to right, #c084fc, #f472b6, #f97316);
   --gradient-mail: linear-gradient(to right, #7c3aed, #db2777);
   --gradient-mail-hover: linear-gradient(to right, #6b21a8, #be185d);
   --color-github-background: #1e293b;
