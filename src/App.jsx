@@ -35,8 +35,6 @@ function AppContent() {
   });
 
   useEffect(() => {
-    if (isOpen) return;
-
     if (location.hash) {
       // Scroll to the element with the id matching the hash
       const element = document.querySelector(location.hash);

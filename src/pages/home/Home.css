@@ -1130,7 +1130,7 @@
   max-width: 500px;
   width: 90%;
   position: relative;
-  max-height: 80vh;
+  max-height: 80dvh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   margin: 0 10px;
@@ -1172,10 +1172,6 @@
     position: absolute;
     top: 80px;
     right: 60px;
-  }
-
-  .modal {
-    height: 70vh;
   }
 }
 
