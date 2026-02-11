@@ -1,0 +1,593 @@
+/* ============================================================================
+   INDEX PAGE
+   ============================================================================ */
+
+/* Typography */
+:root {
+  --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-serif: "Young Serif", serif;
+  --line-height: 1.5;
+  --font-weight: 400;
+
+  /* Colors */
+  --color-bg: #f8fafc; /* light mode background */
+  --color-text: #000000; /* default text color */
+
+  /* Gradient & blob colors */
+  --bg-gradient: linear-gradient(135deg, #ede9f7, #fff1f3, #e0e7ff);
+  --blob-purple: #c084fc;
+  --blob-pink: #f9a8d4;
+  --blob-yellow: #fcd34d;
+}
+
+/* Dark Mode */
+.dark {
+  --color-bg: #111827;
+  --color-text: #e5e7eb;
+  --bg-gradient: linear-gradient(135deg, #1f2937, #111827, #374151);
+  --blob-purple: #7c3aed;
+  --blob-pink: #ec4899;
+  --blob-yellow: #facc15;
+}
+
+/* ============================================================================
+   APP PAGE
+   ============================================================================ */
+
+/* Text Colors */
+:root {
+  --color-text-primary: #000000; /* brand, nav links */
+  --color-text-secondary: #334155; /* paragraph */
+  --color-text-white: #ffffff;
+
+  /* Background Colors */
+  --color-bg-navbar: #ffffff;
+  --color-bg-overlay: rgba(0, 0, 0, 0.3);
+  --color-bg-hover-link: #fcf3fb;
+
+  /* Gradients for active links */
+  --gradient-home: linear-gradient(to right, #a855f7, #ec4899);
+  --gradient-education: linear-gradient(to right, #3b82f6, #06b6d4);
+  --gradient-profession: linear-gradient(to right, #22c55e, #10b981);
+  --gradient-projects: linear-gradient(to right, #f97316, #ef4444);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Navbar */
+  --hero-height: 70px;
+}
+
+/* Dark Mode */
+.dark {
+  --color-text-primary: #e5e7eb;
+  --color-text-secondary: #d1d5db;
+  --color-bg-navbar: #1f2937;
+  --color-bg-overlay: rgba(0, 0, 0, 0.5);
+  --color-bg-hover-link: #374151;
+
+  --gradient-home: linear-gradient(to right, #9333ea, #db2777);
+  --gradient-education: linear-gradient(to right, #2563eb, #0891b2);
+  --gradient-profession: linear-gradient(to right, #16a34a, #059669);
+  --gradient-projects: linear-gradient(to right, #ea580c, #dc2626);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================================================
+   HOME PAGE
+   ============================================================================ */
+
+/* Text Colors */
+:root {
+  --color-text-primary: #314158;
+  --color-text-secondary: #45556c;
+  --color-text-muted: #6b7280;
+
+  /* Background Colors */
+  --color-bg-page: #ffffff;
+  --color-bg-card: #ffffff;
+  --color-bg-model: #f8fafc;
+
+  /* Border Colors */
+  --color-border-card: rgba(0, 0, 0, 0.1);
+
+  /* Shadow Effects */
+  --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Gradients - Main */
+  --gradient-title: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
+  --gradient-mail: linear-gradient(to right, #9333ea, #ec4899);
+  --gradient-mail-hover: linear-gradient(to right, #7e22ce, #be185d);
+
+  /* Gradients - Icons */
+  --gradient-education: linear-gradient(to bottom right, #3b82f6, #06b6d4);
+  --gradient-profession: linear-gradient(to bottom right, #22c55e, #10b981);
+  --gradient-projects: linear-gradient(to bottom right, #f97316, #ef4444);
+
+  /* Gradients - Cards */
+  --gradient-card-education: linear-gradient(to bottom right, #eff6ff, #ecfeff);
+  --gradient-card-profession: linear-gradient(
+    to bottom right,
+    #f0fdf4,
+    #ecfdf5
+  );
+  --gradient-card-projects: linear-gradient(to bottom right, #fff7ed, #fef2f2);
+
+  /* Gradients - Card Titles */
+  --gradient-title-education: linear-gradient(to right, #2563eb, #06b6d4);
+  --gradient-title-profession: linear-gradient(to right, #16a34a, #22c55e);
+  --gradient-title-projects: linear-gradient(to right, #f97316, #ef4444);
+
+  /* Border Colors - Card Hover */
+  --border-color-education-hover: #93c5fd;
+  --border-color-profession-hover: #86efac;
+  --border-color-projects-hover: #fdba74;
+
+  /* Gradient - Skills */
+  --gradient-skills: linear-gradient(to right, #7c3aed, #ec4899);
+
+  /* Skill text gradients */
+  --grad-html: linear-gradient(to right, #facc15, #f97316);
+  --grad-css: linear-gradient(to right, #60a5fa, #06b6d4);
+  --grad-js: linear-gradient(to right, #4ade80, #10b981);
+  --grad-react: linear-gradient(to right, #818cf8, #a78bfa);
+  --grad-angular: linear-gradient(to right, #f472b6, #f43f5e);
+  --grad-laravel: linear-gradient(to right, #22d3ee, #3b82f6);
+  --grad-sql: linear-gradient(to right, #22d3ee, #3b82f6);
+  --grad-git: linear-gradient(to right, #a78bfa, #ec4899);
+  --grad-ux: linear-gradient(to right, #fda4af, #fb923c);
+  --grad-finish: linear-gradient(to right, #7c3aed, #ec4899, #f97316);
+
+  /* Modal Colors */
+  --modal-border: #e9d5ff;
+  --modal-border-hover: #d8b4fe;
+  --modal-background: #ffffff;
+  --modal-background-hover: #f2f6ff;
+  --modal-content-background: #ffffff;
+  --modal-content-color: #000000;
+}
+
+/* Dark Mode */
+.dark {
+  --color-text-primary: #e5e7eb;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+
+  --color-bg-page: #0f172a;
+  --color-bg-card: #1e293b;
+  --color-bg-model: #111827;
+
+  --color-border-card: #374151;
+
+  --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+
+  --gradient-title: linear-gradient(to right, #c084fc, #f472b6, #f97316);
+  --gradient-mail: linear-gradient(to right, #7c3aed, #db2777);
+  --gradient-mail-hover: linear-gradient(to right, #6b21a8, #be185d);
+
+  --gradient-card-education: linear-gradient(to bottom right, #1e293b, #0f172a);
+  --gradient-card-profession: linear-gradient(
+    to bottom right,
+    #0f2920,
+    #152e24
+  );
+  --gradient-card-projects: linear-gradient(to bottom right, #291811, #3b1f1a);
+
+  --gradient-education: linear-gradient(to right, #2563eb, #0c4a6e);
+  --gradient-profession: linear-gradient(to right, #16a34a, #166534);
+  --gradient-projects: linear-gradient(to right, #f97316, #b45309);
+
+  --gradient-title-education: linear-gradient(to right, #60a5fa, #22d3ee);
+  --gradient-title-profession: linear-gradient(to right, #4ade80, #16a34a);
+  --gradient-title-projects: linear-gradient(to right, #fb923c, #ef4444);
+
+  --border-color-education-hover: #3b82f6;
+  --border-color-profession-hover: #22c55e;
+  --border-color-projects-hover: #f97316;
+
+  --color-card-bg: #1f2937;
+
+  --grad-html: linear-gradient(to right, #facc15, #f97316);
+  --grad-css: linear-gradient(to right, #60a5fa, #06b6d4);
+  --grad-js: linear-gradient(to right, #4ade80, #10b981);
+  --grad-react: linear-gradient(to right, #818cf8, #a78bfa);
+  --grad-angular: linear-gradient(to right, #f472b6, #f43f5e);
+  --grad-laravel: linear-gradient(to right, #22d3ee, #3b82f6);
+  --grad-sql: linear-gradient(to right, #f472b6, #f43f5e);
+  --grad-git: linear-gradient(to right, #a78bfa, #ec4899);
+  --grad-ux: linear-gradient(to right, #fda4af, #fb923c);
+  --grad-finish: linear-gradient(to right, #5b21b6, #be185d, #c2410c);
+
+  --modal-border: #5b21b6;
+  --modal-border-hover: #7c3aed;
+  --modal-background: #1e1b2e;
+  --modal-background-hover: #26223a;
+  --modal-content-background: #1e1b2e;
+  --modal-content-color: #f3f4f6;
+}
+
+/* ============================================================================
+   EDUCATION PAGE
+   ============================================================================ */
+
+/* Backgrounds */
+:root {
+  --color-bg-card: white;
+  --color-bg-specialization: #f9f9f9;
+  --color-bg-header--education: linear-gradient(to right, #eff6ff, #ecfeff);
+  --color-bg-level--education: linear-gradient(to right, #3b82f6, #06b6d4);
+
+  /* Borders */
+  --color-border-card: #d1d5db;
+
+  /* Text */
+  --color-text-primary: #111827;
+  --color-text-secondary: #475569;
+
+  /* Bullets */
+  --color-bullet--education: #3b82f6;
+  --color-specialization-border--education: #3b82f6;
+
+  /* Courses */
+  --color-course-text: #111827;
+  --color-course-border: #d1d5db;
+  --color-course-background: #f9f9f9;
+}
+
+/* Dark Mode */
+.dark {
+  --color-bg-card: #1f2937;
+  --color-bg-specialization: #111827;
+  --color-bg-header--education: linear-gradient(to right, #0f172a, #1e3a8a);
+  --color-bg-level--education: linear-gradient(to right, #2563eb, #06b6d4);
+
+  --color-border-card: #374151;
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #d1d5db;
+
+  --color-bullet--education: #2563eb;
+  --color-specialization-border--education: #2563eb;
+
+  --color-course-text: #f9fafb;
+  --color-course-border: #374151;
+  --color-course-background: #27303f;
+}
+
+/* ============================================================================
+   PROFESSION PAGE
+   ============================================================================ */
+
+/* Backgrounds */
+:root {
+  --color-bg-card: white;
+  --color-bg-department: #f9f9f9;
+  --color-bg-header--profession: linear-gradient(to right, #ecfdf5, #f0fdf4);
+  --color-bg-level--profession: linear-gradient(to right, #22c55e, #10b981);
+
+  /* Borders */
+  --color-border-card: #d1d5db;
+
+  /* Text */
+  --color-text-primary: #111827;
+  --color-text-secondary: #475569;
+
+  /* Bullets */
+  --color-bullet--profession: #22c55e;
+  --color-department-border--profession: #22c55e;
+
+  /* Tech */
+  --color-tech-text: #111827;
+  --color-tech-border: #d1d5db;
+  --color-tech-background: #f9f9f9;
+
+  /* Timeline */
+  --timeline-line: #cbd5e1;
+  --timeline-circle: #64748b;
+  --timeline-circle-active: #22c55e;
+  --timeline-ring: #4ade80;
+
+  --summary-background: #0f172b;
+
+  /* Modal */
+  --profession-modal-border: #bbf7d0;
+  --profession-modal-border-hover: #86efac;
+  --profession-modal-background-hover: #f0fdf4;
+}
+
+/* Dark Mode */
+.dark {
+  --color-bg-card: #1f2937;
+  --color-bg-department: #111827;
+  --color-bg-header--profession: linear-gradient(to right, #052e16, #064e3b);
+  --color-bg-level--profession: linear-gradient(to right, #16a34a, #10b981);
+
+  --color-border-card: #374151;
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #d1d5db;
+
+  --color-bullet--profession: #22c55e;
+  --color-department-border--profession: #22c55e;
+
+  --color-tech-text: #f9fafb;
+  --color-tech-border: #374151;
+  --color-tech-background: #27303f;
+
+  --timeline-line: #1f2937;
+  --timeline-circle: #718096;
+  --timeline-circle-active: #16a34a;
+  --timeline-ring: #22c55e;
+
+  --summary-background: #070b14;
+
+  --profession-modal-border: #166534;
+  --profession-modal-border-hover: #22c55e;
+  --profession-modal-background-hover: #1a2e22;
+}
+
+/* ============================================================================
+   PROJECTS PAGE
+   ============================================================================ */
+
+/* Cards */
+:root {
+  --projects-bg-card: #ffffff;
+  --projects-border-card: #e5e7eb;
+  --projects-type-bg: #ebeeee;
+
+  --projects-text-primary: #111827;
+  --projects-text-secondary: #6b7280;
+
+  --projects-tech-bg: #f3f4f6;
+  --projects-tech-border: #e5e7eb;
+  --projects-tech-text: #374151;
+
+  --projects-divider: #e5e7eb;
+
+  /* Buttons */
+  --projects-btn-github-bg: #ffffff;
+  --projects-btn-github-bg-hover: #e9ebef;
+  --projects-btn-github-text: #111827;
+  --projects-btn-github-border: #d1d5db;
+
+  --projects-btn-demo-bg: #111827;
+  --projects-btn-demo-bg-hover: #0b1220;
+  --projects-btn-demo-text: #ffffff;
+  --projects-btn-demo-border: #111827;
+}
+
+/* Dark Mode */
+.dark {
+  --projects-bg-card: #1e293b;
+  --projects-border-card: #334155;
+  --projects-type-bg: #334155;
+
+  --projects-text-primary: #f1f5f9;
+  --projects-text-secondary: #94a3b8;
+
+  --projects-tech-bg: #0f172a;
+  --projects-tech-border: #334155;
+  --projects-tech-text: #cbd5e1;
+
+  --projects-divider: #334155;
+
+  --projects-btn-github-bg: #e2e8f0;
+  --projects-btn-github-bg-hover: #b0b8c3;
+  --projects-btn-github-text: #0f172a;
+  --projects-btn-github-border: #cbd5e1;
+
+  --projects-btn-demo-bg: #0b1220;
+  --projects-btn-demo-bg-hover: #070d18;
+  --projects-btn-demo-text: #f1f5f9;
+  --projects-btn-demo-border: #0b1220;
+}
+
+/* Animation keyframes */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes searchWiggle {
+  0%,
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+  25% {
+    transform: rotate(-12deg) translateX(-2px);
+  }
+  50% {
+    transform: rotate(8deg) translateX(2px);
+  }
+  75% {
+    transform: rotate(-6deg) translateX(-1px);
+  }
+}
+
+@keyframes brightFlash {
+  0%,
+  18%,
+  36%,
+  100% {
+    filter: brightness(1);
+  }
+  9%,
+  27% {
+    filter: brightness(1.5);
+  }
+}
+
+@keyframes borderFlash {
+  0%,
+  18%,
+  36%,
+  100% {
+    border-color: var(--color-border-card);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+  9%,
+  27% {
+    border-color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+  }
+}
+
+@keyframes mediumFlash {
+  0%,
+  18%,
+  36%,
+  100% {
+    filter: brightness(1);
+  }
+  9%,
+  27% {
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-14%, -86%) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-14%, -86%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modalPopIn {
+  from {
+    transform: scale(0.9) translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes modalPopOut {
+  from {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.9) translateY(10px);
+    opacity: 0;
+  }
+}
+
+/* Click animation */
+@keyframes clickShrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-12px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+}
+
+@keyframes floatBetter {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  15% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+  30% {
+    transform: translate(-50%, -50%) rotate(5deg);
+  }
+  45% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+  60% {
+    transform: translate(-50%, -50%) rotate(5deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
