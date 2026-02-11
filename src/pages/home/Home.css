@@ -1065,16 +1065,6 @@
   text-align: left;
 }
 
-.modal__close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
 .title__buttons__modal {
   border: 2px solid var(--modal-border);
   background: var(--modal-background);
@@ -1125,7 +1115,7 @@
 .modal {
   background: var(--modal-content-background);
   color: var(--modal-content-color);
-  padding: 2rem;
+  padding: 0;
   border-radius: 12px;
   max-width: 500px;
   width: 90%;
@@ -1137,9 +1127,11 @@
 }
 
 .modal__close {
-  position: absolute;
+  position: sticky;
   top: 10px;
-  right: 10px;
+  right: 15px;
+  float: right;
+  padding: 0;
   background: transparent;
   border: none;
   font-size: 1.2rem;
@@ -1147,9 +1139,18 @@
   color: var(--modal-content-color);
 }
 
+@media (max-height: 1150px) {
+  .modal__close {
+    position: sticky;
+    top: 0px;
+    float: right;
+    padding: 0;
+  }
+}
+
 .modal__header {
   text-align: center;
-  margin-bottom: 20px;
+  padding: 2rem 2rem 0.1rem 2rem;
 }
 
 .modal__picture {
@@ -1163,7 +1164,8 @@
   width: 130px;
   position: absolute;
   border-radius: 20px;
-  right: 60px;
+  right: 40px;
+  top: 50px;
 }
 
 @media (max-width: 555px) {
@@ -1175,7 +1177,7 @@
   }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 440px) {
   .modal__picture {
     width: 110px;
     position: static;
@@ -1213,6 +1215,7 @@
 .modal__content {
   margin-top: 20px;
   border-top: 1px solid var(--projects-divider);
+  padding: 1rem 2rem;
 }
 
 .modal__content p {
