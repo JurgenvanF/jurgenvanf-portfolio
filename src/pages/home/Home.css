@@ -1120,7 +1120,7 @@
   max-width: 500px;
   width: 90%;
   position: relative;
-  max-height: 80dvh;
+  max-height: 90dvh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   margin: 0 10px;
