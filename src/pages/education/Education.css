@@ -277,6 +277,7 @@ p {
 /* Wrapper spacing */
 .education__container__item__spec__text__accordion {
   margin-bottom: 10px;
+  padding-top: 15px;
 }
 
 /* Each accordion row */
@@ -285,13 +286,11 @@ p {
   padding: 15px 0 12px;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-top: 15px;
 }
 
 /* Last one gets a bottom border for balance */
 .education__container__item__spec__text__accordion__item:last-child {
   border-bottom: 1px solid var(--color-border-card);
-  margin-top: 0px;
 }
 
 /* Header row */
