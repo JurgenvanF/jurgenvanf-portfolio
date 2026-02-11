@@ -299,7 +299,9 @@ function Projects() {
               src={logoYourSurprise}
               alt="YourSurprise TIM"
             />
-            <h3 className="projects__name">Theme Image Manager (TIM)</h3>
+            <h3 className="projects__name">
+              YourSurprise - Theme Image Manager (TIM)
+            </h3>
             <p className="projects__description">
               Tijdens mijn stage bij YourSurprise heb ik gewerkt aan TIM, een
               systeem binnen hun Page Manager om thema-afbeeldingen voor
@@ -400,9 +402,7 @@ function Projects() {
               src={logoYourSurprise}
               alt="YourSurprise Data Science Project"
             />
-            <h3 className="projects__name">
-              YourSurprise - Data Science Project
-            </h3>
+            <h3 className="projects__name">YourSurprise - Data Science</h3>
             <p className="projects__description">
               Voor YourSurprise heb ik met een team een voorspellend model
               ontwikkeld om te voorspellen of klanten terugkomen voor een tweede
