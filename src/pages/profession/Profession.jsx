@@ -65,7 +65,7 @@ function Profession({ isModalOpen, setIsModalOpen }) {
     <>
       <Briefcase className="profession__icon" />
       <h1 className="title__profession">Beroep 💼</h1>
-      <div>Dit is mijn werkervaring!</div>
+      <p>Dit is mijn werkervaring!</p>
 
       <div className="profession__container">
         <div className="profession__container__items">
