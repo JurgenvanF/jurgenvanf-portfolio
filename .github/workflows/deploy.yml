@@ -30,4 +30,3 @@ jobs:
           remote_path: "/home/www/"
           sftp_only: true
           sftpArgs: "-o ConnectTimeout=10"
-          delete_remote_files: true # remove old files not in current build
