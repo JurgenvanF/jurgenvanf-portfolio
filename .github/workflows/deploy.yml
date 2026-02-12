@@ -26,7 +26,8 @@ jobs:
           server: ${{ secrets.STRATO_HOST }}
           port: 22
           password: ${{ secrets.STRATO_PASS }}
-          local_path: "./dist"
+          local_path: "./dist/*"
           remote_path: "/home/www/"
           sftp_only: true
           sftpArgs: "-o ConnectTimeout=10"
+          delete_remote_files: true # remove old files not in current build
