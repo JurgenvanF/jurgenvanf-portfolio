@@ -1,4 +1,4 @@
-name: Deploy to Strato
+name: Deploy React App to Strato
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
+      - name: Build React app
         run: npm run build
 
       - name: Deploy to Strato via SFTP
@@ -27,6 +27,7 @@ jobs:
           port: 22
           password: ${{ secrets.STRATO_PASS }}
           local_path: "./dist/*"
-          remote_path: "/htdocs"
+          remote_path: "/home/www/"
           sftp_only: true
           sftpArgs: "-o ConnectTimeout=10"
+          create_remote_dir: true
