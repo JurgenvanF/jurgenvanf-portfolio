@@ -27,6 +27,6 @@ jobs:
           port: 22
           password: ${{ secrets.STRATO_PASS }}
           local_path: "./dist/*"
-          remote_path: "/home/www/"
+          remote_path: "/website/"
           sftp_only: true
           sftpArgs: "-o ConnectTimeout=10"
