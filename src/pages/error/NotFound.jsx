@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { House, Ghost } from "lucide-react";
 import "./NotFound.css";
 
 export default function NotFound() {
+  useEffect(() => {
+    document.title = "Portfolio | 404 👻";
+  }, []);
+
   return (
     <div className="error-page">
       <div className="error-title">
