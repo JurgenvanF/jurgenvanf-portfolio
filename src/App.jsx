@@ -10,6 +10,7 @@ import Home from "./pages/home/Home.jsx";
 import Education from "./pages/education/Education.jsx";
 import Profession from "./pages/profession/Profession.jsx";
 import Projects from "./pages/projects/Projects.jsx";
+import NotFound from "./pages/error/NotFound.jsx";
 
 import {
   Menu,
@@ -195,6 +196,7 @@ function AppContent() {
           }
         />
         <Route path="/projecten" element={<Projects />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
