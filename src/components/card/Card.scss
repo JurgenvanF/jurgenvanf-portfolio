@@ -1,0 +1,12 @@
+.card__wrapper {
+    border: 2px solid var(--color-border-card);
+    border-radius: 25px;
+    transition: all 0.2s ease-in-out;
+    text-align: left;
+    width: 100%;
+    background: var(--color-bg-card);
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}

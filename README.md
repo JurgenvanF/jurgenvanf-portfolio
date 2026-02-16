@@ -1,16 +1,67 @@
-# React + Vite
+# Jurgen van Fraeijenhove | Portfolio Pagina
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welkom op mijn portfolio!  
+Hier presenteer ik mijn CV op een overzichtelijke en visueel aantrekkelijke manier.
 
-Currently, two official plugins are available:
+## Sterke punten
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Component-gebaseerde structuur
 
-## React Compiler
+- Herbruikbare componenten minimaliseren codeherhaling.
+- Eenvoudig om aanpassingen te doen of nieuwe elementen toe te voegen.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Voorbeelden:** pagina’s **Opleiding**, **Werkervaring** en **Projecten** zijn volledig component-gebaseerd.
 
-## Expanding the ESLint configuration
+### Gebruik van variabelen
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Kleuren, fonts en andere stijlen zijn opgeslagen in variabelen.
+- Snelle aanpassingen mogelijk en overzicht in één centraal bestand.
+
+### BEM-methode
+
+- SCSS met BEM-structuur voor naamgeving.
+- Code blijft gestructureerd en overzichtelijk, ook bij complexere pagina’s.
+
+### Responsive design
+
+- Werkt op mobiel, tablet en desktop.
+- Consistente en prettige gebruikerservaring op alle apparaten.
+
+### Overzichtelijke presentatie
+
+- Projecten, werkervaring en opleiding worden duidelijk gepresenteerd.
+- Kaarten, iconen en highlights maken de pagina scanbaar en aantrekkelijk.
+
+## Verbeterpunten / Leerervaringen
+
+- **Vroeger beginnen met componenten:**  
+  Eerste code bevatte wat inline oplossingen; later alles omgezet naar componenten. In toekomstige projecten start ik meteen component-gebaseerd.
+
+- **BEM eerder toepassen:**  
+  SCSS was nodig om BEM optimaal te gebruiken; deze kennis neem ik mee naar volgende projecten.
+
+- **Responsive design beter plannen:**  
+  Grid- of flexstrategie eerder uitdenken voor soepelere aanpassing aan verschillende schermformaten.
+
+- **Afbeeldingen optimaliseren en lazy-loading:**  
+  Afbeeldingen kunnen compacter of in webp worden opgeslagen om laadtijden te verbeteren.
+
+## Installatie & Gebruik
+
+1. Clone deze repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Installeer dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start de ontwikkelserver:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open de portfolio pagina in je browser via localhost.

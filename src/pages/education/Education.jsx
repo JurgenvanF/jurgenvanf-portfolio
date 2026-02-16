@@ -1,7 +1,14 @@
-import "./Education.css";
+import "./Education.scss";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { GraduationCap, MapPin, Calendar, Award, X } from "lucide-react";
+import { GraduationCap, Award } from "lucide-react";
+
+import Card from "../../components/card/Card.jsx";
+import CardHeader from "../../components/card/card-header/CardHeader.jsx";
+import CardBody from "../../components/card/card-body/CardBody.jsx";
+import Accordion from "../../components/accordion/Accordion.jsx";
+import PdfModal from "../../components/pdf-modal/PdfModal.jsx";
+import studies from "../../data/studies/studies.js";
 
 function Education() {
   useEffect(() => {
@@ -10,474 +17,162 @@ function Education() {
 
   const [openIndex, setOpenIndex] = useState(null);
   const [showPdfModal, setShowPdfModal] = useState(false);
+  const [pdfUrl, setPdfUrl] = useState("");
 
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const toggleAccordion = (uniqueId) => {
+    setOpenIndex(openIndex === uniqueId ? null : uniqueId);
   };
 
-  // Google Drive direct preview link
-  const pdfUrl =
-    "https://drive.google.com/file/d/1F6wOfVD4yq90sjVhUr1LKp0i213hlp53/preview";
+  const handlePdfOpen = (url) => {
+    setPdfUrl(url);
+    setShowPdfModal(true);
+  };
+
+  const color = "blue";
 
   return (
     <>
       <GraduationCap className="education__icon" />
-      <h1 className="title__education">Opleiding 🎓</h1>
+      <h1 className="education__title">Opleiding 🎓</h1>
       <p>Deze opleidingen heb ik gevolgd!</p>
+
       <div className="education__container">
-        <div className="education__title__container">
-          <GraduationCap className="education__title__container__icon" />
+        <div className="education__container__title">
+          <GraduationCap className="education__container__icon" />
           <br />
           <span>Academische Diplomas</span>
         </div>
 
         <div className="education__container__items">
-          {/* MSc */}
-          <div className="education__container__item">
-            <div className="education__container__item__details">
-              <div className="education__container__item__details__school">
-                <h2 className="education__container__item__details__school__subject">
-                  MSc Communicatie- en Informatiewetenschappen
-                </h2>
-                <h3 className="education__container__item__details__school__name">
-                  Tilburg University
-                </h3>
-                <div className="education__container__item__details__school__locdate">
-                  <div className="education__container__item__details__school__location">
-                    <MapPin className="education__container__item__details__school__location__icon" />
-                    <span className="education__container__item__details__school__location__text">
-                      Tilburg, Nederland
-                    </span>
-                  </div>
-
-                  <div className="education__container__item__details__school__date">
-                    <Calendar className="education__container__item__details__school__date__icon" />
-                    <span className="education__container__item__details__school__date__text">
-                      <span>Augustus 2024 -</span>{" "}
-                      <span className="nowrap">Februari 2026</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="education__container__item__details__level">
-                <span>Master</span>
-              </div>
-            </div>
-
-            <div className="education__container__item__spec">
-              <div className="education__container__item__spec__text">
-                <div className="education__container__item__spec__text__description">
-                  Tijdens mijn master Communicatie- en Informatiewetenschappen
-                  heb ik me verdiept in het ontwerpen en onderzoeken van
-                  digitale media. De focus lag op gebruikerservaring,
-                  interactieontwerp en hoe mensen technologie beleven en
-                  gebruiken.
+          {studies.map((study, studyIndex) => (
+            <div className="education__container__item" key={studyIndex}>
+              <Card study={study}>
+                <div className="card__header">
+                  <CardHeader
+                    color={color}
+                    title={study.title}
+                    subtitle={study.subtitle}
+                    tag={study.tag}
+                    location={study.location}
+                    date={study.date}
+                  />
                 </div>
 
-                {/* Specialisatie */}
-                <div className="education__container__item__spec__text__specialization">
-                  <div className="education__container__item__spec__text__specialization__title">
-                    Specialisatie
-                  </div>
-                  <div className="education__container__item__spec__text__specialization__content">
-                    New Media Design
-                  </div>
-                </div>
+                <div className="card__body">
+                  <CardBody>
+                    <p className="card-body__description">
+                      {study.description}
+                    </p>
 
-                <div className="education__container__item__spec__text__achievements">
-                  <div className="education__container__item__spec__text__achievements__title">
-                    <Award className="education__container__item__spec__text__achievements__title__icon__svg" />
-                    <div className="education__container__item__spec__text__achievements__title__text">
-                      Prestaties
+                    <div className={`card-body__focus card-body__focus__${color}`}>
+                      <p className="card-body__focus__title">Specialisatie</p>
+                      <p className="card-body__focus__content">{study.focus}</p>
                     </div>
-                  </div>
-                  <div className="education__container__item__spec__text__achievements__list">
-                    <ul className="education__container__item__spec__text__achievements__list__items">
-                      <li className="education__container__item__spec__text__achievements__list__item">
-                        Universitair niveau onderzoeken uitvoeren en rapporteren
-                      </li>
-                      <li className="education__container__item__spec__text__achievements__list__item">
-                        Kritisch analyseren van effecten van digitale media op
-                        gebruikers
-                      </li>
-                      <li className="education__container__item__spec__text__achievements__list__item">
-                        Toepassen van psychologische inzichten in
-                        interactieontwerp en storytelling
-                      </li>
-                      <li className="education__container__item__spec__text__achievements__list__item">
-                        Experimenteren met innovatieve technologieën zoals VR
-                      </li>
-                    </ul>
-                  </div>
-                </div>
 
-                <div className="education__container__item__spec__text__accordion__text">
-                  Scriptie
-                </div>
-                <div className="education__container__item__spec__text__accordion">
-                  <div
-                    className={`education__container__item__spec__text__accordion__item ${
-                      openIndex === 2 ? "open" : ""
-                    }`}
-                    onClick={() => toggleAccordion(2)}
-                  >
-                    <div className="education__container__item__spec__text__accordion__header">
-                      <span>Visual Congruence in Interface Design</span>
-                      <svg
-                        className="accordion__triangle"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path d="M8 5l8 7-8 7z" />
-                      </svg>
-                    </div>
-                    <div className="education__container__item__spec__text__accordion__content">
-                      <p>
-                        Voor mijn master New Media Design aan Tilburg University
-                        onderzocht ik hoe visuele kenmerken van knoppen,
-                        specifiek kleur en vorm, beïnvloeden hoe duidelijk
-                        gebruikers een knop vinden. In digitale interfaces
-                        moeten mensen vaak snel beslissen wat een knop doet, nog
-                        voordat ze de tekst goed lezen.
+                    <div className="card-body__list">
+                      <p className="card-body__list__title">
+                        <Award size={20} />
+                        Prestaties
                       </p>
-                      <p>
-                        In een experimentele studie met 111 deelnemers testte ik
-                        verschillende combinaties van kleuren, vormen en
-                        taaktypes (bijv. positieve of negatieve acties). De
-                        resultaten laten zien dat knoppen vooral duidelijker
-                        worden wanneer hun visuele uitstraling past bij de
-                        betekenis van de taak (congruentie). Alleen een “visuele
-                        match” tussen kleur en vorm was niet genoeg om
-                        duidelijkheid te vergroten. Wanneer kleur en vorm met
-                        elkaar in conflict waren, bleek kleur een sterkere
-                        invloed te hebben dan vorm.
-                      </p>
-                      <p>
-                        Deze inzichten helpen designers bij het maken van
-                        knoppen die sneller en intuïtiever begrepen worden, wat
-                        kan bijdragen aan gebruiksvriendelijkere en
-                        betrouwbaardere interfaces.
-                      </p>
-                      <button
-                        className="education__container__item__spec__text__accordion__content__link"
-                        onClick={() => setShowPdfModal(true)}
-                      >
-                        Bekijk de volledige scriptie
-                      </button>
+                      {study.list && (
+                        <ul className="card-body__list__items">
+                          {study.list.map((item, i) => (
+                            <li key={i} className={`card-body__list__items__item card-body__list__items__item__${color}`}>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
 
-                      <h4>Resultaten</h4>
-                      <ul>
-                        <li>
-                          <strong>
-                            H1 (visuele match tussen kleur en vorm verhoogt
-                            duidelijkheid) werd niet ondersteund:
-                          </strong>
-                          <br />✗ Knoppen waarvan kleur en vorm visueel bij
-                          elkaar pasten, werden niet als duidelijker ervaren dan
-                          visueel mismatched knoppen.
-                        </li>
-                        <li>
-                          <strong>
-                            H2 (visuele congruentie met de taak verhoogt
-                            duidelijkheid) werd wél ondersteund:
-                          </strong>
-                          <br />✓ Knoppen waarvan het visuele ontwerp aansloot
-                          bij de betekenis van de taak (bijv. een “positieve”
-                          knop voor een positieve actie) werden significant
-                          duidelijker gevonden.
-                        </li>
-                        <li>
-                          <strong>Exploratieve vraag:</strong>
-                          <br /> Wanneer kleur en vorm met elkaar in conflict
-                          waren, had <em>kleur</em> een duidelijk sterkere
-                          invloed op ervaren duidelijkheid dan vorm.
-                        </li>
-                      </ul>
-                      <p>
-                        De resultaten laten zien dat vooral de match tussen
-                        visueel ontwerp en taakbetekenis belangrijk is voor hoe
-                        snel en intuïtief gebruikers een knop begrijpen.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="education__container__item__spec__text__courses">
-                  <div className="education__container__item__spec__text__courses__title">
-                    <div className="education__container__item__spec__text__courses__title__text">
-                      Kernvakken
-                    </div>
-                  </div>
-                  <div className="education__container__item__spec__text__courses__items">
-                    <div className="education__container__item__spec__text__courses__item">
-                      Design Research
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      Responsible UX Design
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      Virtual, Augmented and Mixed Reality
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      Digital Inequality
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      Psychology of Creativity
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      The Human Mind in the Digital World
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* HBO-ICT */}
-          <div className="education__container__item">
-            <div className="education__container__item__details">
-              <div className="education__container__item__details__school">
-                <h2 className="education__container__item__details__school__subject">
-                  HBO-ICT
-                </h2>
-                <h3 className="education__container__item__details__school__name">
-                  HZ, University of Applied Sciences
-                </h3>
-                <div className="education__container__item__details__school__locdate">
-                  <div className="education__container__item__details__school__location">
-                    <MapPin className="education__container__item__details__school__location__icon" />
-                    <span className="education__container__item__details__school__location__text">
-                      Middelburg, Nederland
-                    </span>
-                  </div>
-
-                  <div className="education__container__item__details__school__date">
-                    <Calendar className="education__container__item__details__school__date__icon" />
-                    <span className="education__container__item__details__school__date__text">
-                      <span>Augustus 2019 -</span>{" "}
-                      <span className="nowrap">Juni 2024</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="education__container__item__details__level">
-                <span>Bachelor</span>
-              </div>
-            </div>
-
-            <div className="education__container__item__spec">
-              <div className="education__container__item__spec__text">
-                <div className="education__container__item__spec__text__description">
-                  Tijdens mijn bachelor ICT aan HZ heb ik een sterke,
-                  praktijkgerichte basis opgebouwd in softwareontwikkeling. De
-                  opleiding richtte zich op het ontwerpen, bouwen en testen van
-                  moderne applicaties, waarbij ik veel in teamverband werkte aan
-                  echte projecten voor opdrachtgevers.
-                </div>
-
-                {/* Specialisatie */}
-                <div className="education__container__item__spec__text__specialization">
-                  <div className="education__container__item__spec__text__specialization__title">
-                    Specialisatie
-                  </div>
-                  <div className="education__container__item__spec__text__specialization__content">
-                    Software development
-                  </div>
-                </div>
-
-                {/* Prestaties */}
-                <div className="education__container__item__spec__text__achievements">
-                  <div className="education__container__item__spec__text__achievements__title">
-                    <Award className="education__container__item__spec__text__achievements__title__icon" />
-                    <div className="education__container__item__spec__text__achievements__title__text">
-                      Prestaties
-                    </div>
-                  </div>
-                  <div className="education__container__item__spec__text__achievements__list">
-                    <ul className="education__container__item__spec__text__achievements__list__items">
-                      <li className="education__container__item__spec__text__achievements__list__item">
-                        Meerdere softwareprojecten opgeleverd voor echte
-                        opdrachtgevers
-                      </li>
-                      <li className="education__container__item__spec__text__achievements__list__item">
-                        Intensieve ervaring opgedaan met Agile en Scrum werken
-                      </li>
-                      <li className="education__container__item__spec__text__achievements__list__item">
-                        Gegroeid van programmeer beginner naar ervaren
-                        ontwikkelaar
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Stages Accordion */}
-                <div className="education__container__item__spec__text__accordion__text">
-                  Stages
-                </div>
-                <div className="education__container__item__spec__text__accordion">
-                  <div
-                    className={`education__container__item__spec__text__accordion__item ${
-                      openIndex === 0 ? "open" : ""
-                    }`}
-                    onClick={() => toggleAccordion(0)}
-                  >
-                    <div className="education__container__item__spec__text__accordion__header">
-                      <span>YourSurprise</span>
-                      <svg
-                        className="accordion__triangle"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path d="M8 5l8 7-8 7z" />
-                      </svg>
-                    </div>
-                    <div className="education__container__item__spec__text__accordion__content">
-                      <p>
-                        Hier heb ik ervaring opgedaan in het werken binnen een
-                        professioneel team. Ik leerde hoe je effectief
-                        samenwerkt, communiceert en bijdraagt aan gezamenlijke
-                        doelen. Daarnaast maakte ik kennis met workflows en
-                        ontwikkelde ik een beter begrip van het werken in een
-                        kantoor omgeving.
-                      </p>
-                      <ul>
-                        <li>
-                          Ontwikkelde een dynamische afbeeldingswisselaar voor
-                          het ontwerpteam, waardoor per seizoen andere visuals
-                          in de webshop getoond kunnen worden.
-                        </li>
-                        <li>
-                          Werkte samen binnen een multidisciplinair team om
-                          webshop functionaliteiten te optimaliseren en
-                          problemen efficient op te lossen.
-                        </li>
-                        <li>
-                          Leerde en paste gebruiksvriendelijke workflows toe
-                          binnen de ontwikkelomgeving om de productiviteit te
-                          verhogen.
-                        </li>
-                      </ul>
-                      <Link
-                        to="/beroep#yoursurprise"
-                        className="education__container__item__spec__text__accordion__link"
-                      >
-                        <div className="education__container__item__spec__text__accordion__link__text">
-                          Bekijk de beroep-pagina voor meer informatie
+                    {/* Accordion sections */}
+                    {study.accordionSections?.map((section, sectionIndex) => (
+                      <div key={sectionIndex}>
+                        <div className="accordion__section-title">
+                          {section.sectionTitle}
                         </div>
-                      </Link>
-                    </div>
-                  </div>
 
-                  <div
-                    className={`education__container__item__spec__text__accordion__item ${
-                      openIndex === 1 ? "open" : ""
-                    }`}
-                    onClick={() => toggleAccordion(1)}
-                  >
-                    <div className="education__container__item__spec__text__accordion__header">
-                      <span>Afstudeerstage - Nedbase</span>
-                      <svg
-                        className="accordion__triangle"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path d="M8 5l8 7-8 7z" />
-                      </svg>
-                    </div>
-                    <div className="education__container__item__spec__text__accordion__content">
-                      <p>
-                        Hier werkte ik in een team dat maatwerk applicaties
-                        ontwikkelde. Mijn focus lag vooral op de front-end:
-                        welke informatie beschikbaar moest zijn, hoe dit
-                        overzichtelijk gepresenteerd kon worden en hoe de
-                        interface er uiteindelijk uit moest zien.
-                      </p>
-                      <ul>
-                        <li>
-                          Ontwikkelde (front-end) functionaliteiten voor een
-                          klantgerichte tool die de toegankelijkheid en het
-                          overzicht van website-informatie verbeterde.
-                        </li>
-                        <li>
-                          Leerde en gebruikte moderne ontwikkeltools en
-                          frameworks binnen een professionele ontwikkelomgeving.
-                        </li>
-                      </ul>
-                      <Link
-                        to="/beroep#nedbase"
-                        className="education__container__item__spec__text__accordion__link"
-                      >
-                        <div className="education__container__item__spec__text__accordion__link__text">
-                          Bekijk de beroep-pagina voor meer informatie
-                        </div>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                        {section.items.map((item, itemIndex) => {
+                          const uniqueId = `${studyIndex}-${sectionIndex}-${itemIndex}`;
 
-                {/* Kernvakken */}
-                <div className="education__container__item__spec__text__courses">
-                  <div className="education__container__item__spec__text__courses__title">
-                    <div className="education__container__item__spec__text__courses__title__text">
-                      Kernvakken
+                          return (
+                            <Accordion
+                              key={uniqueId}
+                              color={color}
+                              sectionTitle={item.title}
+                              isOpen={openIndex === uniqueId}
+                              onToggle={() => toggleAccordion(uniqueId)}
+                            >
+                              {item.paragraphs?.map((para, i) => (
+                                <p key={i} className="accordion__content-text">
+                                  {para}
+                                </p>
+                              ))}
+
+                              {item.list && (
+                                <ul className="accordion__content-list">
+                                  {item.list.map((li, i) => (
+                                    <li
+                                      key={i}
+                                      className="accordion__content-list-item"
+                                    >
+                                      {li}
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+
+                              {item.link && (
+                                <>
+                                  {item.link.startsWith("http") ? (
+                                    <button
+                                      className="accordion__link"
+                                      onClick={() => handlePdfOpen(item.link)}
+                                    >
+                                      Bekijk de volledige scriptie
+                                    </button>
+                                  ) : (
+                                    <Link
+                                      to={item.link}
+                                      className="accordion__link"
+                                    >
+                                      Bekijk de beroep-pagina voor meer informatie
+                                    </Link>
+                                  )}
+                                </>
+                              )}
+                            </Accordion>
+                          );
+                        })}
+                      </div>
+                    ))}
+
+                    <div className="card-body__tags">
+                      <p className="card-body__tags__title">Kernvakken</p>
+                      <div className="card-body__tags__items">
+                        {study.courses.map((course, i) => (
+                          <div
+                            key={i}
+                            className="card-body__tags__items__item"
+                          >
+                            {course}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <div className="education__container__item__spec__text__courses__items">
-                    <div className="education__container__item__spec__text__courses__item">
-                      Software Design
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      Object Oriented Programming
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      Digital Innovation
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      Digital Transformation
-                    </div>
-                    <div className="education__container__item__spec__text__courses__item">
-                      Design Thinking
-                    </div>
-                  </div>
+                  </CardBody>
                 </div>
-              </div>
+              </Card>
             </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      {showPdfModal && (
-        <div className="pdf-modal">
-          <div
-            className="pdf-modal__overlay"
-            onClick={() => setShowPdfModal(false)}
-          ></div>
-          <div className="pdf-modal__content">
-            <button
-              className="pdf-modal__close"
-              onClick={() => setShowPdfModal(false)}
-            >
-              ✕
-            </button>
-            <iframe
-              src={pdfUrl}
-              width="100%"
-              height="100%"
-              style={{ flex: 1, border: "none" }}
-              title="Thesis PDF"
-            />
-          </div>
-        </div>
-      )}
+      <PdfModal
+        isOpen={showPdfModal}
+        onClose={() => setShowPdfModal(false)}
+        pdfUrl={pdfUrl}
+      />
     </>
   );
 }

@@ -4,83 +4,29 @@ import "./Home.css";
 import { Canvas } from "@react-three/fiber";
 import HeadModel from "../../HeadModel";
 import profile from "../../assets/profilepicture.jpg";
-import profile2 from "../../assets/profilepicture2.jpg";
-import {
-  GraduationCap,
-  Briefcase,
-  Folder,
-  Mail,
-  Github,
-  Linkedin,
-  Rocket,
-  Heart,
-  User,
-  Cake,
-  MapPin,
-} from "lucide-react";
+import { GraduationCap, Briefcase, Folder, Mail, Github, Linkedin, Rocket, Heart, User } from "lucide-react";
+import ProfileModal from "../../components/profile-modal/ProfileModal";
 
-function Home({ isModalOpen, setIsModalOpen }) {
+function Home() {
   const [showCanvas, setShowCanvas] = useState(false);
   const [hasCanvasLoaded, setHasCanvasLoaded] = useState(false);
   const [isPending, startTransition] = useTransition();
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
-    setIsClosing(false);
-    setIsModalOpen(true);
+  const toggleCanvas = () => {
+    startTransition(() => {
+      if (!showCanvas && !hasCanvasLoaded) setHasCanvasLoaded(true);
+      setShowCanvas(!showCanvas);
+    });
   };
 
-  const closeModal = () => {
-    setIsClosing(true);
-    setTimeout(() => setIsModalOpen(false), 250);
-  };
-
-  useEffect(() => {
-    if (isOpen) {
-      const scrollY = window.scrollY;
-
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.left = "0";
-      document.body.style.right = "0";
-      document.body.style.width = "100%";
-    } else {
-      const scrollY = document.body.style.top;
-
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.width = "";
-
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || "0") * -1);
-      }
-    }
-
-    return () => {
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.width = "";
-    };
-  }, [isOpen]);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   useEffect(() => {
     document.title = "Portfolio | Home";
   }, []);
-
-  const toggleCanvas = () => {
-    startTransition(() => {
-      if (!showCanvas && !hasCanvasLoaded) {
-        setHasCanvasLoaded(true);
-      }
-      setShowCanvas(!showCanvas);
-    });
-  };
 
   return (
     <>
@@ -136,9 +82,9 @@ function Home({ isModalOpen, setIsModalOpen }) {
         </a>
 
         <button onClick={openModal} className="title__buttons__modal">
-          <User className="title__buttons__modal__icon" />
-          Over Mij
-        </button>
+        <User className="title__buttons__modal__icon" />
+        Over Mij
+      </button>
 
         <a
           href="https://github.com/JurgenvanF"
@@ -282,87 +228,10 @@ function Home({ isModalOpen, setIsModalOpen }) {
         </div>
       </div>
 
-      {isModalOpen && (
-        <div
-          className={`modal__overlay ${
-            isClosing ? "modal__overlay--hide" : "modal__overlay--show"
-          }`}
-          onClick={closeModal}
-        >
-          <div
-            className={`modal ${isClosing ? "modal--hide" : "modal--show"}`}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className="modal__close" onClick={closeModal}>
-              ✕
-            </button>
-
-            <div className="modal__header">
-              <img className="modal__picture" src={profile2} alt="Profile" />
-              <h2>Jurgen van Fraeijenhove</h2>
-              <p className="modal__info">
-                <span>
-                  <Cake size={16} className="modal__icon" /> 2 januari 2002
-                </span>
-                <span>
-                  <MapPin size={16} className="modal__icon" /> Terneuzen,
-                  Zeeland
-                </span>
-                <span>
-                  <Mail size={16} className="modal__icon" />
-                  jurgenvanf@gmail.com
-                </span>
-              </p>
-            </div>
-
-            <div className="modal__content">
-              <p>
-                Ik ben een afgestudeerde Media Design / ICT-student met een
-                passie voor hoe design het gedrag en de ervaring van mensen
-                beïnvloedt. Tijdens mijn studie heb ik veel geleerd over
-                cognitieve psychologie en hoe visuele keuzes bepalen hoe mensen
-                informatie verwerken en gebruiken.
-              </p>
-
-              <p>
-                Mijn huidige kracht ligt vooral in front-end development,
-                dankzij de praktische ervaring tijdens mijn bachelor.
-                Daarentegen is mijn ambitie gericht op UX-design. Ik vind het
-                belangrijk om zowel technisch als conceptueel te denken, zodat
-                ideeën niet alleen mooi aanvoelen, maar ook goed functioneren.
-                Deze combinatie helpt mij om de brug te slaan tussen design en
-                uitvoering.
-              </p>
-
-              <p>
-                Ik ben erg detailgericht en kan me volledig vastbijten in een
-                project. Ik denk continu na over hoe iets logischer, duidelijker
-                en visueel sterker kan. Structuur aanbrengen in chaos geeft mij
-                veel voldoening: van een onoverzichtelijk Excel-bestand naar een
-                helder systeem met een fijne flow en een fijne uitstraling.
-                Overzicht, rust en gebruiksgemak vind ik heel belangrijk.
-              </p>
-
-              <p>
-                In de toekomst zou ik graag willen doorgroeien tot UX-designer.
-                Ik ben gemotiveerd om mijn vaardigheden in het ontwikkelen van
-                een visuele stijl te verbeteren en mezelf creatief uit te dagen.
-              </p>
-
-              <p>
-                Buiten design heb ik een grote fascinatie voor de ruimte. Als
-                kind wilde ik astronaut worden (stiekem nog steeds) en ik zou
-                later dan ook graag een professionele telescoop willen bezitten
-                waarmee ik de planeten kan bekijken. Daarnaast heb ik een half
-                jaar in Madrid gewoond tijdens mijn Minor, wat mijn
-                zelfstandigheid en persoonlijke groei enorm heeft versterkt. Van
-                nature ben ik rustig en werk ik graag geconcentreerd door, soms
-                zó gefocust dat ik de tijd vergeet.
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
+      <ProfileModal
+        isModalOpen={isModalOpen}
+        closeModal={closeModal}
+      />
     </>
   );
 }
