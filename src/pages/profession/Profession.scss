@@ -33,7 +33,7 @@ p {
   justify-content: center;
   gap: 30px;
   width: 90%;
-  max-width: 1200px;
+  max-width: 1000px;
 }
 
 .profession__container__items {
@@ -150,35 +150,32 @@ p {
       transform: scale(1);
       border: 1px solid #e5e7eb;
       font-size: 1.875rem;
-        font-weight: 600;
+      font-weight: 600;
 
       &__icon {
         font-size: 2.25rem;
       }
 
-        
+      &__years {
+        color: var(--summary-text-years);
+      }
 
-        &__years {
-          color: var(--summary-text-years);
-        }
+      &__projects {
+        color: var(--summary-text-projects);
+      }
 
-        &__projects {
-          color: var(--summary-text-projects);
-        }
+      &__tech {
+        color: var(--summary-text-tech);
+      }
 
-        &__tech {
-          color: var(--summary-text-tech);
-        }
-
-        &__subtext {
-          font-size: 0.875rem;
-          font-weight: 400;
-          color: #45556c;
-        }
+      &__subtext {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: #45556c;
+      }
     }
   }
 }
-
 
 .profession__container__timeline {
   display: flex;
@@ -188,9 +185,9 @@ p {
   &::after {
     content: "";
     position: absolute;
-    top: 8px;
+    top: 35px;
     left: 8px;
-    bottom: -2rem;
+    bottom: -5rem;
     width: 2px;
     background: var(--timeline-line);
     z-index: 1;
@@ -200,6 +197,8 @@ p {
   &__marker {
     width: 16px;
     height: 16px;
+    top: 35px;
+    left: 1px;
     position: relative;
     z-index: 2;
 
@@ -208,7 +207,9 @@ p {
       height: 16px;
       border-radius: 50%;
       background: var(--timeline-circle-active);
-      transition: transform 0.3s ease, background 0.3s ease;
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease;
 
       &__inactive {
         background: var(--timeline-circle);
@@ -240,7 +241,8 @@ p {
   }
 }
 
-.profession__container__item:last-child .profession__container__timeline::after {
+.profession__container__item:last-child
+  .profession__container__timeline::after {
   display: none;
 }
 
@@ -251,9 +253,9 @@ p {
 .profession__modal {
   margin: 30px 0;
   border: 2px solid var(--profession-modal-border);
-  
+
   &:hover {
     border-color: var(--profession-modal-border-hover);
-  background: var(--profession-modal-background-hover);
+    background: var(--profession-modal-background-hover);
   }
 }

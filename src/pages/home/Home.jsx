@@ -4,7 +4,17 @@ import "./Home.css";
 import { Canvas } from "@react-three/fiber";
 import HeadModel from "../../HeadModel";
 import profile from "../../assets/profilepicture.jpg";
-import { GraduationCap, Briefcase, Folder, Mail, Github, Linkedin, Rocket, Heart, User } from "lucide-react";
+import {
+  GraduationCap,
+  Briefcase,
+  Folder,
+  Mail,
+  Github,
+  Linkedin,
+  Rocket,
+  Heart,
+  User,
+} from "lucide-react";
 import ProfileModal from "../../components/profile-modal/ProfileModal";
 
 function Home() {
@@ -82,9 +92,9 @@ function Home() {
         </a>
 
         <button onClick={openModal} className="title__buttons__modal">
-        <User className="title__buttons__modal__icon" />
-        Over Mij
-      </button>
+          <User className="title__buttons__modal__icon" />
+          Over Mij
+        </button>
 
         <a
           href="https://github.com/JurgenvanF"
@@ -136,7 +146,7 @@ function Home() {
           <span className="skills__container__text html">HTML</span>
         </div>
         <div className="skills__container__item">
-          <span className="skills__container__text css">CSS</span>
+          <span className="skills__container__text css">CSS / SCSS</span>
         </div>
         <div className="skills__container__item">
           <span className="skills__container__text js">
@@ -156,7 +166,7 @@ function Home() {
           <span className="skills__container__text sql">SQL</span>
         </div>
         <div className="skills__container__item">
-          <span className="skills__container__text git">Git / CI/CD</span>
+          <span className="skills__container__text git">Git</span>
         </div>
         <div className="skills__container__item">
           <span className="skills__container__text ux">UI/UX Design</span>
@@ -228,10 +238,7 @@ function Home() {
         </div>
       </div>
 
-      <ProfileModal
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-      />
+      <ProfileModal isModalOpen={isModalOpen} closeModal={closeModal} />
     </>
   );
 }
