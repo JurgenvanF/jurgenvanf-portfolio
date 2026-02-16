@@ -64,7 +64,9 @@ function Education() {
                       {study.description}
                     </p>
 
-                    <div className={`card-body__focus card-body__focus__${color}`}>
+                    <div
+                      className={`card-body__focus card-body__focus__${color}`}
+                    >
                       <p className="card-body__focus__title">Specialisatie</p>
                       <p className="card-body__focus__content">{study.focus}</p>
                     </div>
@@ -77,7 +79,10 @@ function Education() {
                       {study.list && (
                         <ul className="card-body__list__items">
                           {study.list.map((item, i) => (
-                            <li key={i} className={`card-body__list__items__item card-body__list__items__item__${color}`}>
+                            <li
+                              key={i}
+                              className={`card-body__list__items__item card-body__list__items__item__${color}`}
+                            >
                               {item}
                             </li>
                           ))}
@@ -116,7 +121,20 @@ function Education() {
                                       key={i}
                                       className="accordion__content-list-item"
                                     >
-                                      {li}
+                                      {(() => {
+                                        if (!li.includes(":")) return li;
+
+                                        const [before, ...rest] = li.split(":");
+
+                                        return (
+                                          <>
+                                            <strong>
+                                              {before}: <br />
+                                            </strong>
+                                            {rest.join(":")}
+                                          </>
+                                        );
+                                      })()}
                                     </li>
                                   ))}
                                 </ul>
@@ -136,7 +154,8 @@ function Education() {
                                       to={item.link}
                                       className="accordion__link"
                                     >
-                                      Bekijk de beroep-pagina voor meer informatie
+                                      Bekijk de beroep-pagina voor meer
+                                      informatie
                                     </Link>
                                   )}
                                 </>
@@ -151,10 +170,7 @@ function Education() {
                       <p className="card-body__tags__title">Kernvakken</p>
                       <div className="card-body__tags__items">
                         {study.courses.map((course, i) => (
-                          <div
-                            key={i}
-                            className="card-body__tags__items__item"
-                          >
+                          <div key={i} className="card-body__tags__items__item">
                             {course}
                           </div>
                         ))}

@@ -1,10 +1,6 @@
 import "./Profession.scss";
 import { useEffect, useState } from "react";
-import {
-  Briefcase,
-  TrendingUp,
-  User,
-} from "lucide-react";
+import { Briefcase, TrendingUp, User } from "lucide-react";
 
 import jobs from "../../data/jobs/jobs.js";
 import Card from "../../components/card/Card.jsx";
@@ -13,7 +9,6 @@ import CardBody from "../../components/card/card-body/CardBody.jsx";
 import ProfileModal from "../../components/profile-modal/ProfileModal.jsx";
 
 function Profession({ isModalOpen, setIsModalOpen }) {
-
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -24,37 +19,36 @@ function Profession({ isModalOpen, setIsModalOpen }) {
 
   useEffect(() => {
     if (isModalOpen) {
-    const scrollY = window.scrollY;
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.left = "0";
-    document.body.style.right = "0";
-    document.body.style.width = "100%";
-  } else {
-    const scrollY = document.body.style.top;
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.left = "";
-    document.body.style.right = "";
-    document.body.style.width = "";
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
 
-    if (scrollY) {
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
     }
-  }
 
-  return () => {
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.left = "";
-    document.body.style.right = "";
-    document.body.style.width = "";
-  };
-}, [isModalOpen]);
-
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+    };
+  }, [isModalOpen]);
 
   useEffect(() => {
-    document.title = "Portfolio | Werkervaring 💼";
+    document.title = "Portfolio | Beroep 💼";
   }, []);
 
   const color = "green";
@@ -62,7 +56,7 @@ function Profession({ isModalOpen, setIsModalOpen }) {
   return (
     <>
       <Briefcase className="profession__icon" />
-      <h1 className="profession__title">Werkervaring 💼</h1>
+      <h1 className="profession__title">Beroep 💼</h1>
       <p>Dit is mijn werkervaring!</p>
 
       <div className="profession__container">
@@ -76,8 +70,12 @@ function Profession({ isModalOpen, setIsModalOpen }) {
             >
               <div className="profession__container__timeline">
                 <div className="profession__container__timeline__marker">
-                  <div className={`profession__container__timeline__marker__circle profession__container__timeline__marker__circle__${job.status}`}></div>
-                  <div className={`profession__container__timeline__marker__ring profession__container__timeline__marker__ring__${job.status}`}></div>
+                  <div
+                    className={`profession__container__timeline__marker__circle profession__container__timeline__marker__circle__${job.status}`}
+                  ></div>
+                  <div
+                    className={`profession__container__timeline__marker__ring profession__container__timeline__marker__ring__${job.status}`}
+                  ></div>
                 </div>
                 <Card job={job}>
                   <div className="card__header">
@@ -102,7 +100,10 @@ function Profession({ isModalOpen, setIsModalOpen }) {
                           className="title__buttons__modal profession__modal"
                           onClick={openModal}
                         >
-                          <User size={16} className="title__buttons__modal__icon" />
+                          <User
+                            size={16}
+                            className="title__buttons__modal__icon"
+                          />
                           Over Mij
                         </button>
                       )}
@@ -187,9 +188,7 @@ function Profession({ isModalOpen, setIsModalOpen }) {
 
       {/* Summary */}
       <div className="summary">
-        <h2 className="summary__title">
-          Samenvatting professionele skills
-        </h2>
+        <h2 className="summary__title">Samenvatting professionele skills</h2>
         <div className="summary__container">
           <div className="summary__container__item">
             <span className="summary__container__item__years">5+</span>
@@ -212,10 +211,7 @@ function Profession({ isModalOpen, setIsModalOpen }) {
         </div>
       </div>
 
-      <ProfileModal
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-      />
+      <ProfileModal isModalOpen={isModalOpen} closeModal={closeModal} />
     </>
   );
 }
