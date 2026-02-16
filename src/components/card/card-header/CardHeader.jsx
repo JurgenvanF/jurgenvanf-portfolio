@@ -2,15 +2,16 @@ import "./CardHeader.scss";
 import { MapPin, Calendar } from "lucide-react";
 
 const CardHeader = ({ color, title, subtitle, tag, location, date }) => {
-
-    const ALLOWED_COLORS = ["blue", "green"];
-    const safeColor = ALLOWED_COLORS.includes(color) ? color : "blue";
+  const ALLOWED_COLORS = ["blue", "green"];
+  const safeColor = ALLOWED_COLORS.includes(color) ? color : "blue";
 
   return (
     <div className={`card-header card-header__${safeColor}`}>
       <div className="card-header__main">
         <h2 className="card-header__main__title">{title}</h2>
-        <div className={`card-header__main__tag card-header__main__tag__${safeColor}`}>
+        <div
+          className={`card-header__main__tag card-header__main__tag__${safeColor}`}
+        >
           {tag}
         </div>
       </div>

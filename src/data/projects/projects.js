@@ -141,7 +141,14 @@ const projects = [
       "Recall van het model: 0,644, voldoet aan succescriteria ≥0,6",
       "Adviezen voor verbetering: extra features, andere modellen testen en data cleaning verder optimaliseren",
     ],
-    tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Jupyter Notebook", "Matplotlib / Seaborn"],
+    tech: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "Jupyter Notebook",
+      "Matplotlib / Seaborn",
+    ],
     private: true,
   },
   {

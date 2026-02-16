@@ -24,11 +24,7 @@ export default function PdfModal({ isOpen, onClose, pdfUrl }) {
         <button className="pdf-modal__close" onClick={onClose}>
           ✕
         </button>
-        <iframe
-          className="pdf-modal__iframe"
-          src={pdfUrl}
-          title="PDF Viewer"
-        />
+        <iframe className="pdf-modal__iframe" src={pdfUrl} title="PDF Viewer" />
       </div>
     </div>
   );

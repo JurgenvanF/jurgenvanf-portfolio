@@ -37,9 +37,7 @@ function ProjectCard({ project }) {
       {project.private ? (
         <div className="projects__private">
           <Lock className="projects__private__icon" />
-          <span className="projects__private__text">
-            Dit project is privé
-          </span>
+          <span className="projects__private__text">Dit project is privé</span>
         </div>
       ) : (
         <div className="projects__button">
@@ -55,30 +53,29 @@ function ProjectCard({ project }) {
             </a>
           )}
 
-          {project.demo !== undefined && (
-  project.demo ? (
-    project.demo.includes("jurgenvanfraeijenhove.nl") ? (
-      <div className="projects__button__demo disable">
-        <ExternalLink className="projects__button__demo__icon" />
-        Je bent er al
-      </div>
-    ) : (
-      <a
-        href={project.demo}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="projects__button__demo"
-      >
-        <ExternalLink className="projects__button__demo__icon" />
-        Demo
-      </a>
-    )
-  ) : (
-    <div className="projects__button__demo hide">
-      <ExternalLink className="projects__button__demo__icon" />
-    </div>
-  )
-)}
+          {project.demo !== undefined &&
+            (project.demo ? (
+              project.demo.includes("jurgenvanfraeijenhove.nl") ? (
+                <div className="projects__button__demo disable">
+                  <ExternalLink className="projects__button__demo__icon" />
+                  Je bent er al
+                </div>
+              ) : (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="projects__button__demo"
+                >
+                  <ExternalLink className="projects__button__demo__icon" />
+                  Demo
+                </a>
+              )
+            ) : (
+              <div className="projects__button__demo hide">
+                <ExternalLink className="projects__button__demo__icon" />
+              </div>
+            ))}
         </div>
       )}
     </div>

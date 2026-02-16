@@ -1,7 +1,13 @@
 import { useRef, useEffect, useState } from "react";
 import "./Accordion.scss";
 
-export default function Accordion({ sectionTitle, color, isOpen, onToggle, children }) {
+export default function Accordion({
+  sectionTitle,
+  color,
+  isOpen,
+  onToggle,
+  children,
+}) {
   const contentRef = useRef(null);
   const [height, setHeight] = useState(0);
 
@@ -13,7 +19,10 @@ export default function Accordion({ sectionTitle, color, isOpen, onToggle, child
   }, [isOpen, children]);
 
   return (
-    <div className={`accordion__item ${isOpen ? "accordion__item--open" : ""}`} onClick={onToggle}>
+    <div
+      className={`accordion__item ${isOpen ? "accordion__item--open" : ""}`}
+      onClick={onToggle}
+    >
       {/* Header */}
       <div className="accordion__header">
         <span className="accordion__header-title">{sectionTitle}</span>
