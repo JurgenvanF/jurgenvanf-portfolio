@@ -8,7 +8,7 @@ In plaats dat ik enkel mijn CV in PDF formaat stuur is het ook leuk (en nuttig) 
 
 Hieronder noem ik wat sterke punten van deze portfolio website. Ook benoem ik dingen die ik de volgende keer anders zou doen!
 
-De pagina kan worden bekeken via: <a href="https://www.jurgenvanfraeijenhove.nl" target="_blank">jurgenvanfraeijenhove.nl</a>
+De pagina kan worden bekeken via: [jurgenvanfraeijenhove.nl](https://www.jurgenvanfraeijenhove.nl)
 
 ## Sterke punten
 
