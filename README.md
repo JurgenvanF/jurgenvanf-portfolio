@@ -50,7 +50,7 @@ Hier presenteer ik mijn CV op een overzichtelijke en visueel aantrekkelijke mani
 
 1. Clone deze repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/JurgenvanF/jurgenvanf-portfolio.git
    ```
 2. Installeer dependencies:
 
