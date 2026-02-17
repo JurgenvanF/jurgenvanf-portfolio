@@ -1,5 +1,5 @@
 import "./Profession.scss";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Briefcase, TrendingUp, User } from "lucide-react";
 
 import jobs from "../../data/jobs/jobs.js";

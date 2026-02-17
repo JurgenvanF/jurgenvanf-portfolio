@@ -34,7 +34,9 @@ function AppContent() {
   // Initialize darkMode from localStorage or system preference
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("darkMode");
-    return saved !== null ? saved === "true" : false; // default to light mode
+    if (saved !== null) return saved === "true"; // use saved preference
+    // use system preference if nothing saved
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
 
   useEffect(() => {
