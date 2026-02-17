@@ -1,5 +1,11 @@
 import "./ProjectCard.scss";
-import { Github, ExternalLink, Lock } from "lucide-react";
+import {
+  Github,
+  ExternalLink,
+  Youtube,
+  MonitorCheck,
+  Lock,
+} from "lucide-react";
 
 function ProjectCard({ project }) {
   return (
@@ -57,9 +63,20 @@ function ProjectCard({ project }) {
             (project.demo ? (
               project.demo.includes("jurgenvanfraeijenhove.nl") ? (
                 <div className="projects__button__demo disable">
-                  <ExternalLink className="projects__button__demo__icon" />
+                  <MonitorCheck className="projects__button__demo__icon" />
                   Je bent er al
                 </div>
+              ) : project.demo.includes("youtube.com") ||
+                project.demo.includes("youtu.be") ? (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="projects__button__demo"
+                >
+                  <Youtube className="projects__button__demo__icon" />
+                  Demo
+                </a>
               ) : (
                 <a
                   href={project.demo}
@@ -68,12 +85,13 @@ function ProjectCard({ project }) {
                   className="projects__button__demo"
                 >
                   <ExternalLink className="projects__button__demo__icon" />
-                  Demo
+                  Open
                 </a>
               )
             ) : (
               <div className="projects__button__demo hide">
                 <ExternalLink className="projects__button__demo__icon" />
+                Open
               </div>
             ))}
         </div>
