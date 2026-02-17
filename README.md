@@ -101,3 +101,7 @@ Al deze verbeterpunten hoop ik in de loop van tijd op mijn portfolio pagina aan 
    ```
 
 4. Open de portfolio pagina in je browser via localhost.
+
+## Project(en) waar ik mee bezig ben
+
+- App om een LP collectie bij te houden. Met deze website kan een gebruiker inloggen en zijn of haar vinyl collectie bijhouden. De gebruiker kan zoeken en een API haalt alle resultaten op. Elk gebruiker heeft een profiel en kan elkaar opzoeken en bevrienden om elkaars collectie te kunnen bekijken. Ook kan een verlanglijstje worden bijgehouden.
