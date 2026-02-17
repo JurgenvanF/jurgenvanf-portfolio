@@ -1,5 +1,7 @@
 # Jurgen van Fraeijenhove | Portfolio Pagina
 
+<img src="https://jurgenvanfraeijenhove.nl/assets/logo-DIUv0sIu.jpg" alt="Portfolio image" width="400"/>
+
 Welkom op mijn portfolio!
 
 In plaats dat ik enkel mijn CV in PDF formaat stuur is het ook leuk (en nuttig) om middels een website gelijk te kunnen laten zien wat mijn vaardigheden zijn. Klik zeker rond op de pagina en kijk door de code!
