@@ -53,15 +53,22 @@ Wat onderscheidt een front-end developer van een back-end developer? Niet heel m
 - Projecten, werkervaring en opleiding worden duidelijk gepresenteerd.
 - Kaarten, iconen en highlights maken de pagina scanbaar en aantrekkelijk.
 
+### Automatische deploy naar Strato
+
+Wanneer de code naar GitHub wordt verzonden start er automatisch een job om alle veranderingen naar Strato te sturen met SFTP. Dit zorgt ervoor dat wanneer er wijzigingen worden gemaakt ik niet handmatig alle veranderingen in Strato hoef door te voeren. Dit maakt het een stuk makkelijker om kleine wijzigingen te maken.
+
 ## Verbeterpunten / Leerervaringen
 
 ### Vroeger beginnen met componenten
+
 Toen ik begon aan de website wilde ik een snel ontwerp maken om mijn CV op een leuke manier te presenteren en tegelijk te kunnen laten zien wat ik kan. Tegen het einde hiervan werd ik herinnerd aan het concept van componenten. Voor een statische pagina die alleen ik soms zal aanpassen is dit niet per se nodig maar aangezien ik toch ook technische vaardigheden wil laten zien heb ik besloten toch de pagina's waar veel code repetition was om te zetten naar componenten. Dit is alleen een stuk lastiger om achteraf te doen. In de toekomst zou ik hier vooraf meer over nadenken om ervoor te zorgen dat het uiteindelijk een stuk makkelijker is om elementen toe te voegen.
 
 ### BEM eerder toepassen
+
 Ditzelfde is het geval met de BEM-methode. Alhoewel de naamgeving overal terug te vinden was, was het me niet gelukt om dit daadwerkelijk toe te passen in de CSS. Weer aan het einde van het traject werd mij verteld dat dit via SCSS werkt. Ook voor technische demonstratie redenen heb ik uiteindelijk de pagina's met componenten omgezet naar SCSS. Nu ik dit weet zal ik dit toepassen in toekomstige projecten.
 
 ### Afbeeldingen optimaliseren
+
 De afbeeldingen op de pagina doen er soms lang over om in te laden. Bij het toevoegen van afbeeldingen heb ik niet nagedacht over wat dit met de performance van de website doet.
 
 Al deze verbeterpunten hoop ik in de loop van tijd op mijn portfolio pagina aan te pakken. De status van deze verbeteringen houd ik hieronder bij.
