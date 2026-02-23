@@ -6,8 +6,30 @@ import logoKledingbank from "../../assets/projects/kledingbank/logo.jpg";
 import logoPortfolio from "../../assets/projects/portfolio/logo.jpg";
 import logoSKC from "../../assets/projects/SKC/logo.jpg";
 import logoYourSurprise from "../../assets/projects/yoursurprise/logo.jpg";
+import logoVinylVault from "../../assets/projects/vinylvault/logo.jpg";
 
 const projects = [
+  {
+    type: "Website",
+    image: logoVinylVault,
+    alt: "Vinyl Vault",
+    title: "WiP - Vinyl Vault",
+    description:
+      "Dit platform is momenteel in ontwikkeling en wordt dagelijks verbeterd met nieuwe functies.Vinyl Vault is een platform voor gebruikers om hun vinylcollectie te beheren. Gebruikers kunnen albums toevoegen, bekijken in kaartstijl en gedetailleerde informatie per album bekijken, zoals artiest, genre, tracklist en duur. Het platform biedt functionaliteiten zoals zoeken, filteren en het toevoegen van albums die nog niet in de database staan. Daarnaast kunnen gebruikers accounts aanmaken, inloggen, hun profiel en privacy-instellingen beheren, vrienden toevoegen en elkaars collecties bekijken. Ook is er een wishlist-functie om gewenste albums bij te houden. Vinyl Vault ondersteunt meerdere talen en biedt zo een centrale plek voor het organiseren en delen van vinylcollecties.",
+
+    highlights: [
+      "Registratie- en loginfunctionaliteit met Firebase Authentication",
+      "Centrale opslag van de vinylcollectie per gebruiker met Firestore",
+      "Responsive ontwerp met TailwindCSS en SCSS",
+      "Meertalige interface (Nederlands en Engels)",
+      "Herbruikbare componenten",
+    ],
+
+    tech: ["React", "Next.js", "TypeScript", "Firebase", "SCSS", "TailwindCSS"],
+
+    github: "https://github.com/JurgenvanF/vinyl-app",
+    demo: "https://vinyl-app-sigma.vercel.app/",
+  },
   {
     type: "Website",
     image: logoPortfolio,
