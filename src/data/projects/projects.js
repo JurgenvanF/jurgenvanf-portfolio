@@ -16,7 +16,7 @@ const projects = [
     title: "Vinyl Vault",
 
     description:
-      "Vinyl Vault is een webapplicatie waarmee gebruikers hun vinylcollectie digitaal kunnen beheren en ontdekken. Gebruikers kunnen albums toevoegen aan hun persoonlijke collectie, albuminformatie bekijken en hun verlanglijstje organiseren op één centrale plek. Albums kunnen handmatig worden toegevoegd of opgezocht via de database van Discogs, inclusief informatie zoals artiest, releasejaar, genre, tracklist en totale speelduur. Het platform ondersteunt functies zoals zoeken, filteren en het toevoegen van releases die niet in de database bestaan. Daarnaast kunnen gebruikers accounts aanmaken, hun profiel en privacy-instellingen beheren, vrienden toevoegen en elkaars collecties bekijken. Ook bevat het platform een verlanglijst om gewenste albums bij te houden. Vinyl Vault is een moderne, responsive webapplicatie voor vinylverzamelaars.",
+      "Vinyl Vault is een webapplicatie waarmee gebruikers hun vinylcollectie digitaal kunnen beheren en ontdekken. Gebruikers kunnen albums toevoegen aan hun persoonlijke collectie, albuminformatie bekijken en hun verlanglijstje organiseren op één centrale plek. Albums kunnen handmatig worden toegevoegd of opgezocht via de database van Discogs. Dit kan handmatig of met de ingebouwde barcode scanner. Het platform ondersteunt functies zoals zoeken, filteren en het toevoegen van releases die (nog) niet in de database bestaan. Daarnaast kunnen gebruikers hun profiel en privacy-instellingen beheren, vrienden toevoegen en elkaars collecties bekijken. Vinyl Vault is een moderne, responsive webapplicatie voor vinylverzamelaars.",
 
     highlights: [
       "Registratie- en loginfunctionaliteit met Firebase Authentication",
