@@ -14,18 +14,22 @@ const projects = [
     image: logoVinylVault,
     alt: "Vinyl Vault",
     title: "Vinyl Vault",
+
     description:
-      "Vinyl Vault is een platform voor gebruikers om hun vinylcollectie te beheren. Gebruikers kunnen albums toevoegen, bekijken en gedetailleerde informatie per album bekijken, zoals artiest, genre, tracklist en duur. Het platform biedt functionaliteiten zoals zoeken, filteren en het toevoegen van albums die nog niet in de database staan. Daarnaast kunnen gebruikers accounts aanmaken, inloggen, hun profiel en privacy-instellingen beheren, vrienden toevoegen en elkaars collecties bekijken. Ook is er een wishlist-functie om gewenste albums bij te houden. Vinyl Vault ondersteunt momenteel Nederlands en Engels en biedt zo een centrale plek voor het organiseren en delen van vinylcollecties.",
+      "Vinyl Vault is een webapplicatie waarmee gebruikers hun vinylcollectie digitaal kunnen beheren en ontdekken. Gebruikers kunnen albums toevoegen aan hun persoonlijke collectie, albuminformatie bekijken en hun verlanglijstje organiseren op één centrale plek. Albums kunnen handmatig worden toegevoegd of opgezocht via de database van Discogs, inclusief informatie zoals artiest, releasejaar, genre, tracklist en totale speelduur. Het platform ondersteunt functies zoals zoeken, filteren en het toevoegen van releases die niet in de database bestaan. Daarnaast kunnen gebruikers accounts aanmaken, hun profiel en privacy-instellingen beheren, vrienden toevoegen en elkaars collecties bekijken. Ook bevat het platform een verlanglijst om gewenste albums bij te houden. Vinyl Vault is een moderne, responsive webapplicatie voor vinylverzamelaars.",
 
     highlights: [
       "Registratie- en loginfunctionaliteit met Firebase Authentication",
-      "Centrale opslag van de vinylcollectie per gebruiker met Firestore",
-      "Responsive ontwerp met TailwindCSS en SCSS",
+      "Albumgegevens ophalen via Discogs",
+      "Barcode scanner voor het snel toevoegen van platen",
+      "Zoeken, filteren en sorteren binnen collecties",
+      "Vriendensysteem om de collecties van anderen te bekijken",
       "Meertalige interface (Nederlands en Engels)",
-      "Herbruikbare componenten",
+      "Volledig responsive ontwerp voor desktop, tablet en mobiel",
+      "Modulaire en herbruikbare React componenten",
     ],
 
-    tech: ["React", "Next.js", "TypeScript", "Firebase", "SCSS", "TailwindCSS"],
+    tech: ["React", "Next.js", "TypeScript", "Firebase", "TailwindCSS", "SCSS"],
 
     github: "https://github.com/JurgenvanF/vinyl-app",
     demo: "https://vinyl-app-sigma.vercel.app/",
