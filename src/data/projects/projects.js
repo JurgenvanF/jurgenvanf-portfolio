@@ -29,7 +29,16 @@ const projects = [
       "Modulaire en herbruikbare React componenten",
     ],
 
-    tech: ["React", "Next.js", "TypeScript", "Firebase", "TailwindCSS", "SCSS"],
+    tech: [
+      "React",
+      "Next.js",
+      "Firebase",
+      "TailwindCSS",
+      "SCSS / BEM",
+      "REST APIs",
+      "Figma",
+      "Git",
+    ],
 
     github: "https://github.com/JurgenvanF/vinyl-app",
     demo: "https://vinyl-app-sigma.vercel.app/",
