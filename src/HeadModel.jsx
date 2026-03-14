@@ -6,7 +6,7 @@ import * as THREE from "three";
 export default function HeadModel({ url }) {
   const modelRef = useRef();
   const { scene, animations } = useGLTF(url);
-  const { actions, gl } = useThree();
+  const { gl } = useThree();
   const { actions: animActions } = useAnimations(animations, modelRef);
 
   const neckRef = useRef();

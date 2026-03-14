@@ -1,4 +1,3 @@
-import { useRef, useEffect, useState } from "react";
 import "./Accordion.scss";
 
 export default function Accordion({
@@ -8,16 +7,6 @@ export default function Accordion({
   onToggle,
   children,
 }) {
-  const contentRef = useRef(null);
-  const [height, setHeight] = useState(0);
-
-  // Update height when isOpen changes
-  useEffect(() => {
-    if (contentRef.current) {
-      setHeight(isOpen ? contentRef.current.scrollHeight : 0);
-    }
-  }, [isOpen, children]);
-
   return (
     <div
       className={`accordion__item ${isOpen ? "accordion__item--open" : ""}`}
@@ -39,13 +28,7 @@ export default function Accordion({
       </div>
 
       {/* Content */}
-      <div
-        ref={contentRef}
-        className="accordion__content"
-        style={{ maxHeight: `${height}px` }}
-      >
-        {children}
-      </div>
+      <div className="accordion__content">{children}</div>
     </div>
   );
 }

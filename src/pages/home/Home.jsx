@@ -20,7 +20,7 @@ import ProfileModal from "../../components/profile-modal/ProfileModal";
 function Home() {
   const [showCanvas, setShowCanvas] = useState(false);
   const [hasCanvasLoaded, setHasCanvasLoaded] = useState(false);
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -60,11 +60,9 @@ function Home() {
         )}
         <div className="model-cover"></div>
 
-        <img
-          className={`title__picture ${!showCanvas ? "visible" : ""}`}
-          src={profile}
-          alt="Profile"
-        />
+        <div className={`title__pictureFloat ${!showCanvas ? "visible" : ""}`}>
+          <img className="title__picture" src={profile} alt="Profile" />
+        </div>
       </div>
 
       {/* Mobile toggle button */}
