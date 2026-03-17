@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 import { Canvas } from "@react-three/fiber";
 import HeadModel from "../../HeadModel";
-import profile from "../../assets/profilepicture4.jpg";
+import profile from "../../assets/profilepicture4.jpeg";
 import {
   GraduationCap,
   Briefcase,
